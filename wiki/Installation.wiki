@@ -1,0 +1,22 @@
+#summary Installation guide for CarFrontEnd
+#labels Phase-Deploy,Featured
+
+= Introduction =
+
+How to install the CarFrontEnd application
+
+= Details =
+
+  # Download [http://mac-carfrontend.googlecode.com/files/CarFrontEndAPI.zip CarFrontEndAPI.zip] and extract the Framework
+  # Move CarFrontEndAPI.framework into ~/Library/Frameworks or /Library/Frameworks
+  # Download [http://mac-carfrontend.googlecode.com/files/CarFrontEnd.zip CarFrontEnd.zip] and extract the application.
+  # Move the Application to the folder (e.g. /Applications) you would like to keep it in.
+
+Run the app and enjoy.
+
+
+
+
+
+
+
