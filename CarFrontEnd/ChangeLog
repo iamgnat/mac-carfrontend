@@ -1,0 +1,14 @@
+2007-XX-XX - 1.0a2 - gnat
+    Update previous track button to skip to the begining of the current track
+        if more than 10 seconds have elapsed.
+
+2007-07-27 - 1.0a1 - gnat
+    Fix to timer being fired when a device (iPod, CD, HDD, etc..) is mounted.
+    An infinite loop was possible that would cause the available playlists to
+        not be updated when changes occurred.
+    If two consecutive tracks had the same duration, the track info would not
+        change when the track changed. Corrected by using the id from iTunes
+        rather than the duration.
+
+2007-07-18 - 1.0 - gnat
+    Initial release
