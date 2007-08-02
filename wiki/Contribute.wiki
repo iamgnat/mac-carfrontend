@@ -1,4 +1,4 @@
-How to contribute to the CarFrontEnd project.
+#summary How to contribute to the CarFrontEnd project.
 
 = Introduction =
 
