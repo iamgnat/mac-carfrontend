@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 2E58C6020C2D99BA000D5703 /* CarFrontEnd */;
+		activeTarget = 8D1107260486CEB800E47090 /* CarFrontEnd */;
+		addToTargets = (
+			2E7CA7F80C36BFF800B12442 /* iTunesMusicPlayer */,
+			8D1107260486CEB800E47090 /* CarFrontEnd */,
+		);
+		breakpoints = (
+			2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */,
+		);
+		breakpointsGroup = 2E05C1E50C6230C800EE0866 /* XCBreakpointsBucket */;
+		codeSenseManager = 2E58C60E0C2D99C5000D5703 /* Code sense */;
+		executables = (
+			2E58C6020C2D99BA000D5703 /* CarFrontEnd */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					213,
+					167,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					78,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					150,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 207768023;
+			PBXWorkspaceStateSaveDate = 207768023;
+		};
+		sourceControlManager = 2E58C60D0C2D99C5000D5703 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {633, 210}}";
+			sepNavSelRange = "{188, 0}";
+			sepNavVisRange = "{33, 216}";
+		};
+	};
+	2E05C1E50C6230C800EE0866 /* XCBreakpointsBucket */ = {
+		isa = XCBreakpointsBucket;
+		name = "Project Breakpoints";
+		objects = (
+			2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */,
+		);
+	};
+	2E58C6020C2D99BA000D5703 /* CarFrontEnd */ = {
+		isa = PBXExecutable;
+		activeArgIndex = 2147483647;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = CarFrontEnd;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	2E58C60D0C2D99C5000D5703 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	2E58C60E0C2D99C5000D5703 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	2E58C6100C2DB1B8000D5703 /* MainViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 980}}";
+			sepNavSelRange = "{0, 791}";
+			sepNavVisRange = "{0, 1910}";
+			sepNavWindowFrame = "{{64, -5}, {822, 832}}";
+		};
+	};
+	2E58C6110C2DB1B8000D5703 /* MainViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 3584}}";
+			sepNavSelRange = "{40, 0}";
+			sepNavVisRange = "{0, 1959}";
+			sepNavWindowFrame = "{{357, 0}, {822, 832}}";
+		};
+	};
+	2E7CA7F80C36BFF800B12442 /* iTunesMusicPlayer */ = {
+		activeExec = 0;
+	};
+	2E7CA8090C36CEEB00B12442 /* iTunesViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {680, 1400}}";
+			sepNavSelRange = "{818, 42}";
+			sepNavVisRange = "{0, 2096}";
+			sepNavVisRect = "{{0, 116}, {680, 209}}";
+			sepNavWindowFrame = "{{452, 0}, {822, 832}}";
+		};
+	};
+	2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2522, 8708}}";
+			sepNavSelRange = "{14587, 64}";
+			sepNavVisRange = "{17898, 1468}";
+			sepNavVisRect = "{{0, 4859}, {680, 209}}";
+			sepNavWindowFrame = "{{451, 0}, {822, 832}}";
+		};
+	};
+	2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */ = {
+		isa = PBXSymbolicBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 1;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		hitCount = 0;
+		location = CarFrontEndAPI;
+		modificationTime = 206407787.267634;
+		state = 2;
+		symbolName = "-[CarFrontEndButton updateImages]";
+	};
+	2EC8F37F0C3609F5000F3CE2 /* PluginManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 742}}";
+			sepNavSelRange = "{0, 786}";
+			sepNavVisRange = "{0, 1717}";
+			sepNavWindowFrame = "{{67, -5}, {822, 832}}";
+		};
+	};
+	2EC8F3800C3609F5000F3CE2 /* PluginManager.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 2674}}";
+			sepNavSelRange = "{35, 0}";
+			sepNavVisRange = "{0, 1853}";
+			sepNavWindowFrame = "{{434, 0}, {822, 832}}";
+		};
+	};
+	2EC8F38C0C3619BE000F3CE2 /* AudioVolumeManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 770}}";
+			sepNavSelRange = "{0, 791}";
+			sepNavVisRange = "{0, 1781}";
+		};
+	};
+	2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 3472}}";
+			sepNavSelRange = "{40, 0}";
+			sepNavVisRange = "{0, 2037}";
+			sepNavWindowFrame = "{{436, 0}, {822, 832}}";
+		};
+	};
+	2EC8F39D0C3621D4000F3CE2 /* SystemManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
+			sepNavSelRange = "{0, 786}";
+			sepNavVisRange = "{0, 1213}";
+			sepNavWindowFrame = "{{297, -7}, {822, 832}}";
+		};
+	};
+	2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
+			sepNavSelRange = "{0, 786}";
+			sepNavVisRange = "{0, 1209}";
+			sepNavWindowFrame = "{{297, -7}, {822, 832}}";
+		};
+	};
+	2EF917480C5AAFD300A05648 /* LICENSE */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 7840}}";
+			sepNavSelRange = "{35146, 0}";
+			sepNavVisRange = "{0, 2589}";
+			sepNavWindowFrame = "{{62, -5}, {822, 832}}";
+		};
+	};
+	2EF917990C5EE44B00A05648 /* ChangeLog */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{0, 613}";
+			sepNavWindowFrame = "{{340, 0}, {822, 832}}";
+		};
+	};
+	8D1107260486CEB800E47090 /* CarFrontEnd */ = {
+		activeExec = 0;
+		executables = (
+			2E58C6020C2D99BA000D5703 /* CarFrontEnd */,
+		);
+	};
+	8D1107310486CEB800E47090 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 853}";
+			sepNavWindowFrame = "{{71, -5}, {822, 832}}";
+		};
+	};
+}
