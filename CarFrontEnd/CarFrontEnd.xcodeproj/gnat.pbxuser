@@ -1,6 +1,7 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = ppc;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 2E58C6020C2D99BA000D5703 /* CarFrontEnd */;
 		activeTarget = 8D1107260486CEB800E47090 /* CarFrontEnd */;
@@ -11,7 +12,6 @@
 		breakpoints = (
 			2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */,
 		);
-		breakpointsGroup = 2E05C1E50C6230C800EE0866 /* XCBreakpointsBucket */;
 		codeSenseManager = 2E58C60E0C2D99C5000D5703 /* Code sense */;
 		executables = (
 			2E58C6020C2D99BA000D5703 /* CarFrontEnd */,
@@ -74,7 +74,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					243,
+					190,
 					20,
 					48,
 					43,
@@ -97,9 +97,9 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					219,
+					166,
 					20,
-					48.1626,
+					48,
 					43,
 					43,
 					20,
@@ -137,8 +137,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 207768821;
-			PBXWorkspaceStateSaveDate = 207768821;
+			PBXPerProjectTemplateStateSaveDate = 207798822;
+			PBXWorkspaceStateSaveDate = 207798822;
 		};
 		sourceControlManager = 2E58C60D0C2D99C5000D5703 /* Source Control */;
 		userBuildSettings = {
@@ -151,21 +151,14 @@
 			sepNavVisRange = "{33, 216}";
 		};
 	};
-	2E05C1E50C6230C800EE0866 /* XCBreakpointsBucket */ = {
-		isa = XCBreakpointsBucket;
-		name = "Project Breakpoints";
-		objects = (
-			2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */,
-		);
-	};
 	2E58C6020C2D99BA000D5703 /* CarFrontEnd */ = {
 		isa = PBXExecutable;
-		activeArgIndex = 2147483647;
 		activeArgIndices = (
 		);
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -191,6 +184,7 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 1;
 		scmConfiguration = {
+			repositoryName = "Google mac-carfrontend";
 		};
 		scmType = scm.subversion;
 	};
@@ -241,8 +235,10 @@
 		);
 		breakpointStyle = 1;
 		continueAfterActions = 0;
+		countType = 0;
 		delayBeforeContinue = 0;
 		hitCount = 0;
+		ignoreCount = 0;
 		location = CarFrontEndAPI;
 		modificationTime = 206407787.267634;
 		state = 2;
