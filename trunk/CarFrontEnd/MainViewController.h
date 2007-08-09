@@ -39,6 +39,8 @@
     NSString                    *appSupportPath;
     NSView                      *contentViewContent;
     NSWindow                    *mainWindow;
+    NSMutableDictionary         *prefsConfig;
+    NSString                    *prefsConfigPath;
     
     // Resolution change
     NSDictionary                *currentDisplayMode;
@@ -65,5 +67,9 @@
 #pragma mark AppleScript Utilities
 - (NSAppleEventDescriptor *) runWithSource: (id) source
                        andReturnError: (NSDictionary **) error;
+
+#pragma mark Preferences configInfo
+- (NSDictionary *) preferencesForKey: (NSString *) key;
+- (void) setPreferences: (NSDictionary *) prefs forKey: (NSString *) key;
 
 @end
