@@ -53,6 +53,15 @@
     }
     [appSupportPath retain];
     
+    // Load the prefs
+    prefsConfigPath = [[appSupportPath stringByAppendingPathComponent:@"CarFrontEnd.plist"]
+                       retain];
+    prefsConfig = [NSMutableDictionary dictionaryWithContentsOfFile:prefsConfigPath];
+    if (prefsConfig == nil) {
+        prefsConfig = [NSMutableDictionary dictionary];
+    }
+    [prefsConfig retain];
+    
     return(self);
 }
 
@@ -250,6 +259,17 @@
     NSAppleEventDescriptor  *res = [script executeAndReturnError:error];
     
     return(res);
+}
+
+#pragma mark Preferences configInfo
+- (NSDictionary *) preferencesForKey: (NSString *) key {
+    return([prefsConfig objectForKey:key]);
+}
+
+- (void) setPreferences: (NSDictionary *) prefs forKey: (NSString *) key {
+    if (prefs == nil) return;
+    [prefsConfig setObject:prefs forKey:key];
+    [prefsConfig writeToFile:prefsConfigPath atomically:YES];
 }
 
 @end
