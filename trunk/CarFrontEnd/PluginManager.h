@@ -20,21 +20,25 @@
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 @class MainViewController;
+@class PluginListView;
 
 @interface PluginManager : NSObject {
     IBOutlet CarFrontEndButton  *pluginButton1;
     IBOutlet CarFrontEndButton  *pluginButton2;
     IBOutlet CarFrontEndButton  *pluginButton3;
-    IBOutlet CarFrontEndButton  *pluginButton4;
-    IBOutlet CarFrontEndButton  *pluginButton5;
-    IBOutlet CarFrontEndButton  *pluginButton6;
     IBOutlet MainViewController *controller;
+    IBOutlet PluginListView     *pluginListView;
+    IBOutlet CarFrontEndButton  *modifyButton;
+    IBOutlet NSTextField        *quickSlotText;
     
+    NSMutableDictionary         *pluginPrefs;
     NSMutableDictionary         *pluginList;
     NSMutableArray              *orderedPluginList;
     int                         pluginMarker;
     
     id <CarFrontEndProtocol>    currentPlugin;
+    
+    NSTimer                     *modifyTimer;
 }
 
 - (void) initalize;
@@ -43,7 +47,7 @@
 - (IBAction) buttonAction: (id) sender;
 
 #pragma mark Update buttons
-- (void) updatePluginButtons: (id) ignore;
+- (void) updateQuickSlots: (id) ignore;
 
 #pragma mark Utilities
 - (void) loadPluginsFromPath: (NSString *) pluginPath;
