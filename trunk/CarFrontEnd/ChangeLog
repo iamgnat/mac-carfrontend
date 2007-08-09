@@ -1,6 +1,14 @@
-2007-XX-XX - 1.0a2 - gnat
+2007-08-08 - 1.0a2 - gnat
     Update previous track button to skip to the begining of the current track
         if more than 10 seconds have elapsed.
+    Added PluginListView to manage new plugin management.
+    Updated MainMenu.nib to add a PluginListView to the SystemView view for
+        displaying the loaded plugins.
+    Updated MainMenu.nib to change the 6 plugin buttons in the MainView to 
+        3 QuickSlot buttons to act as quick access to commonly used plugins.
+    Updated PluginManager.h/m to add new PluginListView and QuickSlot logic.
+    Updated MainViewController to add support for preference management.
+    Updated iTunesMusicPlayer to add "iTunes" to the pluginButtonImage.
 
 2007-07-27 - 1.0a1 - gnat
     Fix to timer being fired when a device (iPod, CD, HDD, etc..) is mounted.
