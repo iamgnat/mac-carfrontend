@@ -193,8 +193,31 @@ static iTunesViewController *sharedITVC = nil;
 - (void) initalize {
     NSString    *resourcePath = [[NSBundle bundleForClass:[iTunesViewController
                                                            class]] resourcePath];
-    pluginButtonImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
-                            stringByAppendingPathComponent:@"iTunes.tif"]];
+    NSImage     *itunes = [[[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"iTunes.tif"]]
+                           autorelease];
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+
+    [attributes setObject:[NSFont fontWithName:@"Helvetica" size:26]
+                   forKey:NSFontAttributeName];
+	[attributes setObject:[NSColor whiteColor] forKey:NSForegroundColorAttributeName];
+	NSSize  size = [@" iTunes" sizeWithAttributes:attributes];
+    
+    [itunes setScalesWhenResized:YES];
+    [itunes scaleForHeight:size.height];
+    size.width += [itunes size].width;
+    
+    NSPoint     origin = NSZeroPoint;
+    NSRect      rect = NSZeroRect;
+    pluginButtonImage = [[NSImage alloc] initWithSize:size];
+    origin.x = [itunes size].width;
+    rect.size = [itunes size];
+    [pluginButtonImage lockFocus];
+    [itunes drawInRect:rect fromRect:NSZeroRect
+             operation:NSCompositeSourceOver fraction:1.0];
+    [@" iTunes" drawAtPoint:origin withAttributes:attributes];
+    [itunes unlockFocus];
+    
     return;
 }
 
@@ -444,7 +467,7 @@ static iTunesViewController *sharedITVC = nil;
         // Probably just ejected a source and no playlist has been selected
         //  to play yet.
         // NB: It's the apostrophe...
-        if (![msg isEqualToString:@"CanÕt make duration of current track into type integer."])
+        if (![msg isEqualToString:@"Canâ€™t make duration of current track into type integer."])
             NSLog(@"iTunesViewController: fastTimer: playerInfo: %@", msg);
         [artistNameField setStringValue:@"No information available."];
         [albumNameField setStringValue:@"No information available."];
