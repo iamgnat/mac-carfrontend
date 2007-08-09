@@ -79,7 +79,7 @@
 					20,
 					224,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -117,8 +117,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 207798863;
-			PBXWorkspaceStateSaveDate = 207798863;
+			PBXPerProjectTemplateStateSaveDate = 208323117;
+			PBXWorkspaceStateSaveDate = 208323117;
 		};
 		sourceControlManager = 2EBBEEAF0C31EC2300690505 /* Source Control */;
 		userBuildSettings = {
@@ -179,10 +179,26 @@
 	};
 	2EBBEEB90C31ECF900690505 /* CarFrontEndButton.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 6132}}";
-			sepNavSelRange = "{42, 0}";
-			sepNavVisRange = "{0, 2088}";
-			sepNavWindowFrame = "{{67, -5}, {822, 832}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 4410}}";
+			sepNavSelRange = "{6294, 0}";
+			sepNavVisRange = "{3998, 2409}";
+			sepNavWindowFrame = "{{271, 0}, {822, 832}}";
+		};
+	};
+	2EEC0E930C6AC2A10066662B /* LICENSE */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {767, 9128}}";
+			sepNavSelRange = "{35146, 0}";
+			sepNavVisRange = "{9592, 2571}";
+			sepNavWindowFrame = "{{463, -15}, {826, 832}}";
+		};
+	};
+	2EEC0E970C6AC2D70066662B /* ChangeLog */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {767, 703}}";
+			sepNavSelRange = "{91, 0}";
+			sepNavVisRange = "{0, 137}";
+			sepNavWindowFrame = "{{463, -312}, {826, 832}}";
 		};
 	};
 	8DC2EF4F0486A6940098B216 /* CarFrontEndAPI */ = {
