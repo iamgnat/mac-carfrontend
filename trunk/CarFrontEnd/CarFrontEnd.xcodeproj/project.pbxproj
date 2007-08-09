@@ -24,6 +24,7 @@
 		2EF9179A0C5EE44B00A05648 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917990C5EE44B00A05648 /* ChangeLog */; };
 		2EF9179B0C5EE44B00A05648 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917990C5EE44B00A05648 /* ChangeLog */; };
 		2EF918470C622E4C00A05648 /* iTunesMusicPlayer.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */; };
+		2EF918B70C64294300A05648 /* PluginListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF918B60C64294300A05648 /* PluginListView.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -80,6 +81,8 @@
 		2EF917480C5AAFD300A05648 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2EF917990C5EE44B00A05648 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
 		2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = iTunesMusicPlayer.nib; sourceTree = "<group>"; };
+		2EF918B50C64294300A05648 /* PluginListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginListView.h; sourceTree = "<group>"; };
+		2EF918B60C64294300A05648 /* PluginListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginListView.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* CarFrontEnd_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarFrontEnd_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CarFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +123,8 @@
 				2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */,
 				2E7CA8090C36CEEB00B12442 /* iTunesViewController.h */,
 				2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */,
+				2EF918B50C64294300A05648 /* PluginListView.h */,
+				2EF918B60C64294300A05648 /* PluginListView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				2EC8F3810C3609F5000F3CE2 /* PluginManager.m in Sources */,
 				2EC8F38E0C3619BE000F3CE2 /* AudioVolumeManager.m in Sources */,
 				2EC8F39F0C3621D4000F3CE2 /* SystemManager.m in Sources */,
+				2EF918B70C64294300A05648 /* PluginListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
