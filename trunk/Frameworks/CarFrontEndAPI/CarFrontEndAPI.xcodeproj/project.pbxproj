@@ -28,6 +28,8 @@
 		2EBBEEBA0C31ECF900690505 /* CarFrontEndButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EBBEEB80C31ECF900690505 /* CarFrontEndButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EBBEEBB0C31ECF900690505 /* CarFrontEndButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBEEB90C31ECF900690505 /* CarFrontEndButton.m */; };
 		2EBBEF080C31FE3100690505 /* CarFrontEnd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBEF070C31FE3100690505 /* CarFrontEnd.icns */; };
+		2EEC0E940C6AC2A10066662B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC0E930C6AC2A10066662B /* LICENSE */; };
+		2EEC0E980C6AC2D70066662B /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC0E970C6AC2D70066662B /* ChangeLog */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		2EBBEEB90C31ECF900690505 /* CarFrontEndButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarFrontEndButton.m; sourceTree = "<group>"; };
 		2EBBEED80C31F03900690505 /* CarFrontEnd.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarFrontEnd.psd; sourceTree = "<group>"; };
 		2EBBEF070C31FE3100690505 /* CarFrontEnd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CarFrontEnd.icns; sourceTree = "<group>"; };
+		2EEC0E930C6AC2A10066662B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2EEC0E970C6AC2D70066662B /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* CarFrontEndAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarFrontEndAPI_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* CarFrontEndAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CarFrontEndAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,8 @@
 				2EBBEED80C31F03900690505 /* CarFrontEnd.psd */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				2EEC0E930C6AC2A10066662B /* LICENSE */,
+				2EEC0E970C6AC2D70066662B /* ChangeLog */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -243,6 +249,8 @@
 				2EA4AFF10C40A3A7009A861F /* ButtonMiddleDown.tif in Resources */,
 				2EA4AFF20C40A3A7009A861F /* ButtonRightDown.psd in Resources */,
 				2EA4AFF30C40A3A7009A861F /* ButtonRightDown.tif in Resources */,
+				2EEC0E940C6AC2A10066662B /* LICENSE in Resources */,
+				2EEC0E980C6AC2D70066662B /* ChangeLog in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
