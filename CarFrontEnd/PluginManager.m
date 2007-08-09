@@ -18,6 +18,7 @@
 
 #import "PluginManager.h"
 #import "MainViewController.h"
+#import "PluginListView.h"
 
 @implementation PluginManager
 
@@ -29,6 +30,18 @@
     orderedPluginList = [[NSMutableArray alloc] init];
     pluginMarker = 0;
     currentPlugin = nil;
+    
+    return(self);
+}
+
+- (void) awakeFromNib {
+    [modifyButton setHidden:YES];
+    [quickSlotText setHidden:YES];
+    
+    // Setup the PluginListView
+    [pluginListView setPad:20.0];
+    [pluginListView setWidth:133.0];
+    [pluginListView setHeight:60.0];
     
     // Setup the plugin search path.
     NSFileManager   *fm = [NSFileManager defaultManager];
@@ -64,46 +77,80 @@
         [self loadPluginsFromPath:path];
     }
     
-    return(self);
+    // Load the prefs
+    pluginPrefs = [NSMutableDictionary dictionaryWithDictionary:[controller preferencesForKey:@"PluginManager"]];
+    if ([pluginPrefs count] == 0) {
+        pluginPrefs = [NSMutableDictionary dictionary];
+        [pluginPrefs setObject:[NSMutableDictionary
+                                dictionaryWithObjects:[NSArray
+                                                       arrayWithObjects:[NSNumber numberWithInt:0],
+                                                       [NSNumber numberWithInt:1],
+                                                       [NSNumber numberWithInt:2], nil]
+                                forKeys:[NSArray
+                                         arrayWithObjects:@"1", @"2", @"3", nil]]
+                        forKey:@"QuickSlots"];
+        [controller setPreferences:pluginPrefs forKey:@"PluginManager"];
+    }
+    [pluginPrefs retain];
+    
+    if ([orderedPluginList count] > 3) {
+        [modifyButton setHidden:NO];
+        [quickSlotText setHidden:NO];
+    }
+    
+    // Set the quick slots
+    [pluginButton1 setTag:[[[pluginPrefs objectForKey:@"QuickSlots"] objectForKey:@"1"] intValue]];
+    [pluginButton2 setTag:[[[pluginPrefs objectForKey:@"QuickSlots"] objectForKey:@"2"] intValue]];
+    [pluginButton3 setTag:[[[pluginPrefs objectForKey:@"QuickSlots"] objectForKey:@"3"] intValue]];
 }
 
 - (void) initalize {
-    [self updatePluginButtons:nil];
+    [self updateQuickSlots:nil];
     [NSTimer scheduledTimerWithTimeInterval:0.50 target:self
-                                   selector:@selector(updatePluginButtons:)
+                                   selector:@selector(updateQuickSlots:)
                                    userInfo:nil repeats:YES];
 }
 
 #pragma mark Actions
 - (IBAction) buttonAction: (id) sender {
-    if ([[sender stringValue] isEqualToString:@"Prev"]) {
-        pluginMarker -= 6;
-        if (pluginMarker < 0) pluginMarker = 0;
-        [self updatePluginButtons:nil];
-    } else if ([[sender stringValue] isEqualToString:@"More"]) {
-        pluginMarker += 6;
-        [self updatePluginButtons:nil];
-    } else {
-        int     i = 0;
-        
-        if (sender == pluginButton1) {
-            i = pluginMarker;
-        } else if (sender == pluginButton2) {
-            i = pluginMarker + 1;
-        } else if (sender == pluginButton3) {
-            i = pluginMarker + 2;
-        } else if (sender == pluginButton4) {
-            i = pluginMarker + 3;
-        } else if (sender == pluginButton5) {
-            i = pluginMarker + 4;
-        } else if (sender == pluginButton6) {
-            i = pluginMarker + 5;
+    if (sender == modifyButton) {
+        pluginMarker = -1;
+        if ([[modifyButton stringValue] isEqualToString:@"Done"]) {
+            [modifyButton setStringValue:@"Modify"];
         } else {
-            NSLog(@"PluginManager: buttonAction: from %@", sender);
-            return;
+            [modifyButton setStringValue:@"Done"];
+            
+            // Need to generate a window. This pops under the window which is
+            //  obviously useless in full screen mode.
+            //  Too tired tonight though and there is only one plugin.
+            NSRunAlertPanel(@"Setup Quick Slots",
+                            @"Select the plugin, then select the Quick Slot you wish to use. Select 'Done' when you are finished.",
+                            @"OK", nil, nil);
         }
+    } else if ([[modifyButton stringValue] isEqualToString:@"Done"]) {
+        if (sender == pluginButton1 || sender == pluginButton2 ||
+            sender == pluginButton3) {
+            if (pluginMarker < 0 || pluginMarker > [orderedPluginList count])
+                return;
+            
+            // It is already in a quick slot, don't allow it to appear more
+            //  than once.
+            if ([pluginButton1 tag] == pluginMarker) return;
+            if ([pluginButton2 tag] == pluginMarker) return;
+            if ([pluginButton3 tag] == pluginMarker) return;
+            
+            // Update the plugin that the button should use.
+            [sender setTag:pluginMarker];
+            [self updateQuickSlots:nil];
+            pluginMarker = -1;
+        } else {
+            pluginMarker = [sender tag];
+        }
+    } else {
+        int     tag = [sender tag];
+        if (tag < 0 || tag >= [orderedPluginList count]) return;
         
-        id      plugin = [orderedPluginList objectAtIndex:i];
+        id      plugin = [orderedPluginList objectAtIndex:tag];
         if (plugin == currentPlugin) return;
         
         // changeContentView will have been called by the time
@@ -115,29 +162,24 @@
 }
 
 #pragma mark Update buttons
-- (void) updatePluginButtons: (id) ignore {
-    if ([orderedPluginList count] >= pluginMarker + 1 && [orderedPluginList count] > 0) {
+- (void) updateQuickSlots: (id) ignore {
+    if ([orderedPluginList count] > 0) {
         [pluginButton1 setHidden:NO];
         [pluginButton1 setEnabled:YES];
-        if ([orderedPluginList count] > 1) {
-            [pluginButton1 setImage:nil];
-            [pluginButton1 setStringValue:@"Prev"];
-        } else {
-            NSImage *image = [[orderedPluginList objectAtIndex:pluginMarker]
-                              pluginButtonImage];
-            [pluginButton1 setImage:image];
-            [pluginButton1 setAlternateImage:image];
-        }
+        NSImage *image = [[orderedPluginList objectAtIndex:[pluginButton1 tag]]
+                          pluginButtonImage];
+        [pluginButton1 setImage:image];
+        [pluginButton1 setAlternateImage:image];
     } else {
         [pluginButton1 setHidden:YES];
         [pluginButton1 setEnabled:NO];
         [pluginButton1 setImage:nil];
     }
     
-    if ([orderedPluginList count] >= pluginMarker + 2) {
+    if ([orderedPluginList count] > 1) {
         [pluginButton2 setHidden:NO];
         [pluginButton2 setEnabled:YES];
-        NSImage *image = [[orderedPluginList objectAtIndex:pluginMarker + 1]
+        NSImage *image = [[orderedPluginList objectAtIndex:[pluginButton2 tag]]
                           pluginButtonImage];
         [pluginButton2 setImage:image];
         [pluginButton2 setAlternateImage:image];
@@ -147,10 +189,10 @@
         [pluginButton2 setImage:nil];
     }
     
-    if ([orderedPluginList count] >= pluginMarker + 3) {
+    if ([orderedPluginList count] > 2) {
         [pluginButton3 setHidden:NO];
         [pluginButton3 setEnabled:YES];
-        NSImage *image = [[orderedPluginList objectAtIndex:pluginMarker + 2]
+        NSImage *image = [[orderedPluginList objectAtIndex:[pluginButton3 tag]]
                           pluginButtonImage];
         [pluginButton3 setImage:image];
         [pluginButton3 setAlternateImage:image];
@@ -158,50 +200,6 @@
         [pluginButton3 setHidden:YES];
         [pluginButton3 setEnabled:NO];
         [pluginButton3 setImage:nil];
-    }
-    
-    if ([orderedPluginList count] >= pluginMarker + 4) {
-        [pluginButton4 setHidden:NO];
-        [pluginButton4 setEnabled:YES];
-        NSImage *image = [[orderedPluginList objectAtIndex:pluginMarker + 3]
-                          pluginButtonImage];
-        [pluginButton4 setImage:image];
-        [pluginButton4 setAlternateImage:image];
-    } else {
-        [pluginButton4 setHidden:YES];
-        [pluginButton4 setEnabled:NO];
-        [pluginButton4 setImage:nil];
-    }
-    
-    if ([orderedPluginList count] >= pluginMarker + 5) {
-        [pluginButton5 setHidden:NO];
-        [pluginButton5 setEnabled:YES];
-        NSImage *image = [[orderedPluginList objectAtIndex:pluginMarker + 4]
-                          pluginButtonImage];
-        [pluginButton5 setImage:image];
-        [pluginButton5 setAlternateImage:image];
-    } else {
-        [pluginButton5 setHidden:YES];
-        [pluginButton5 setEnabled:NO];
-        [pluginButton5 setImage:nil];
-    }
-    
-    if ([orderedPluginList count] >= pluginMarker + 6) {
-        [pluginButton6 setHidden:NO];
-        [pluginButton6 setEnabled:YES];
-        if ([orderedPluginList count] > pluginMarker + 6) {
-            [pluginButton6 setImage:nil];
-            [pluginButton6 setStringValue:@"More"];
-        } else {
-            NSImage *image = [[orderedPluginList objectAtIndex:pluginMarker + 5]
-                              pluginButtonImage];
-            [pluginButton6 setImage:image];
-            [pluginButton6 setAlternateImage:image];
-        }
-    } else {
-        [pluginButton6 setHidden:YES];
-        [pluginButton6 setEnabled:NO];
-        [pluginButton6 setImage:nil];
     }
 }
 
@@ -255,6 +253,10 @@
             }
             [pluginList setObject:pInst forKey:name];
             [orderedPluginList addObject:pInst];
+            [[pluginListView addButtonWithImage:[pInst pluginButtonImage]
+                                                target:self
+                                                andSelector:@selector(buttonAction:)]
+             setTag:[orderedPluginList count] - 1];
         }
     }
 }
