@@ -103,6 +103,8 @@
 				<string>MainViewController</string>
 				<key>currentPlugin</key>
 				<string>id</string>
+				<key>modifyButton</key>
+				<string>CarFrontEndButton</string>
 				<key>pluginButton1</key>
 				<string>CarFrontEndButton</string>
 				<key>pluginButton2</key>
@@ -115,9 +117,21 @@
 				<string>CarFrontEndButton</string>
 				<key>pluginButton6</key>
 				<string>CarFrontEndButton</string>
+				<key>pluginListView</key>
+				<string>PluginListView</string>
+				<key>quickSlotText</key>
+				<string>NSTextField</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>PluginListView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSView</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>
