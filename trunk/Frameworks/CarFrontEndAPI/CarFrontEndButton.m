@@ -74,6 +74,8 @@
                   options:NSKeyValueObservingOptionNew context:NULL];
         
         [super setBordered:NO];
+        [super setButtonType:NSMomentaryChangeButton];
+        [super setBezelStyle:NSRegularSquareBezelStyle];
         [self updateImages];
     }
     
@@ -125,6 +127,8 @@
                   options:NSKeyValueObservingOptionNew context:NULL];
         
         [super setBordered:NO];
+        [super setButtonType:NSMomentaryChangeButton];
+        [super setBezelStyle:NSRegularSquareBezelStyle];
     }
 	return(self);
 }
