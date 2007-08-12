@@ -7,13 +7,10 @@ How to install the CarFrontEnd application
 
 = Details =
 
-  # Download [http://mac-carfrontend.googlecode.com/files/CarFrontEndAPI.zip CarFrontEndAPI.zip] and extract the Framework
-  # Move CarFrontEndAPI.framework into ~/Library/Frameworks or /Library/Frameworks
-  # Download [http://mac-carfrontend.googlecode.com/files/CarFrontEnd.zip CarFrontEnd.zip] and extract the application.
-  # Move the Application to the folder (e.g. /Applications) you would like to keep it in.
+  # Download [http://mac-carfrontend.googlecode.com/files/CarFrontEnd.1_0_2.zip CarFrontEnd Installer] and extract it.
+  # Run the installer and follow the on screen directions.
 
 Run the app and enjoy.
-
 
 
 
