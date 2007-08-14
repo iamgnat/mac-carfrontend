@@ -39,7 +39,8 @@ You should also be using the latest version of [http://developer.apple.com/tools
     # Add the required methods to conform to the protocol.
     # Go ahead and add an action so we can add a button.
     * You header should look something like:
-      {{{#import <Cocoa/Cocoa.h>
+      {{{
+      #import <Cocoa/Cocoa.h>
       #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
       @interface SamplePlugin : NSObject <CarFrontEndProtocol> {
