@@ -3,6 +3,8 @@
 == Purpose ==
 This section will show you how to setup and build a Xcode project to create a CarFrontEnd plugin, then install it.
 
+The complete example project that is discussed here is available in the Plugins directory of the source tree as "SamplePlugin".
+
 == Prerequisites ==
 You must have the CarFrontEndAPI framework installed on your development host. For the purposes of this discussion, it will be assumed that you have installed it as _/Library/Frameworks/CarFrontEndAPI.framework_.
 
@@ -132,9 +134,9 @@ You should also be using the latest version of [http://developer.apple.com/tools
 
       - (IBAction) buttonClicked: (id) sender {
           if ([[sender stringValue] isEqualToString:@"Click"]) {
-              [sender setString:@"Clock"];
+              [sender setStringValue:@"Clock"];
           } else if ([[sender stringValue] isEqualToString:@"Clock"]) {
-              [sender setString:@"Click"];
+              [sender setStringValue:@"Click"];
           }
       }
 
@@ -148,4 +150,8 @@ You should also be using the latest version of [http://developer.apple.com/tools
       # Set it's string value to "Click".
       # Set it's action to the _-buttonClick:_ method of you object.
   # Edit your project's _Info.plist_
-    # Set the "PrincipalClass" value to the name of your object.
+    # Set the "NSPrincipalClass" value to the name of your object.
+  # Build your project and fix any compiler errors.
+
+== Installation ==
+Copy the built plugin to your _~/Library/Application Support/CarFrontEnd/Plugins_ directory and launch CarFrontEnd. If everything went according to plan, your new plugin should be available.
