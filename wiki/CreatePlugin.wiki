@@ -1,0 +1,58 @@
+#summary How to create a CarFrontEnd plugin
+
+== Purpose ==
+This section will show you how to setup and build a Xcode project to create a CarFrontEnd plugin, then install it.
+
+== Prerequisites ==
+You must have CarFrontEndAPI framework installed on your development host. For the purposes of this discussion, it will be assumed that you have installed it as _/Library/Frameworks/CarFrontEndAPI.framework_.
+
+You should also be using the latest version of [http://developer.apple.com/tools/xcode/ Xcode] which is available from Apple's developer website.
+
+== Project Creation ==
+  # Start XCode (_/Developer/Applications/Xcode_)
+  # Create a new Project (_File->New Project..._)
+  # Select *Cocoa Bundle* as the project type.
+  # Give your project a name and location.
+  # Edit the Project Settings (_Project->Edit Project Settings..._)
+    * General Tab
+      # Set the Cross-Development _Target to 10.4 (Universal)_.
+  # Edit the Active Target Settings (_Project->Edit Active Target_).
+    * Build Tab
+      # Set the _Configuration_ to "All Configurations".
+      # Set _Show_ to "All Settings" if it is not already.
+      # Set the _Architectures_ to "ppc i386". (Universal build)
+      # Set _Mach-O Type_ to "Bundle".
+      # Set _Wrapper Extension_ to "cfep".
+  # Add the CarFrontEndAPI framework to your project.
+    # Right click on _Frameworks_ in the "Groups & Files".
+    # Select "Add->Existing Frameworks...".
+    # Navigate to where you installed CarFrontEndAPI (the default location is _/Library/Frameworks/CarFrontEndAPI.framework_) and select it.
+    # Click the "ADD" button with no other changes.
+  # Add your primary class to the Project
+    # Right click on _Classes_ in the "Groups & Files" area.
+    # Select "Add->New File...".
+    # Select "Objective-C Class"
+    # Give the new class a name.
+  # Edit your header file.
+    # Add the import for `<CarFrontEndAPI/CarFrontEndAPI.h>`
+    # Update the `@interface` line to include the _CarFrontEndProtocol_ designation.
+    # Add the required methods to conform to the protocol.
+    # Go ahead and add an action so we can add a button.
+    * You header should look something like:
+      {{{#import <Cocoa/Cocoa.h>
+      #import <CarFrontEndAPI/CarFrontEndAPI.h>
+
+      @interface SamplePlugin : NSObject <CarFrontEndProtocol> {
+
+      }
+
+      - (NSString *) name;
+      - (void) initalize;
+      - (NSImage *) pluginButtonImage;
+      - (NSView *) contentViewForSize: (NSSize) size;
+      - (void) removePluginFromView;
+
+      - (IBAction) buttonClicked: (id) sender;
+
+      @end
+      }}}
