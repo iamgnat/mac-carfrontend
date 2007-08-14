@@ -1,0 +1,92 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecture = ppc;
+		activeBuildConfigurationName = Release;
+		activeTarget = 8D5B49AC048680CD000E48DA /* SamplePlugin */;
+		addToTargets = (
+			8D5B49AC048680CD000E48DA /* SamplePlugin */,
+		);
+		codeSenseManager = 2EC30CE20C711EE700A296BB /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					300,
+					133,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 208756429;
+			PBXWorkspaceStateSaveDate = 208756429;
+		};
+		sourceControlManager = 2EC30CE10C711EE700A296BB /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	2EC30CE10C711EE700A296BB /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	2EC30CE20C711EE700A296BB /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	2EC30CFF0C71346000A296BB /* SamplePlugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {767, 703}}";
+			sepNavSelRange = "{894, 43}";
+			sepNavVisRange = "{0, 1141}";
+		};
+	};
+	2EC30D000C71346000A296BB /* SamplePlugin.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {767, 1274}}";
+			sepNavSelRange = "{2492, 0}";
+			sepNavVisRange = "{1122, 1504}";
+			sepNavWindowFrame = "{{71, -5}, {826, 832}}";
+		};
+	};
+	8D5B49AC048680CD000E48DA /* SamplePlugin */ = {
+		activeExec = 0;
+	};
+	8D5B49B7048680CD000E48DA /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {767, 703}}";
+			sepNavSelRange = "{719, 16}";
+			sepNavVisRange = "{0, 790}";
+			sepNavWindowFrame = "{{363, 0}, {826, 832}}";
+		};
+	};
+}
