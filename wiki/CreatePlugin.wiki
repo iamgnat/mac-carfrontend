@@ -4,7 +4,7 @@
 This section will show you how to setup and build a Xcode project to create a CarFrontEnd plugin, then install it.
 
 == Prerequisites ==
-You must have CarFrontEndAPI framework installed on your development host. For the purposes of this discussion, it will be assumed that you have installed it as _/Library/Frameworks/CarFrontEndAPI.framework_.
+You must have the CarFrontEndAPI framework installed on your development host. For the purposes of this discussion, it will be assumed that you have installed it as _/Library/Frameworks/CarFrontEndAPI.framework_.
 
 You should also be using the latest version of [http://developer.apple.com/tools/xcode/ Xcode] which is available from Apple's developer website.
 
@@ -44,7 +44,7 @@ You should also be using the latest version of [http://developer.apple.com/tools
       #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
       @interface SamplePlugin : NSObject <CarFrontEndProtocol> {
-
+          IBOutlet NSView     *samplePluginView;
       }
 
       - (NSString *) name;
@@ -57,3 +57,95 @@ You should also be using the latest version of [http://developer.apple.com/tools
 
       @end
       }}}
+  # Edit the class file
+    # Add a static variable outside the _@implementation_ section.
+      * This will allow you to apply the Singleton pattern to the object.
+      * The init method will be called twice. Once when the plugin is loaded and once when you load your NIB file.
+    # Add an init method to setup your object.
+      * Make sure to use your static variable so that there is only ever one instance of your object.
+    # Add the protocol methods to the _@implementation_.
+    # Add the code for your action method.
+    * Your object file should look something like:
+      {{{
+      #import "SamplePlugin.h"
+
+      static SamplePlugin *sharedSP = nil;
+
+      @implementation SamplePlugin
+
+      - (id) init {
+          if (sharedSP != nil) {
+              [self release];
+              return(sharedSP);
+          }
+
+          [super init];
+
+          // Setup for a single instance.
+          sharedSP = self;
+
+          return(self);
+      }
+
+      - (NSString *) name {
+          return(@"Sample Plugin");
+      }
+
+      - (void) initalize {
+          // No-op for this example.
+          //  Should generate the button image here rather than on demand.
+      }
+
+      - (NSImage *) pluginButtonImage {
+      	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+
+          [attributes setObject:[NSFont fontWithName:@"Helvetica" size:26]
+                         forKey:NSFontAttributeName];
+      	[attributes setObject:[NSColor whiteColor]
+                         forKey:NSForegroundColorAttributeName];
+
+          NSSize          size = [[self name] sizeWithAttributes:attributes];
+          NSImage         *image = [[[NSImage alloc] initWithSize:size] autorelease];
+
+          [image lockFocus];
+          [[self name] drawAtPoint:NSZeroPoint withAttributes:attributes];
+          [image unlockFocus];
+
+          return(image);
+      }
+
+      - (NSView *) contentViewForSize: (NSSize) size {
+          // We are ignoring the size value, but it is there incase you have differnt
+          //  views based on the size that CarFrontEnd sends you.
+          if (samplePluginView == nil) {
+              [NSBundle loadNibNamed:@"SamplePlugin" owner:self];
+          }
+
+          return(samplePluginView);
+      }
+
+      - (void) removePluginFromView {
+          // No-op
+          //  If you need to do something when your view is no longer displayed,
+          //  add the code here.
+      }
+
+      - (IBAction) buttonClicked: (id) sender {
+          if ([[sender stringValue] isEqualToString:@"Click"]) {
+              [sender setString:@"Clock"];
+          } else if ([[sender stringValue] isEqualToString:@"Clock"]) {
+              [sender setString:@"Click"];
+          }
+      }
+
+      @end
+      }}}
+  # Add a NIB file to your project and make sure that it uses the name that you used in your _-contentViewForSize:_ method ("SamplePlugin" in the example).
+    # Read your object's header file into the NIB file.
+    # Instantiate your object.
+    # Add a NSView to your NIB file and link it to your NSView outlet.
+    # Add a NSButton to your NSView.
+      # Set it's string value to "Click".
+      # Set it's action to the _-buttonClick:_ method of you object.
+  # Edit your project's _Info.plist_
+    # Set the "PrincipalClass" value to the name of your object.
