@@ -91,7 +91,11 @@
     // Put up a new window
     [self replaceContentWith:splashView];
     mainWindow = [[NSWindow alloc] initWithContentRect:screenRect
+#ifndef CFE_DEBUG
                                              styleMask:NSBorderlessWindowMask
+#else
+                                             styleMask:NSTitledWindowMask
+#endif
                                                backing:NSBackingStoreBuffered
                                                  defer:NO
 #ifndef CFE_DEBUG
@@ -99,8 +103,14 @@
 #endif
                   ];
     
+    if ([[[prefsConfig objectForKey:@"CarFrontEnd"] objectForKey:@"DriverSide"]
+         isEqualToString:@"right"]) {
+        [self swapDriverToSide:@"right"];
+    }
+    
     [mainView setFrame:screenRect];
     [mainWindow setLevel:windowLevel];
+    [mainWindow setTitle:@"CarFrontEnd"];
     [mainWindow setBackgroundColor:[NSColor blackColor]];
     [mainWindow setContentView:mainView];
     [mainWindow makeKeyAndOrderFront:nil];
@@ -243,6 +253,47 @@
 
 - (NSRect) contentViewFrame {
     return([contentView frame]);
+}
+
+- (BOOL) swapDriverToSide: (NSString *) side {
+    NSMutableDictionary *prefs = [prefsConfig objectForKey:@"CarFrontEnd"];
+    
+    if (prefs == nil) {
+        prefs = [NSMutableDictionary dictionary];
+        [prefs setObject:@"left" forKey:@"DriverSide"];
+    }
+    
+    NSRect      frame;
+    NSString    *currSide = [prefs objectForKey:@"DriverSide"];
+    
+    if ([side isEqualToString:@"left"] && [contentView frame].origin.x == 0) {
+        // Move the elements
+        NSArray *els = [mainView subviews];
+        int     i = 0;
+        for (i = 0 ; i < [els count] ; i++) {
+            NSView  *el = [els objectAtIndex:i];
+            frame = [el frame];
+            frame.origin.x = [mainView frame].size.width - frame.size.width - frame.origin.x;
+            [el setFrame:frame];
+        }
+    } else if ([side isEqualToString:@"right"] && [contentView frame].origin.x != 0) {
+        // Move the elements
+        NSArray *els = [mainView subviews];
+        int     i = 0;
+        for (i = 0 ; i < [els count] ; i++) {
+            NSView  *el = [els objectAtIndex:i];
+            frame = [el frame];
+            frame.origin.x = [mainView frame].size.width - frame.size.width - frame.origin.x;
+            [el setFrame:frame];
+        }
+    }
+    
+    if (![currSide isEqualToString:side]) {
+        [prefs setObject:side forKey:@"DriverSide"];
+        [self setPreferences:prefs forKey:@"CarFrontEnd"];
+    }
+    
+    return(YES);
 }
 
 #pragma mark AppleScript Utilities

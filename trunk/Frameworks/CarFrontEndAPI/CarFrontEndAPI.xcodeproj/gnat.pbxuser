@@ -1,7 +1,7 @@
 // !$*UTF8*$!
 {
 	0867D690FE84028FC02AAC07 /* Project object */ = {
-		activeArchitecture = ppc;
+		activeArchitecture = i386;
 		activeBuildConfigurationName = Release;
 		activeTarget = 8DC2EF4F0486A6940098B216 /* CarFrontEndAPI */;
 		addToTargets = (
@@ -117,12 +117,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 208323117;
-			PBXWorkspaceStateSaveDate = 208323117;
-		};
-		perUserProjectItems = {
-			2EEC0EB80C6AD1C20066662B /* PBXBookmark */ = 2EEC0EB80C6AD1C20066662B /* PBXBookmark */;
-			2EEC0ED20C6AD7A80066662B /* PBXTextBookmark */ = 2EEC0ED20C6AD7A80066662B /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 209012757;
+			PBXWorkspaceStateSaveDate = 209012757;
 		};
 		sourceControlManager = 2EBBEEAF0C31EC2300690505 /* Source Control */;
 		userBuildSettings = {
@@ -168,9 +164,9 @@
 	2EBBEEB50C31EC9A00690505 /* CarFrontEndProtocol.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {763, 756}}";
-			sepNavSelRange = "{0, 2260}";
-			sepNavVisRange = "{0, 2254}";
-			sepNavWindowFrame = "{{306, -11}, {822, 832}}";
+			sepNavSelRange = "{172, 0}";
+			sepNavVisRange = "{398, 1862}";
+			sepNavWindowFrame = "{{204, 0}, {822, 746}}";
 		};
 	};
 	2EBBEEB80C31ECF900690505 /* CarFrontEndButton.h */ = {
@@ -183,10 +179,10 @@
 	};
 	2EBBEEB90C31ECF900690505 /* CarFrontEndButton.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 5656}}";
-			sepNavSelRange = "{12975, 69}";
-			sepNavVisRange = "{11705, 2126}";
-			sepNavWindowFrame = "{{79, 0}, {822, 832}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 5166}}";
+			sepNavSelRange = "{12983, 60}";
+			sepNavVisRange = "{13110, 1725}";
+			sepNavWindowFrame = "{{107, 132}, {822, 746}}";
 		};
 	};
 	2EEC0E930C6AC2A10066662B /* LICENSE */ = {
@@ -204,20 +200,6 @@
 			sepNavVisRange = "{0, 137}";
 			sepNavWindowFrame = "{{463, -312}, {826, 832}}";
 		};
-	};
-	2EEC0EB80C6AD1C20066662B /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */;
-	};
-	2EEC0ED20C6AD7A80066662B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */;
-		name = "NSImageUtils.m: 2";
-		rLen = 0;
-		rLoc = 37;
-		rType = 0;
-		vrLen = 1585;
-		vrLoc = 0;
 	};
 	8DC2EF4F0486A6940098B216 /* CarFrontEndAPI */ = {
 		activeExec = 0;

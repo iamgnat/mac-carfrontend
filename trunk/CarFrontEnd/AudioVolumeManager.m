@@ -94,8 +94,13 @@
     NSRect  mainFrame = [controller mainWindowFrame];
     NSRect  volFrame = [volumeView frame];
     
-    volFrame.origin.x = (mainFrame.size.width / 2) - (volFrame.size.width / 2);
-    volFrame.origin.y = (mainFrame.size.height / 2) - (volFrame.size.height / 2);
+    NSDictionary    *prefs = [controller preferencesForKey:@"CarFrontEnd"];
+    if ([[prefs objectForKey:@"DriverSide"] isEqualToString:@"right"]) {
+        volFrame.origin.x = mainFrame.size.width - volFrame.size.width;
+    } else {
+        volFrame.origin.x = 0;
+    }
+    volFrame.origin.y = mainFrame.origin.y;
     
     [volumeLevel setIntValue:[self volumeLevel]];
     
@@ -105,7 +110,7 @@
                                                    defer:NO];
     
     [volumeWindow setReleasedWhenClosed:YES];
-    [volumeWindow setAlphaValue:0.85];
+    [volumeWindow setAlphaValue:0.95];
     [volumeWindow setBackgroundColor:[NSColor blackColor]];
     [volumeWindow setContentView:volumeView];
     [volumeWindow setLevel:[controller mainWindowLevel]];
