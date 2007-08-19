@@ -38,6 +38,8 @@
 				<string>id</string>
 				<key>showSystemView</key>
 				<string>id</string>
+				<key>sideSwap</key>
+				<string>id</string>
 			</dict>
 			<key>CLASS</key>
 			<string>SystemManager</string>
@@ -47,6 +49,8 @@
 			<dict>
 				<key>controller</key>
 				<string>MainViewController</string>
+				<key>swapSidesButton</key>
+				<string>CarFrontEndButton</string>
 				<key>systemButton</key>
 				<string>CarFrontEndButton</string>
 				<key>systemView</key>
@@ -111,16 +115,14 @@
 				<string>CarFrontEndButton</string>
 				<key>pluginButton3</key>
 				<string>CarFrontEndButton</string>
-				<key>pluginButton4</key>
-				<string>CarFrontEndButton</string>
-				<key>pluginButton5</key>
-				<string>CarFrontEndButton</string>
-				<key>pluginButton6</key>
-				<string>CarFrontEndButton</string>
 				<key>pluginListView</key>
 				<string>PluginListView</string>
 				<key>quickSlotText</key>
 				<string>NSTextField</string>
+				<key>updateQuickSlotsOkButton</key>
+				<string>CarFrontEndButton</string>
+				<key>updateQuickSlotsView</key>
+				<string>NSView</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>

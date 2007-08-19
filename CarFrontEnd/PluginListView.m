@@ -85,6 +85,7 @@
     [button setAlternateImage:image];
     [button setTarget:target];
     [button setAction:selector];
+    [items addObject:button];
     
     // Make it visible
     [self addSubview:button];

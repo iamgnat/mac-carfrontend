@@ -113,19 +113,35 @@
 
 #pragma mark Actions
 - (IBAction) buttonAction: (id) sender {
-    if (sender == modifyButton) {
+    if (sender == updateQuickSlotsOkButton) {
+        if (quickSlotsWindow == nil) return;
+        [quickSlotsWindow close];
+        quickSlotsWindow = nil;
+    } else if (sender == modifyButton) {
         pluginMarker = -1;
         if ([[modifyButton stringValue] isEqualToString:@"Done"]) {
             [modifyButton setStringValue:@"Modify"];
         } else {
+            if (quickSlotsWindow != nil) return;
             [modifyButton setStringValue:@"Done"];
             
-            // Need to generate a window. This pops under the window which is
-            //  obviously useless in full screen mode.
-            //  Too tired tonight though and there is only one plugin.
-            NSRunAlertPanel(@"Setup Quick Slots",
-                            @"Select the plugin, then select the Quick Slot you wish to use. Select 'Done' when you are finished.",
-                            @"OK", nil, nil);
+            NSRect  mainFrame = [controller mainWindowFrame];
+            NSRect  frame = [updateQuickSlotsView frame];
+            
+            frame.origin.x = (mainFrame.size.width / 2) - (frame.size.width / 2);
+            frame.origin.y = (mainFrame.size.height / 2) - (frame.size.height / 2);
+            
+            quickSlotsWindow = [[NSWindow alloc] initWithContentRect:frame
+                                                           styleMask:NSBorderlessWindowMask
+                                                             backing:NSBackingStoreBuffered
+                                                               defer:NO];
+            
+            [quickSlotsWindow setReleasedWhenClosed:YES];
+            [quickSlotsWindow setAlphaValue:0.85];
+            [quickSlotsWindow setBackgroundColor:[NSColor blackColor]];
+            [quickSlotsWindow setContentView:updateQuickSlotsView];
+            [quickSlotsWindow setLevel:[controller mainWindowLevel]];
+            [quickSlotsWindow makeKeyAndOrderFront:nil];
         }
     } else if ([[modifyButton stringValue] isEqualToString:@"Done"]) {
         if (sender == pluginButton1 || sender == pluginButton2 ||

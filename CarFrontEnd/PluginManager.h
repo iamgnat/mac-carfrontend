@@ -30,6 +30,8 @@
     IBOutlet PluginListView     *pluginListView;
     IBOutlet CarFrontEndButton  *modifyButton;
     IBOutlet NSTextField        *quickSlotText;
+    IBOutlet NSView             *updateQuickSlotsView;
+    IBOutlet CarFrontEndButton  *updateQuickSlotsOkButton;
     
     NSMutableDictionary         *pluginPrefs;
     NSMutableDictionary         *pluginList;
@@ -39,6 +41,8 @@
     id <CarFrontEndProtocol>    currentPlugin;
     
     NSTimer                     *modifyTimer;
+    
+    NSWindow                    *quickSlotsWindow;
 }
 
 - (void) initalize;

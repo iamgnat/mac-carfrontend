@@ -24,6 +24,7 @@
 @interface SystemManager : NSObject {
     IBOutlet MainViewController *controller;
     IBOutlet CarFrontEndButton  *systemButton;
+    IBOutlet CarFrontEndButton  *swapSidesButton;
     IBOutlet NSView             *systemView;
 }
 
@@ -33,5 +34,6 @@
 - (IBAction) showSystemView: (id) sender;
 - (IBAction) quit: (id) sender;
 - (IBAction) hide: (id) sender;
+- (IBAction) sideSwap: (id) sender;
 
 @end

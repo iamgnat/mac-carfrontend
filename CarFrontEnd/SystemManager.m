@@ -22,7 +22,14 @@
 @implementation SystemManager
 
 - (void) initalize {
-    // no-op
+    NSDictionary    *prefs = [controller preferencesForKey:@"CarFrontEnd"];
+    
+    if ([[prefs objectForKey:@"DriverSide"] isEqualToString:@"right"]) {
+        [swapSidesButton setStringValue:@"L Drv"];
+    } else {
+        // Should also handle the pref not being set.
+        [swapSidesButton setStringValue:@"R Drv"];
+    }
 }
 
 #pragma mark Actions
@@ -36,6 +43,18 @@
 
 - (IBAction) hide: (id) sender {
     [[NSApplication sharedApplication] hide:nil];
+}
+
+- (IBAction) sideSwap: (id) sender {
+    if ([[sender stringValue] isEqualToString:@"L Drv"]) {
+        if ([controller swapDriverToSide:@"left"]) {
+            [sender setStringValue:@"R Drv"];
+        }
+    } else {
+        if ([controller swapDriverToSide:@"right"]) {
+            [sender setStringValue:@"L Drv"];
+        }
+    }
 }
 
 @end
