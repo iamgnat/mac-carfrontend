@@ -1,3 +1,9 @@
+2007-08-19 - 1.0a4 - gnat
+    BUG: Inadvertantly (ok, I was screwing around and forgot about it) changed
+        the AppleScript for the Next Track button that caused the screen to
+        go black. Returned the script to the proper state.
+    BUG: Due to the 1.0a3 NIB changes, the QuickSlot buttons were not calling
+        their plugins. Relinked the buttons to the proper action.
 2007-08-19 - 1.0a3 - gnat
     Added driver side selection option to the Menu view.
     Updated the Volume window to pop to the bottom of the screen rather than
