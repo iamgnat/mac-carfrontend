@@ -53,7 +53,7 @@ static iTunesViewController *sharedITVC = nil;
     pauseScript = [[NSAppleScript alloc]
                    initWithSource:@"tell application \"iTunes\" to pause"];
     nextTrackScript = [[NSAppleScript alloc]
-                       initWithSource:@"tell application \"iTunes\"\nif player state is playing then\nset full screen to true\nset visuals enabled to true\nend if\nend tell"];
+                       initWithSource:@"tell application \"iTunes\" to next track"];
     shuffleOnScript = [[NSAppleScript alloc]
                        initWithSource:@"tell application \"iTunes\" to set shuffle of current playlist to true"];
     shuffleOffScript = [[NSAppleScript alloc]
