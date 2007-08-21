@@ -1,3 +1,10 @@
+2007-08-21 - 1.0a5 - gnat
+    BUG: On larger displays the buttons were not working. The buttons were bound
+        to the wrong side of the screen causing them to be pulled under the
+        splash view. Corrected the bindings.
+    BUG: Artifacting on some displays when the driver side is swapped. Added
+        setNeedsDisplay: calls to the mainView which appears to have corrected
+        the issue in the test case.
 2007-08-19 - 1.0a4 - gnat
     BUG: Inadvertantly (ok, I was screwing around and forgot about it) changed
         the AppleScript for the Next Track button that caused the screen to

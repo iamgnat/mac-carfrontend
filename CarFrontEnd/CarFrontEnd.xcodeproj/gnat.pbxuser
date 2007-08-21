@@ -1,83 +1,22 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeArchitecture = i386;
 		activeBuildConfigurationName = Release;
-		activeExecutable = 2E58C6020C2D99BA000D5703 /* CarFrontEnd */;
+		activeExecutable = 2E11B6C10C7B89F10006BD8C /* CarFrontEnd */;
 		activeTarget = 8D1107260486CEB800E47090 /* CarFrontEnd */;
-		addToTargets = (
-			8D1107260486CEB800E47090 /* CarFrontEnd */,
-		);
-		breakpoints = (
-			2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */,
-			2EC30D350C715AFB00A296BB /* -[NSException raise] */,
-			2EA586220C793A0F0050855E /* PluginManager.m:116 */,
-		);
-		codeSenseManager = 2E58C60E0C2D99C5000D5703 /* Code sense */;
+		codeSenseManager = 2E11B6D60C7B89F70006BD8C /* Code sense */;
 		executables = (
-			2E58C6020C2D99BA000D5703 /* CarFrontEnd */,
+			2E11B6C10C7B89F10006BD8C /* CarFrontEnd */,
 		);
 		perUserDictionary = {
-			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					20,
-					20,
-					198,
-					20,
-					99,
-					99,
-					29,
-					20,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXBreakpointsDataSource_ActionID,
-					PBXBreakpointsDataSource_TypeID,
-					PBXBreakpointsDataSource_BreakpointID,
-					PBXBreakpointsDataSource_UseID,
-					PBXBreakpointsDataSource_LocationID,
-					PBXBreakpointsDataSource_ConditionID,
-					PBXBreakpointsDataSource_IgnoreCountID,
-					PBXBreakpointsDataSource_ContinueID,
-				);
-			};
-			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					20,
-					230,
-					229,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXErrorsWarningsDataSource_TypeID,
-					PBXErrorsWarningsDataSource_MessageID,
-					PBXErrorsWarningsDataSource_LocationID,
-				);
-			};
-			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					22,
-					300,
-					78,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXExecutablesDataSource_ActiveFlagID,
-					PBXExecutablesDataSource_NameID,
-					PBXExecutablesDataSource_CommentsID,
-				);
-			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					269,
+					243,
 					20,
-					48,
+					48.1626,
 					43,
 					43,
 					20,
@@ -92,92 +31,26 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					20,
-					20,
-					166,
-					20,
-					48,
-					43,
-					43,
-					20,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXFileDataSource_SCM_ColumnID,
-					PBXFileDataSource_FiletypeID,
-					PBXFileDataSource_Filename_ColumnID,
-					PBXFileDataSource_Built_ColumnID,
-					PBXFileDataSource_ObjectSize_ColumnID,
-					PBXFileDataSource_Errors_ColumnID,
-					PBXFileDataSource_Warnings_ColumnID,
-					PBXFileDataSource_Target_ColumnID,
-				);
-			};
-			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					20,
-					150,
-					60,
-					20,
-					48,
-					43,
-					43,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXFileDataSource_FiletypeID,
-					PBXFileDataSource_Filename_ColumnID,
-					PBXTargetDataSource_PrimaryAttribute,
-					PBXFileDataSource_Built_ColumnID,
-					PBXFileDataSource_ObjectSize_ColumnID,
-					PBXFileDataSource_Errors_ColumnID,
-					PBXFileDataSource_Warnings_ColumnID,
-				);
-			};
-			PBXPerProjectTemplateStateSaveDate = 209270040;
-			PBXWorkspaceStateSaveDate = 209270040;
+			PBXPerProjectTemplateStateSaveDate = 209422833;
+			PBXWorkspaceStateSaveDate = 209422833;
 		};
-		perUserProjectItems = {
-			2EA585A40C77FC8D0050855E = 2EA585A40C77FC8D0050855E /* PBXTextBookmark */;
-			2EA585A50C77FC8D0050855E = 2EA585A50C77FC8D0050855E /* PBXTextBookmark */;
-			2EA585A80C77FE4E0050855E = 2EA585A80C77FE4E0050855E /* PBXTextBookmark */;
-			2EA585B00C78BB910050855E = 2EA585B00C78BB910050855E /* PBXTextBookmark */;
-			2EA586180C7935240050855E /* PBXBookmark */ = 2EA586180C7935240050855E /* PBXBookmark */;
-			2EA586190C7935320050855E /* PBXTextBookmark */ = 2EA586190C7935320050855E /* PBXTextBookmark */;
-			2EA5861E0C7935320050855E /* PBXTextBookmark */ = 2EA5861E0C7935320050855E /* PBXTextBookmark */;
-			2EA586200C793A070050855E /* PBXBookmark */ = 2EA586200C793A070050855E /* PBXBookmark */;
-			2EA586240C793A380050855E /* PBXTextBookmark */ = 2EA586240C793A380050855E /* PBXTextBookmark */;
-			2EA586270C793A380050855E /* PBXTextBookmark */ = 2EA586270C793A380050855E /* PBXTextBookmark */;
-		};
-		sourceControlManager = 2E58C60D0C2D99C5000D5703 /* Source Control */;
+		sourceControlManager = 2E11B6D50C7B89F70006BD8C /* Source Control */;
 		userBuildSettings = {
 		};
 	};
-	29B97316FDCFA39411CA2CEA /* main.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {633, 210}}";
-			sepNavSelRange = "{188, 0}";
-			sepNavVisRange = "{33, 216}";
-		};
-	};
-	2E58C6020C2D99BA000D5703 /* CarFrontEnd */ = {
+	2E11B6C10C7B89F10006BD8C /* CarFrontEnd */ = {
 		isa = PBXExecutable;
+		activeArgIndex = 2147483647;
 		activeArgIndices = (
 		);
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
-		dylibVariantSuffix = "";
 		enableDebugStr = 1;
 		environmentEntries = (
 		);
@@ -185,295 +58,44 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = CarFrontEnd;
-		savedGlobals = {
-		};
 		sourceDirectories = (
 		);
-		variableFormatDictionary = {
-		};
 	};
-	2E58C60D0C2D99C5000D5703 /* Source Control */ = {
+	2E11B6D50C7B89F70006BD8C /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
-		isSCMEnabled = 1;
+		isSCMEnabled = 0;
 		scmConfiguration = {
-			repositoryName = "Google mac-carfrontend";
 		};
-		scmType = scm.subversion;
+		scmType = "";
 	};
-	2E58C60E0C2D99C5000D5703 /* Code sense */ = {
+	2E11B6D60C7B89F70006BD8C /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	2E58C6100C2DB1B8000D5703 /* MainViewController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 1078}}";
-			sepNavSelRange = "{1232, 0}";
-			sepNavVisRange = "{959, 1791}";
-			sepNavWindowFrame = "{{64, -5}, {822, 832}}";
-		};
-	};
 	2E58C6110C2DB1B8000D5703 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 4578}}";
-			sepNavSelRange = "{9559, 0}";
-			sepNavVisRange = "{9411, 1839}";
-			sepNavWindowFrame = "{{179, 0}, {822, 746}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 4606}}";
+			sepNavSelRange = "{5956, 45}";
+			sepNavVisRect = "{{0, 1921}, {763, 764}}";
+			sepNavWindowFrame = "{{38, 92}, {808, 884}}";
 		};
 	};
 	2E7CA7F80C36BFF800B12442 /* iTunesMusicPlayer */ = {
 		activeExec = 0;
 	};
-	2E7CA8090C36CEEB00B12442 /* iTunesViewController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {680, 1400}}";
-			sepNavSelRange = "{818, 42}";
-			sepNavVisRange = "{0, 2096}";
-			sepNavVisRect = "{{0, 116}, {680, 209}}";
-			sepNavWindowFrame = "{{452, 0}, {822, 832}}";
-		};
-	};
-	2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2927, 5712}}";
-			sepNavSelRange = "{2148, 0}";
-			sepNavVisRange = "{1078, 3422}";
-			sepNavVisRect = "{{0, 4859}, {680, 209}}";
-			sepNavWindowFrame = "{{609, 132}, {822, 746}}";
-		};
-	};
-	2EA4AF740C3FF88E009A861F /* -[CarFrontEndButton updateImages] */ = {
-		isa = PBXSymbolicBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 1;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		hitCount = 0;
-		ignoreCount = 0;
-		location = CarFrontEndAPI;
-		modificationTime = 209271326.87275;
-		state = 2;
-		symbolName = "-[CarFrontEndButton updateImages]";
-	};
-	2EA585920C77F1B40050855E /* MainViewController.m */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.objc;
-		name = MainViewController.m;
-		path = "/Users/gnat/src/xcode/mac-carfrontend/CarFrontEnd/MainViewController.m";
-		sourceTree = "<absolute>";
-	};
-	2EA585A40C77FC8D0050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EA585920C77F1B40050855E /* MainViewController.m */;
-		name = "MainViewController.m: 269";
-		rLen = 0;
-		rLoc = 9534;
-		rType = 0;
-		vrLen = 267;
-		vrLoc = 9388;
-	};
-	2EA585A50C77FC8D0050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EA585920C77F1B40050855E /* MainViewController.m */;
-		name = "MainViewController.m: 269";
-		rLen = 0;
-		rLoc = 9534;
-		rType = 0;
-		vrLen = 267;
-		vrLoc = 9388;
-	};
-	2EA585A80C77FE4E0050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-		name = "PluginManager.m: 284";
-		rLen = 29;
-		rLoc = 10891;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
-	};
-	2EA585B00C78BB910050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-		name = "PluginManager.m: 284";
-		rLen = 29;
-		rLoc = 10891;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
-	};
-	2EA586180C7935240050855E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */;
-	};
-	2EA586190C7935320050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-		name = "PluginManager.m: 284";
-		rLen = 29;
-		rLoc = 10891;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
-	};
-	2EA5861E0C7935320050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */;
-		name = "iTunesViewController.m: 56";
-		rLen = 0;
-		rLoc = 2133;
-		rType = 0;
-		vrLen = 3513;
-		vrLoc = 1078;
-	};
-	2EA586200C793A070050855E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-	};
-	2EA586220C793A0F0050855E /* PluginManager.m:116 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-		functionName = "-buttonAction:";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 116;
-		location = CarFrontEnd;
-		modificationTime = 209271372.170171;
-		state = 1;
-	};
-	2EA586240C793A380050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-		name = "PluginManager.m: 284";
-		rLen = 29;
-		rLoc = 10891;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
-	};
-	2EA586270C793A380050855E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */;
-		name = "PluginManager.m: 284";
-		rLen = 29;
-		rLoc = 10891;
-		rType = 0;
-		vrLen = 2075;
-		vrLoc = 3857;
-	};
-	2EC30D350C715AFB00A296BB /* -[NSException raise] */ = {
-		isa = PBXSymbolicBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 1;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		hitCount = 0;
-		ignoreCount = 0;
-		location = CoreFoundation;
-		modificationTime = 209271326.872778;
-		state = 1;
-		symbolName = "-[NSException raise]";
-	};
-	2EC8F37F0C3609F5000F3CE2 /* PluginManager.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 854}}";
-			sepNavSelRange = "{1734, 0}";
-			sepNavVisRange = "{0, 1827}";
-			sepNavWindowFrame = "{{67, -5}, {822, 832}}";
-		};
-	};
-	2EC8F3800C3609F5000F3CE2 /* PluginManager.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {799, 4046}}";
-			sepNavSelRange = "{10891, 29}";
-			sepNavVisRange = "{3857, 2075}";
-			sepNavWindowFrame = "{{191, 0}, {822, 746}}";
-		};
-	};
-	2EC8F38C0C3619BE000F3CE2 /* AudioVolumeManager.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 770}}";
-			sepNavSelRange = "{0, 791}";
-			sepNavVisRange = "{0, 1781}";
-		};
-	};
-	2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {765, 2968}}";
-			sepNavSelRange = "{4079, 0}";
-			sepNavVisRange = "{2825, 1976}";
-			sepNavWindowFrame = "{{616, 0}, {824, 878}}";
-		};
-	};
-	2EC8F39D0C3621D4000F3CE2 /* SystemManager.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
-			sepNavSelRange = "{1060, 0}";
-			sepNavVisRange = "{0, 1299}";
-			sepNavWindowFrame = "{{297, -7}, {822, 832}}";
-		};
-	};
-	2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 854}}";
-			sepNavSelRange = "{896, 76}";
-			sepNavVisRange = "{385, 1472}";
-			sepNavWindowFrame = "{{297, -7}, {822, 832}}";
-		};
-	};
-	2EF917480C5AAFD300A05648 /* LICENSE */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 9436}}";
-			sepNavSelRange = "{0, 35146}";
-			sepNavVisRange = "{0, 2589}";
-			sepNavWindowFrame = "{{62, -5}, {822, 832}}";
-		};
-	};
 	2EF917990C5EE44B00A05648 /* ChangeLog */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
-			sepNavSelRange = "{298, 0}";
-			sepNavVisRange = "{0, 1460}";
-			sepNavWindowFrame = "{{449, 0}, {822, 832}}";
-		};
-	};
-	2EF918B50C64294300A05648 /* PluginListView.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {767, 798}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1847}";
-		};
-	};
-	2EF918B60C64294300A05648 /* PluginListView.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {675, 1988}}";
-			sepNavSelRange = "{2428, 0}";
-			sepNavVisRange = "{2152, 442}";
-			sepNavWindowFrame = "{{434, 0}, {826, 832}}";
+			sepNavIntBoundsRect = "{{0, 0}, {763, 764}}";
+			sepNavSelRange = "{419, 0}";
+			sepNavVisRect = "{{0, 0}, {763, 764}}";
+			sepNavWindowFrame = "{{15, 113}, {808, 884}}";
 		};
 	};
 	8D1107260486CEB800E47090 /* CarFrontEnd */ = {
 		activeExec = 0;
 		executables = (
-			2E58C6020C2D99BA000D5703 /* CarFrontEnd */,
+			2E11B6C10C7B89F10006BD8C /* CarFrontEnd */,
 		);
-	};
-	8D1107310486CEB800E47090 /* Info.plist */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {763, 703}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 853}";
-			sepNavWindowFrame = "{{71, -5}, {822, 832}}";
-		};
 	};
 }
