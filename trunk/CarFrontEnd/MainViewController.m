@@ -276,6 +276,7 @@
             frame.origin.x = [mainView frame].size.width - frame.size.width - frame.origin.x;
             [el setFrame:frame];
         }
+        [mainView setNeedsDisplay:YES];
     } else if ([side isEqualToString:@"right"] && [contentView frame].origin.x != 0) {
         // Move the elements
         NSArray *els = [mainView subviews];
@@ -286,6 +287,7 @@
             frame.origin.x = [mainView frame].size.width - frame.size.width - frame.origin.x;
             [el setFrame:frame];
         }
+        [mainView setNeedsDisplay:YES];
     }
     
     if (![currSide isEqualToString:side]) {
