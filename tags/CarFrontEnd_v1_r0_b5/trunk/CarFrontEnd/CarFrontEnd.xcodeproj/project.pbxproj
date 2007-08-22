@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E05C1FA0C6235DC00EE0866 /* CarFrontEndAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05C1F90C6235DC00EE0866 /* CarFrontEndAPI.framework */; };
+		2E05C1FB0C6235DC00EE0866 /* CarFrontEndAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05C1F90C6235DC00EE0866 /* CarFrontEndAPI.framework */; };
+		2E58C6120C2DB1B8000D5703 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E58C6110C2DB1B8000D5703 /* MainViewController.m */; };
+		2E58C6780C2E16E3000D5703 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E58C6770C2E16E3000D5703 /* ApplicationServices.framework */; };
+		2E7CA8010C36C12400B12442 /* CarFrontEnd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBEF050C31FDA900690505 /* CarFrontEnd.icns */; };
+		2E7CA80B0C36CEEB00B12442 /* iTunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */; };
+		2E7CA84D0C36EB3900B12442 /* iTunesMusicPlayer.cfep in Copy Plugins (1) */ = {isa = PBXBuildFile; fileRef = 2E7CA7F90C36BFF800B12442 /* iTunesMusicPlayer.cfep */; };
+		2EA4B03E0C41CF4B009A861F /* iTunes.tif in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4B03D0C41CF4B009A861F /* iTunes.tif */; };
+		2EBBEF060C31FDA900690505 /* CarFrontEnd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBEF050C31FDA900690505 /* CarFrontEnd.icns */; };
+		2EC8F3810C3609F5000F3CE2 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */; };
+		2EC8F38E0C3619BE000F3CE2 /* AudioVolumeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */; };
+		2EC8F39F0C3621D4000F3CE2 /* SystemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */; };
+		2EF917490C5AAFD300A05648 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917480C5AAFD300A05648 /* LICENSE */; };
+		2EF9174A0C5AAFD300A05648 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917480C5AAFD300A05648 /* LICENSE */; };
+		2EF9179A0C5EE44B00A05648 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917990C5EE44B00A05648 /* ChangeLog */; };
+		2EF9179B0C5EE44B00A05648 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917990C5EE44B00A05648 /* ChangeLog */; };
+		2EF918470C622E4C00A05648 /* iTunesMusicPlayer.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */; };
+		2EF918B70C64294300A05648 /* PluginListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF918B60C64294300A05648 /* PluginListView.m */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E7CA8ED0C37246600B12442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E7CA7F80C36BFF800B12442;
+			remoteInfo = iTunesMusicPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E7CA8650C36EB9600B12442 /* Copy Plugins (1) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E7CA84D0C36EB3900B12442 /* iTunesMusicPlayer.cfep in Copy Plugins (1) */,
+			);
+			name = "Copy Plugins (1)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2E05C1F90C6235DC00EE0866 /* CarFrontEndAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarFrontEndAPI.framework; path = ../Frameworks/CarFrontEndAPI/build/Release/CarFrontEndAPI.framework; sourceTree = SOURCE_ROOT; };
+		2E58C6100C2DB1B8000D5703 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2E58C6110C2DB1B8000D5703 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		2E58C6770C2E16E3000D5703 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		2E7CA7F90C36BFF800B12442 /* iTunesMusicPlayer.cfep */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesMusicPlayer.cfep; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7CA7FA0C36BFF800B12442 /* iTunesMusicPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iTunesMusicPlayer-Info.plist"; sourceTree = "<group>"; };
+		2E7CA8090C36CEEB00B12442 /* iTunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesViewController.h; sourceTree = "<group>"; };
+		2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesViewController.m; sourceTree = "<group>"; };
+		2EA4B03D0C41CF4B009A861F /* iTunes.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = iTunes.tif; sourceTree = "<group>"; };
+		2EBBEF050C31FDA900690505 /* CarFrontEnd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CarFrontEnd.icns; sourceTree = "<group>"; };
+		2EC8F37F0C3609F5000F3CE2 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
+		2EC8F3800C3609F5000F3CE2 /* PluginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginManager.m; sourceTree = "<group>"; };
+		2EC8F38C0C3619BE000F3CE2 /* AudioVolumeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioVolumeManager.h; sourceTree = "<group>"; };
+		2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioVolumeManager.m; sourceTree = "<group>"; };
+		2EC8F39D0C3621D4000F3CE2 /* SystemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemManager.h; sourceTree = "<group>"; };
+		2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemManager.m; sourceTree = "<group>"; };
+		2EF917480C5AAFD300A05648 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2EF917990C5EE44B00A05648 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
+		2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = iTunesMusicPlayer.nib; sourceTree = "<group>"; };
+		2EF918B50C64294300A05648 /* PluginListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginListView.h; sourceTree = "<group>"; };
+		2EF918B60C64294300A05648 /* PluginListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginListView.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* CarFrontEnd_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarFrontEnd_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* CarFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E7CA7F70C36BFF800B12442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E05C1FA0C6235DC00EE0866 /* CarFrontEndAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				2E58C6780C2E16E3000D5703 /* ApplicationServices.framework in Frameworks */,
+				2E05C1FB0C6235DC00EE0866 /* CarFrontEndAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2E58C6100C2DB1B8000D5703 /* MainViewController.h */,
+				2E58C6110C2DB1B8000D5703 /* MainViewController.m */,
+				2EC8F37F0C3609F5000F3CE2 /* PluginManager.h */,
+				2EC8F3800C3609F5000F3CE2 /* PluginManager.m */,
+				2EC8F38C0C3619BE000F3CE2 /* AudioVolumeManager.h */,
+				2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */,
+				2EC8F39D0C3621D4000F3CE2 /* SystemManager.h */,
+				2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */,
+				2E7CA8090C36CEEB00B12442 /* iTunesViewController.h */,
+				2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */,
+				2EF918B50C64294300A05648 /* PluginListView.h */,
+				2EF918B60C64294300A05648 /* PluginListView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E58C6770C2E16E3000D5703 /* ApplicationServices.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* CarFrontEnd.app */,
+				2E7CA7F90C36BFF800B12442 /* iTunesMusicPlayer.cfep */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CarFrontEnd */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CarFrontEnd;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* CarFrontEnd_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */,
+				2EF917990C5EE44B00A05648 /* ChangeLog */,
+				2E7CA7FA0C36BFF800B12442 /* iTunesMusicPlayer-Info.plist */,
+				2EA4B03D0C41CF4B009A861F /* iTunes.tif */,
+				2EBBEF050C31FDA900690505 /* CarFrontEnd.icns */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				2EF917480C5AAFD300A05648 /* LICENSE */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E05C1F90C6235DC00EE0866 /* CarFrontEndAPI.framework */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E7CA7F80C36BFF800B12442 /* iTunesMusicPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E7CA7FE0C36BFFA00B12442 /* Build configuration list for PBXNativeTarget "iTunesMusicPlayer" */;
+			buildPhases = (
+				2E7CA7F50C36BFF800B12442 /* Resources */,
+				2E7CA7F60C36BFF800B12442 /* Sources */,
+				2E7CA7F70C36BFF800B12442 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			comments = "AppleScript controller for Apple's iTunes application to play music.";
+			dependencies = (
+			);
+			name = iTunesMusicPlayer;
+			productName = iTunesMusicPlayer;
+			productReference = 2E7CA7F90C36BFF800B12442 /* iTunesMusicPlayer.cfep */;
+			productType = "com.apple.product-type.bundle";
+		};
+		8D1107260486CEB800E47090 /* CarFrontEnd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "CarFrontEnd" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				2E7CA8650C36EB9600B12442 /* Copy Plugins (1) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E7CA8EE0C37246600B12442 /* PBXTargetDependency */,
+			);
+			name = CarFrontEnd;
+			productInstallPath = "$(HOME)/Applications";
+			productName = CarFrontEnd;
+			productReference = 8D1107320486CEB800E47090 /* CarFrontEnd.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CarFrontEnd" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CarFrontEnd */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* CarFrontEnd */,
+				2E7CA7F80C36BFF800B12442 /* iTunesMusicPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E7CA7F50C36BFF800B12442 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7CA8010C36C12400B12442 /* CarFrontEnd.icns in Resources */,
+				2EA4B03E0C41CF4B009A861F /* iTunes.tif in Resources */,
+				2EF9174A0C5AAFD300A05648 /* LICENSE in Resources */,
+				2EF9179B0C5EE44B00A05648 /* ChangeLog in Resources */,
+				2EF918470C622E4C00A05648 /* iTunesMusicPlayer.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				2EBBEF060C31FDA900690505 /* CarFrontEnd.icns in Resources */,
+				2EF917490C5AAFD300A05648 /* LICENSE in Resources */,
+				2EF9179A0C5EE44B00A05648 /* ChangeLog in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E7CA7F60C36BFF800B12442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7CA80B0C36CEEB00B12442 /* iTunesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				2E58C6120C2DB1B8000D5703 /* MainViewController.m in Sources */,
+				2EC8F3810C3609F5000F3CE2 /* PluginManager.m in Sources */,
+				2EC8F38E0C3619BE000F3CE2 /* AudioVolumeManager.m in Sources */,
+				2EC8F39F0C3621D4000F3CE2 /* SystemManager.m in Sources */,
+				2EF918B70C64294300A05648 /* PluginListView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E7CA8EE0C37246600B12442 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E7CA7F80C36BFF800B12442 /* iTunesMusicPlayer */;
+			targetProxy = 2E7CA8ED0C37246600B12442 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E7CA7FC0C36BFF900B12442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "iTunesMusicPlayer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Plugins";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = iTunesMusicPlayer;
+				WRAPPER_EXTENSION = cfep;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		2E7CA7FD0C36BFF900B12442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "iTunesMusicPlayer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Plugins";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = iTunesMusicPlayer;
+				WRAPPER_EXTENSION = cfep;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CarFrontEnd_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = CarFrontEnd;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../Frameworks/CarFrontEndAPI/build/Release\"";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CarFrontEnd_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = CarFrontEnd;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DCFE_DEBUG";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E7CA7FE0C36BFFA00B12442 /* Build configuration list for PBXNativeTarget "iTunesMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E7CA7FC0C36BFF900B12442 /* Debug */,
+				2E7CA7FD0C36BFF900B12442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "CarFrontEnd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CarFrontEnd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
