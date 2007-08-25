@@ -18,12 +18,18 @@
 
 #import "CarFrontEndButton.h"
 #import "NSImageUtils.h"
+#import "CarFrontEndAPI.h"
+
+NSColor     *defaultStringColor = nil;
+NSString    *defaultFontName = nil;
+float       defaultFontSize = 30;
 
 #pragma mark private declarations
 @interface CarFrontEndButton (private)
 
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object
                          change: (NSDictionary *) change context: (void *) context;
+- (void) notificationHandler: (NSNotification *) note;
 - (void) updateImages;
 
 @end
@@ -32,25 +38,34 @@
 
 #pragma mark NSCoding methods
 - (id) initWithCoder: (NSCoder *) coder {
+    inInit = YES;
     if (self = [super initWithCoder:coder]) {
         // Setting manually rather than the setters to skip contant image
         //  updates.
         string = [[coder decodeObjectForKey:@"CFEButtonString"] retain];
-        stringColor = [[coder decodeObjectForKey:@"CFEButtonStringColor"]
-                       retain];
+        stringColor = [[coder decodeObjectForKey:@"CFEButtonStringColor"] retain];
+        fontName = [[coder decodeObjectForKey:@"CFEButtonFontName"] retain];
         image = [[coder decodeObjectForKey:@"CFEButtonImage"] retain];
         altImage = [[coder decodeObjectForKey:@"CFEButtonAltImage"] retain];
         userImage = [[coder decodeObjectForKey:@"CFEButtonUserImage"] retain];
         userAltImage = [[coder decodeObjectForKey:@"CFEButtonUserAltImage"] retain];
+        
+        NSNumber    *fSize = [coder decodeObjectForKey:@"CFEButtonUserFontSize"];
         
         // Update the images.
         if (string == nil) {
             string = [[super title] retain];
             [super setTitle:@""];
         }
-        if (stringColor == nil) {stringColor = [[NSColor whiteColor] retain];}
+        if (stringColor == nil) {[self setStringColor:[CarFrontEndButton defaultStringColor]];}
+        if (fontName == nil) {[self setFontName:[CarFrontEndButton defaultFontName]];}
         if (userImage == nil) {userImage = [[self image] retain];}
         if (userAltImage == nil) {userAltImage = [[self alternateImage] retain];}
+        if (fSize == nil) {
+            [self setFontSize:[CarFrontEndButton defaultFontSize]];
+        } else {
+            [self setFontSize:[fSize floatValue]];
+        }
         
         // Load the background images
         NSString    *resourcePath = [[NSBundle bundleForClass:[CarFrontEndButton
@@ -76,8 +91,14 @@
         [super setBordered:NO];
         [super setButtonType:NSMomentaryChangeButton];
         [super setBezelStyle:NSRegularSquareBezelStyle];
-        [self updateImages];
+        
+        NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(notificationHandler:)
+                   name:CFENotificationChangeBackgroundColor object:nil];
     }
+    
+    inInit = NO;
+    [self updateImages];
     
     return(self);
 }
@@ -87,6 +108,8 @@
     
     [coder encodeObject:string forKey:@"CFEButtonString"];
     [coder encodeObject:stringColor forKey:@"CFEButtonStringColor"];
+    [coder encodeObject:fontName forKey:@"CFEButtonFontName"];
+    [coder encodeObject:[NSNumber numberWithFloat:fontSize] forKey:@"CFEButtonFontSize"];
     [coder encodeObject:image forKey:@"CFEButtonImage"];
     [coder encodeObject:altImage forKey:@"CFEButtonAltImage"];
     [coder encodeObject:userImage forKey:@"CFEButtonUserImage"];
@@ -95,15 +118,19 @@
 
 #pragma mark NSButton override methods
 - (id) initWithFrame: (NSRect) frameRect {
+    inInit = YES;
 	if ((self = [super initWithFrame:frameRect]) != nil) {
         // Setting manually rather than the setters to skip contant image
         //  updates.
         string = [[NSString alloc] initWithString:@""];
-        stringColor = [[NSColor whiteColor] retain];
         image = nil;
         altImage = nil;
         userImage = nil;
         userAltImage = nil;
+        
+        [self setStringColor:[CarFrontEndButton defaultStringColor]];
+        [self setFontName:[CarFrontEndButton defaultFontName]];
+        [self setFontSize:[CarFrontEndButton defaultFontSize]];
         
         // Load the background images
         NSString    *resourcePath = [[NSBundle bundleForClass:[CarFrontEndButton
@@ -130,12 +157,15 @@
         [super setButtonType:NSMomentaryChangeButton];
         [super setBezelStyle:NSRegularSquareBezelStyle];
     }
+    
+    inInit = NO;
 	return(self);
 }
 
 - (void) dealloc {
     [string release];
     [stringColor release];
+    [fontName release];
     [image release];
     [altImage release];
     [leftUpImage release];
@@ -154,6 +184,8 @@
 
 - (void) setStringValue: (NSString *) value {
     [string release];
+    
+    // Create a new string in case they gave us  mutable copy.
     string = [[NSString alloc] initWithString:value];
     
     [self updateImages];
@@ -198,6 +230,67 @@
     [super setFrame:frame];
 }
 
+#pragma mark CFEButton methods
+- (NSColor *) stringColor {return(stringColor);}
+
+- (void) setStringColor: (NSColor *) color {
+    [color retain];
+    [stringColor release];
+    stringColor = color;
+    [self updateImages];
+}
+
+- (NSString *) fontName {
+    return(fontName);
+}
+
+- (void) setFontName: (NSString *) name {
+    [fontName release];
+    fontName = [name retain];
+    [self updateImages];
+}
+
+- (float) fontSize{
+    return(fontSize);
+}
+
+- (void) setFontSize: (float) size{
+    fontSize = size;
+    [self updateImages];
+}
+
+#pragma mark CFEButton class methods
++ (NSColor *) defaultStringColor {
+    if (defaultStringColor == nil) {defaultStringColor = [[NSColor whiteColor] retain];}
+    return(defaultStringColor);
+}
+
++ (void) setDefaultStringColor: (NSColor *) color {
+    // NSColor is immutable so we don't need to copy it.
+    [defaultStringColor release];
+    defaultStringColor = [color retain];
+}
+
++ (NSString *) defaultFontName {
+    if (defaultFontName == nil) {defaultFontName = [@"Helvetica" retain];}
+    return(defaultFontName);
+}
+
++ (void) setDefaultFontName: (NSString *) name {
+    [defaultFontName release];
+    // Create a new string in case they gave us  mutable copy.
+    defaultFontName = [[NSString alloc] initWithString:name];
+}
+
++ (float) defaultFontSize {
+    return(defaultFontSize);
+}
+
++ (void) setDefaultFontSize: (float) size {
+    defaultFontSize = size;
+}
+
+#pragma mark private methods
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object
                          change: (NSDictionary *) change context: (void *) context {
     if ([keyPath isEqualToString:@"frame"]) {
@@ -211,15 +304,15 @@
     }
 }
 
-#pragma mark CFEButton methods
-- (NSColor *) stringColor {return(stringColor);}
-
-- (void) setStringColor: (NSColor *) color {
-    [color retain];
-    [stringColor release];
-    stringColor = color;
-    
-    [self updateImages];
+- (void) notificationHandler: (NSNotification *) note {
+    if ([[note name] isEqualToString:CFENotificationChangeForegroundColor]) {
+        id  color = [note object];
+        
+        // Make sure they gave us something and it is a color.
+        if (color != nil && [color isKindOfClass:[NSColor class]]) {
+            [self setStringColor:color];
+        }
+    }
 }
 
 - (void) updateImages {
@@ -230,6 +323,8 @@
 	NSPoint             stringOrigin;
 	NSSize              stringSize;
 	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    
+    if (inInit) {return;}
     
     // The background for the default (unclicked) image
     if (!image) {
@@ -304,7 +399,7 @@
     }
     
     // Setup the string info.
-	[attributes setObject:[NSFont fontWithName:@"Helvetica" size:30]
+	[attributes setObject:[NSFont fontWithName:fontName size:fontSize]
                                forKey:NSFontAttributeName];
 	[attributes setObject:stringColor forKey:NSForegroundColorAttributeName];
 	stringSize = [string sizeWithAttributes:attributes];
