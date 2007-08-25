@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2372250C7FF067009718B7 /* CarFrontEndAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */; };
 		2EA4AF4D0C3F07D1009A861F /* NSImageUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EA4AF4E0C3F07D1009A861F /* NSImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */; };
 		2EA4AFB90C4028C6009A861F /* ButtonFullUp.psd in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4AFB20C4028C5009A861F /* ButtonFullUp.psd */; };
@@ -39,6 +40,7 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarFrontEndAPI.m; sourceTree = "<group>"; };
 		2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSImageUtils.h; sourceTree = "<group>"; };
 		2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSImageUtils.m; sourceTree = "<group>"; };
 		2EA4AFB20C4028C5009A861F /* ButtonFullUp.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButtonFullUp.psd; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				32DBCF5E0370ADEE00C91783 /* CarFrontEndAPI_Prefix.pch */,
 				2EBBEEB20C31EC5400690505 /* CarFrontEndAPI.h */,
 				2EBBEEB50C31EC9A00690505 /* CarFrontEndProtocol.h */,
+				2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "CarFrontEndAPI" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* CarFrontEndAPI */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -262,6 +266,7 @@
 			files = (
 				2EBBEEBB0C31ECF900690505 /* CarFrontEndButton.m in Sources */,
 				2EA4AF4E0C3F07D1009A861F /* NSImageUtils.m in Sources */,
+				2E2372250C7FF067009718B7 /* CarFrontEndAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
