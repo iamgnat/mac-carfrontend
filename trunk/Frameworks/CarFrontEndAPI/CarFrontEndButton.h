@@ -18,6 +18,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSColor     *defaultStringColor;
+extern NSString    *defaultFontName;
+extern float               defaultFontSize;
+
 @interface CarFrontEndButton : NSButton <NSCoding> {
     NSImage     *image;
     NSImage     *altImage;
@@ -34,6 +38,10 @@
     NSString    *string;
     
     NSColor     *stringColor;
+    NSString    *fontName;
+    float       fontSize;
+    
+    BOOL        inInit;
 }
 
 #pragma mark NSCoding methods
@@ -56,5 +64,17 @@
 #pragma mark CFEButton methods
 - (NSColor *) stringColor;
 - (void) setStringColor: (NSColor *) color;
+- (NSString *) fontName;
+- (void) setFontName: (NSString *) name;
+- (float) fontSize;
+- (void) setFontSize: (float) size;
+
+#pragma mark CFEButton class methods
++ (NSColor *) defaultStringColor;
++ (void) setDefaultStringColor: (NSColor *) color;
++ (NSString *) defaultFontName;
++ (void) setDefaultFontName: (NSString *) name;
++ (float) defaultFontSize;
++ (void) setDefaultFontSize: (float) size;
 
 @end
