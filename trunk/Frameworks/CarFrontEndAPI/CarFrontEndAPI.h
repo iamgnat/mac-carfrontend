@@ -16,6 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// NSNotification messages
+// If you are building a new UI element, make sure it responds to any
+//  CFENotificationChange* messages that relate to it.
+
+// The sender is requesting that the foreground color should be changed.
+//  The new NSColor object should be sent as the object value of the
+//      notification.
+extern NSString *CFENotificationChangeForegroundColor;
+
+// The sender is requesting that the background color should be changed.
+//  The new NSColor object should be sent as the object value of the
+//      notification.
+extern NSString *CFENotificationChangeBackgroundColor;
+
 #import <CarFrontEndAPI/CarFrontEndProtocol.h>
 #import <CarFrontEndAPI/CarFrontEndButton.h>
 #import <CarFrontEndAPI/NSImageUtils.h>
