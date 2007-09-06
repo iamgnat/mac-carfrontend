@@ -1,3 +1,6 @@
+2007-09-05 - 1.0a6 - gnat
+    Updated SplashView to reflect version change.
+    See CarFrontEndAPI for changes.
 2007-08-21 - 1.0a5 - gnat
     BUG: On larger displays the buttons were not working. The buttons were bound
         to the wrong side of the screen causing them to be pulled under the
