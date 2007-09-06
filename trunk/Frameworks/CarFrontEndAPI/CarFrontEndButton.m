@@ -156,6 +156,10 @@ float       defaultFontSize = 30;
         [super setBordered:NO];
         [super setButtonType:NSMomentaryChangeButton];
         [super setBezelStyle:NSRegularSquareBezelStyle];
+        
+        NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(notificationHandler:)
+                   name:CFENotificationChangeBackgroundColor object:nil];
     }
     
     inInit = NO;
@@ -331,21 +335,26 @@ float       defaultFontSize = 30;
         NSSize  size = bounds.size;
         
         size = [NSImage scaleSize:size forHeight:[leftUpImage size].height];
+        size.width = floor(size.width);
+        size.height = floor(size.height);
         image = [[NSImage alloc] initWithSize:size];
         [image lockFocus];
         
         // The left side
         imageSize.size = [leftUpImage size];
+        imageSize.size.width = floor(imageSize.size.width);
+        imageSize.size.height = floor(imageSize.size.height);
         imageSize.origin = NSZeroPoint;
         [leftUpImage drawInRect:imageSize fromRect:NSZeroRect
                       operation:NSCompositeSourceOver fraction:1.0];
         
         // The middle of the button (resize as needed)
         NSImage     *middle = [middleUpImage copyWithZone:NULL];
-        imageSize.size.width = size.width - [leftUpImage size].width -
-                                [rightUpImage size].width;
+        imageSize.size.width = floor(size.width) - floor([leftUpImage size].width) -
+                                floor([rightUpImage size].width);
+        imageSize.size.height = floor(imageSize.size.height);
         imageSize.origin = NSZeroPoint;
-        imageSize.origin.x = [leftUpImage size].width;
+        imageSize.origin.x = floor([leftUpImage size].width);
         [middle setScalesWhenResized:YES];
         [middle setSize:imageSize.size];
         [middle drawInRect:imageSize fromRect:NSZeroRect
@@ -354,8 +363,10 @@ float       defaultFontSize = 30;
         
         // The right side
         imageSize.size = [rightUpImage size];
+        imageSize.size.width = floor(imageSize.size.width);
+        imageSize.size.height = floor(imageSize.size.height);
         imageSize.origin = NSZeroPoint;
-        imageSize.origin.x = size.width - [rightUpImage size].width;
+        imageSize.origin.x = floor(size.width) - floor([rightUpImage size].width);
         [rightUpImage drawInRect:imageSize fromRect:NSZeroRect
                 operation:NSCompositeSourceOver fraction:1.0];
         
@@ -367,21 +378,26 @@ float       defaultFontSize = 30;
         NSSize  size = bounds.size;
         
         size = [NSImage scaleSize:size forHeight:[leftDownImage size].height];
+        size.width = floor(size.width);
+        size.height = floor(size.height);
         altImage = [[NSImage alloc] initWithSize:size];
         [altImage lockFocus];
         
         // The left side
         imageSize.size = [leftDownImage size];
+        imageSize.size.width = floor(imageSize.size.width);
+        imageSize.size.height = floor(imageSize.size.height);
         imageSize.origin = NSZeroPoint;
         [leftDownImage drawInRect:imageSize fromRect:NSZeroRect
                       operation:NSCompositeSourceOver fraction:1.0];
         
         // The middle of the button (resize as needed)
         NSImage     *middle = [middleDownImage copyWithZone:NULL];
-        imageSize.size.width = size.width - [leftDownImage size].width -
-        [rightDownImage size].width;
+        imageSize.size.width = floor(size.width) - floor([leftDownImage size].width) -
+            floor([rightDownImage size].width);
+        imageSize.size.height = floor(imageSize.size.height);
         imageSize.origin = NSZeroPoint;
-        imageSize.origin.x = [leftDownImage size].width;
+        imageSize.origin.x = floor([leftDownImage size].width);
         [middle setScalesWhenResized:YES];
         [middle setSize:imageSize.size];
         [middle drawInRect:imageSize fromRect:NSZeroRect
@@ -390,8 +406,10 @@ float       defaultFontSize = 30;
         
         // The right side
         imageSize.size = [rightDownImage size];
+        imageSize.size.width = floor(imageSize.size.width);
+        imageSize.size.height = floor(imageSize.size.height);
         imageSize.origin = NSZeroPoint;
-        imageSize.origin.x = size.width - [rightDownImage size].width;
+        imageSize.origin.x = floor(size.width) - floor([rightDownImage size].width);
         [rightDownImage drawInRect:imageSize fromRect:NSZeroRect
                        operation:NSCompositeSourceOver fraction:1.0];
         
