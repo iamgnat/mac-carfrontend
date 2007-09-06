@@ -1,3 +1,10 @@
+2007-09-05 - 1.0a6 - gnat
+    Fixed the button images so they don't have vertical lines anymore.
+    Added support for changing the font and font size being used by
+        CarFrontEndButton.
+    Added NSNotification support to change the string color for
+        CarFrontEndButton.
+
 2007-08-08 - 1.0a1 - gnat
     Force CarFrontEndButton to use NSMomentaryChange button type.
 
