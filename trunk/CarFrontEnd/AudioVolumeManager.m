@@ -89,7 +89,10 @@
 
 #pragma mark Actions
 - (IBAction) openVolumeWindow: (id) sender {
-    if (volumeWindow != nil) return;
+    if (volumeWindow != nil) {
+        [volumeWindow makeKeyAndOrderFront:nil];
+        return;
+    }
     
     NSRect  mainFrame = [controller mainWindowFrame];
     NSRect  volFrame = [volumeView frame];
