@@ -1,3 +1,7 @@
+2007-XX-XX - 1.0a7 - gnat
+    Updated openVolumeWindow: to bring the volume window to the front if it is
+        still open (e.g. the window has been hidden and the user clicks the
+        volume button again).
 2007-09-05 - 1.0a6 - gnat
     Updated SplashView to reflect version change.
     See CarFrontEndAPI for changes.
