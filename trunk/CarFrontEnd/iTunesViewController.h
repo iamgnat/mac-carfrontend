@@ -21,6 +21,8 @@
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 @interface iTunesViewController : NSObject <CarFrontEndProtocol> {
+    id                              owner;
+    
     IBOutlet NSView                 *iTunesView;
     
     IBOutlet NSArrayController      *sourceList;
@@ -68,6 +70,7 @@
 }
 
 #pragma mark CarFrontEndProtocol methods
+- (id) initWithPluginManager: (id) pluginManager;
 - (NSString *) name;
 - (void) initalize;
 - (NSImage *) pluginButtonImage;
