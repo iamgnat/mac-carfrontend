@@ -23,6 +23,10 @@ static iTunesViewController *sharedITVC = nil;
 @implementation iTunesViewController
 
 - (id) init {
+    return([self initWithPluginManager:nil]);
+}
+
+- (id) initWithPluginManager: (id) pluginManager {
     if (sharedITVC != nil) {
         [self release];
         return(sharedITVC);
@@ -32,6 +36,8 @@ static iTunesViewController *sharedITVC = nil;
     
     // Setup for a single instance.
     sharedITVC = self;
+    
+    owner = pluginManager;
     
     // Generate our button image
     NSMutableDictionary     *attributes = [NSMutableDictionary dictionary];
