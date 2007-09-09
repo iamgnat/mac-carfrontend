@@ -20,6 +20,9 @@
 
 @protocol CarFrontEndProtocol
 
+// The init method that the PluginManager will call.
+- (id) initWithPluginManager: (id) pluginManager;
+
 // Return the name of the plugin.
 - (NSString *) name;
 
