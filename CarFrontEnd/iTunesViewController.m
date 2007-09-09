@@ -38,6 +38,7 @@ static iTunesViewController *sharedITVC = nil;
     sharedITVC = self;
     
     owner = pluginManager;
+    if (owner != nil) [owner retain];
     
     // Generate our button image
     NSMutableDictionary     *attributes = [NSMutableDictionary dictionary];
@@ -187,6 +188,7 @@ static iTunesViewController *sharedITVC = nil;
     if (trackInfoScript != nil) [trackInfoScript release];
     if (playlistsScript != nil) [playlistsScript release];
     if (currentPlaylistScript != nil) [currentPlaylistScript release];
+    if (owner != nil) [owner release];
     
     [super dealloc];
 }
