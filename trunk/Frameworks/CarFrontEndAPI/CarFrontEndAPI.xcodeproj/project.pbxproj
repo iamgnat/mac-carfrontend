@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E2372250C7FF067009718B7 /* CarFrontEndAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */; };
+		2E23738B0C921D69009718B7 /* PluginManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E23738A0C921D69009718B7 /* PluginManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EA4AF4D0C3F07D1009A861F /* NSImageUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EA4AF4E0C3F07D1009A861F /* NSImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */; };
 		2EA4AFB90C4028C6009A861F /* ButtonFullUp.psd in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4AFB20C4028C5009A861F /* ButtonFullUp.psd */; };
@@ -41,6 +42,7 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarFrontEndAPI.m; sourceTree = "<group>"; };
+		2E23738A0C921D69009718B7 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSImageUtils.h; sourceTree = "<group>"; };
 		2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSImageUtils.m; sourceTree = "<group>"; };
 		2EA4AFB20C4028C5009A861F /* ButtonFullUp.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButtonFullUp.psd; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				2EBBEEB20C31EC5400690505 /* CarFrontEndAPI.h */,
 				2EBBEEB50C31EC9A00690505 /* CarFrontEndProtocol.h */,
 				2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */,
+				2E23738A0C921D69009718B7 /* PluginManager.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				2EBBEEB60C31EC9A00690505 /* CarFrontEndProtocol.h in Headers */,
 				2EBBEEBA0C31ECF900690505 /* CarFrontEndButton.h in Headers */,
 				2EA4AF4D0C3F07D1009A861F /* NSImageUtils.h in Headers */,
+				2E23738B0C921D69009718B7 /* PluginManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
