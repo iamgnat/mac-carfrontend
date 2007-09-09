@@ -23,12 +23,17 @@ static SamplePlugin *sharedSP = nil;
 @implementation SamplePlugin
 
 - (id) init {
+    return([self initWithPluginManager:nil]);
+}
+
+- (id) initWithPluginManager: (id) pluginManager {
     if (sharedSP != nil) {
         [self release];
         return(sharedSP);
     }
     
     [super init];
+    owner = [pluginManager retain];
     
     // Setup for a single instance.
     sharedSP = self;

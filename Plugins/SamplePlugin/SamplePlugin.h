@@ -20,9 +20,11 @@
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 @interface SamplePlugin : NSObject <CarFrontEndProtocol> {
+    id                  owner;
     IBOutlet NSView     *samplePluginView;
 }
 
+- (id) initWithPluginManager: (id) pluginManager;
 - (NSString *) name;
 - (void) initalize;
 - (NSImage *) pluginButtonImage;
