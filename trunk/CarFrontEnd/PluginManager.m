@@ -25,6 +25,8 @@
 - (id) init {
     [super init];
     
+    messagingList = [[NSMutableDictionary alloc] init];
+    
     // Setup the plugin paths
     pluginList = [[NSMutableDictionary alloc] init];
     orderedPluginList = [[NSMutableArray alloc] init];
@@ -252,8 +254,7 @@
                 NSLog(@"PluginManager: %@ is not a CarFrontEnd plugin!", path);
                 continue;
             }
-            
-            pInst = [[pClass alloc] init];
+            pInst = [[pClass alloc] initWithPluginManager:self];
             if (pInst == nil) {
                 NSLog(@"PluginManager: Unable to create instance of %@", path);
                 continue;
@@ -283,6 +284,125 @@
     [currentPlugin removePluginFromView];
     [currentPlugin release];
     currentPlugin = nil;
+}
+
+#pragma mark Plugin message utility methods
+
+- (void) addObserver: (id) object selector: (SEL) selector
+                name: (NSString *) message {
+    NSMutableArray  *objects = [messagingList objectForKey:message];
+    NSData          *sel = [NSData dataWithBytes:selector
+                                          length:sizeof(SEL)];
+    BOOL            found = NO;
+    int             i = 0;
+    
+    if (objects == nil) {
+        objects = [NSMutableArray array];
+        [messagingList setObject:objects forKey:message];
+    }
+    
+    // See if we are replacing an existing observation.
+    for (i = 0 ; i < [objects count] ; i++) {
+        NSMutableDictionary *info = [objects objectAtIndex:i];
+        
+        if ([info objectForKey:@"observer"] == object) {
+            [info setObject:sel forKey:@"selector"];
+            found = YES;
+            break;
+        }
+    }
+    
+    if (!found) {
+        NSMutableDictionary *info = [NSMutableDictionary dictionary];
+        [info setObject:object forKey:@"observer"];
+        [info setObject:sel forKey:@"selector"];
+        [objects addObject:info];
+    }
+}
+
+- (void) removeObserver: (id) object name: (NSString *) message {
+    NSMutableArray  *objects = [messagingList objectForKey:message];
+    int             i = 0;
+    
+    if (objects == nil) return;
+    for (i = 0 ; i < [objects count] ; i++) {
+        NSDictionary    *info = [objects objectAtIndex:i];
+        
+        if ([info objectForKey:@"observer"] == object) {
+            [objects removeObjectAtIndex:i];
+        }
+    }
+}
+
+- (void) removeAllObserversFor: (id) object {
+    NSArray     *messages = [messagingList allKeys];
+    int         i = 0;
+    
+    for (i = 0 ; i < [messages count] ; i++) {
+        [self removeObserver:object name:[messages objectAtIndex:i]];
+    }
+}
+
+- (void) sendMessage: (NSString *) message withObject: (id) userInfo {
+    NSMutableArray  *objects = [messagingList objectForKey:message];
+    int             i = 0;
+    
+    if (objects == nil) return;
+    
+    for (i = 0 ; i < [objects count] ; i++) {
+        NSMutableDictionary *info = [objects objectAtIndex:i];
+        id                  object = [info objectForKey:@"observer"];
+        SEL                 sel = (SEL) [[info objectForKey:@"selector"] bytes];
+        
+        // call the selector
+        [object performSelector:sel withObject:message withObject:userInfo];
+    }
+}
+
+#pragma mark Plugin management utilities.
+
+- (NSArray *) plugins {
+    NSMutableArray  *names = [NSMutableArray array];
+    int             i = 0;
+    
+    for (i = 0 ; i < [orderedPluginList count] ; i++) {
+        [names addObject:[[orderedPluginList objectAtIndex:i] name]];
+    }
+    
+    return(names);
+}
+
+- (void) loadViewForPlugin: (int) pluginIndex {
+    NSView  *view = [[orderedPluginList objectAtIndex:pluginIndex]
+                     contentViewForSize:[controller contentViewFrame].size];
+    [controller replaceContentWith:view];
+    currentPlugin = [[orderedPluginList objectAtIndex:pluginIndex] retain];
+}
+
+- (void) quickSlot1 {
+    [self buttonAction:pluginButton1];
+}
+
+- (void) quickSlot2 {
+    [self buttonAction:pluginButton2];
+}
+
+- (void) quickSlot3 {
+    [self buttonAction:pluginButton3];
+}
+
+#pragma mark Plugin generic utility methods
+
+- (NSWindow *) windowWithContentRect: (NSRect) frame {
+    NSWindow    *window = [[NSWindow alloc] initWithContentRect:frame
+                                               styleMask:NSBorderlessWindowMask
+                                                 backing:NSBackingStoreBuffered
+                                                   defer:NO];
+    
+    [window setReleasedWhenClosed:YES];
+    [window setBackgroundColor:[NSColor blackColor]];
+    [window setLevel:[controller mainWindowLevel]];
+    return(window);
 }
 
 @end

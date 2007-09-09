@@ -18,11 +18,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
+#import <CarFrontEndAPI/PluginManager.h>
 
 @class MainViewController;
 @class PluginListView;
 
-@interface PluginManager : NSObject {
+@interface PluginManager : NSObject <PluginMessaging, PluginPlugins, PluginUtilities> {
     IBOutlet CarFrontEndButton  *pluginButton1;
     IBOutlet CarFrontEndButton  *pluginButton2;
     IBOutlet CarFrontEndButton  *pluginButton3;
@@ -43,6 +44,8 @@
     NSTimer                     *modifyTimer;
     
     NSWindow                    *quickSlotsWindow;
+    
+    NSMutableDictionary         *messagingList;
 }
 
 - (void) initalize;
@@ -56,5 +59,22 @@
 #pragma mark Utilities
 - (void) loadPluginsFromPath: (NSString *) pluginPath;
 - (void) changeContentView;
+
+#pragma mark Plugin message utility methods
+- (void) addObserver: (id) object selector: (SEL) selector
+                name: (NSString *) message;
+- (void) removeObserver: (id) object name: (NSString *) message;
+- (void) removeAllObserversFor: (id) object;
+- (void) sendMessage: (NSString *) message withObject: (id) userInfo;
+
+#pragma mark Plugin management utilities.
+- (NSArray *) plugins;
+- (void) loadViewForPlugin: (int) pluginIndex;
+- (void) quickSlot1;
+- (void) quickSlot2;
+- (void) quickSlot3;
+
+#pragma mark Plugin generic utility methods
+- (NSWindow *) windowWithContentRect: (NSRect) frame;
 
 @end
