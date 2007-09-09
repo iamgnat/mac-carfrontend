@@ -17,6 +17,8 @@
  */
 
 // NSNotification messages
+
+#pragma mark CarFrontEnd UI notifications
 // If you are building a new UI element, make sure it responds to any
 //  CFENotificationChange* messages that relate to it.
 
@@ -30,6 +32,56 @@ extern NSString *CFENotificationChangeForegroundColor;
 //      notification.
 extern NSString *CFENotificationChangeBackgroundColor;
 
+#pragma mark CarFrontEnd Plugin Messaging
+#pragma mark CarFrontEnd Volume Messages
+// Mute the volume if currently unmuted, otherwise no effect.
+//  CarFrontEnd will always respond to this message.
+//  Any userInfo object will be ignored.
+extern NSString *CFEMessageVolumeMute;
+
+// Unmute the volume if currently muted, otherwise no effect.
+//  CarFrontEnd will always respond to this message.
+//  Any userInfo object will be ignored.
+extern NSString *CFEMessageVolumeUnmute;
+
+// Set the volume level to the given value.
+//  CarFrontEnd will always respond to this message.
+//  The userInfo object should be a NSNumber with a value between 0 and 100.
+//  If userInfo does not respond to intValue or the value is outside of the
+//      0 to 100 range, no volume change will occur.
+extern NSString *CFEMessageVolumeSet;
+
+// Called when the volume level is changed.
+//  It is expected for plugins that are interested in this information will
+//      add an observer for it.
+//  The current volume level will be passed as a NSNumber in the userInfo.
+extern NSString *CFEMessageVolumeChanged;
+
+#pragma mark CarFrontEnd Menu Messages
+// Causes the Menu content to be displayed.
+//  CarFrontEnd will always respond to this message.
+//  Any userInfo value will be ignored.
+extern NSString *CFEMessageMenuShowView;
+
+// Causes CarFrontEnd to be hidden.
+//  CarFrontEnd will always respond to this message.
+//  Any userInfo value will be ignored.
+extern NSString *CFEMessageMenuHideApp;
+
+// Causes CarFrontEnd to be hidden.
+//  CarFrontEnd will always respond to this message.
+//  Any userInfo value will be ignored.
+extern NSString *CFEMessageMenuQuitApp;
+
+// Causes CarFrontEnd to swap the driver side display.
+//  CarFrontEnd will always respond to this message.
+//  If userInfo does not respond to isEqualToString, is not "left" or "right",
+//      or is nil, then it will swap based on the current setting.
+//      If it does it will swap to the given side if that is not the current
+//      side.
+extern NSString *CFEMessageMenuSwapSide;
+
 #import <CarFrontEndAPI/CarFrontEndProtocol.h>
 #import <CarFrontEndAPI/CarFrontEndButton.h>
 #import <CarFrontEndAPI/NSImageUtils.h>
+#import <CarFrontEndAPI/PluginManager.h>

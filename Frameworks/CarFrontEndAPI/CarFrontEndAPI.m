@@ -18,5 +18,19 @@
 
 #include "CarFrontEndAPI.h"
 
+#pragma mark CarFrontEnd UI notifications
 NSString    *CFENotificationChangeForegroundColor = @"CFENotificationChangeForegroundColor";
 NSString    *CFENotificationChangeBackgroundColor = @"CFENotificationChangeForegroundColor";
+
+#pragma mark CarFrontEnd Plugin Messaging
+#pragma mark CarFrontEnd Volume Messages
+NSString    *CFEMessageVolumeMute = @"CFEMessageVolumeMute";
+NSString    *CFEMessageVolumeUnmute = @"CFEMessageVolumeUnmute";
+NSString    *CFEMessageVolumeSet = @"CFEMessageVolumeSet";
+NSString    *CFEMessageVolumeChanged = @"CFEMessageVolumeChanged";
+
+#pragma mark CarFrontEnd Menu Messages
+NSString    *CFEMessageMenuShowView = @"CFEMessageMenuShowView";
+NSString    *CFEMessageMenuHideApp = @"CFEMessageMenuHideApp";
+NSString    *CFEMessageMenuQuitApp = @"CFEMessageMenuQuitApp";
+NSString    *CFEMessageMenuSwapSide = @"CFEMessageMenuSwapSide";
