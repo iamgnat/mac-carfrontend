@@ -66,3 +66,14 @@
 - (NSWindow *) windowWithContentRect: (NSRect) frame;
 
 @end
+
+#pragma mark Plugin CarFrontEnd utility methods
+@protocol PluginCarFrontEnd
+
+// Returns the current volume level.
+- (NSNumber *) currentVolumeLevel;
+
+// Returns (left/right) the current side considered the driver's side.
+- (NSString *) currentDriverSide;
+
+@end

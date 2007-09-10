@@ -20,7 +20,7 @@
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 @class MainViewController;
-@class PluginManager
+@class PluginManager;
 
 @interface SystemManager : NSObject {
     IBOutlet MainViewController *controller;
@@ -37,5 +37,8 @@
 - (IBAction) quit: (id) sender;
 - (IBAction) hide: (id) sender;
 - (IBAction) sideSwap: (id) sender;
+
+#pragma mark Plugin Message observation
+- (void) observePluginMessage: (NSString *) message with: (id) userInfo;
 
 @end

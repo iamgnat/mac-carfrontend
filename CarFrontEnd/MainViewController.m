@@ -293,9 +293,24 @@
     if (![currSide isEqualToString:side]) {
         [prefs setObject:side forKey:@"DriverSide"];
         [self setPreferences:prefs forKey:@"CarFrontEnd"];
+        
+        // Notify anyone that care that the side has been swapped.
+        [pluginManager sendMessage:CFEMessageMenuSideSwapped withObject:side];
     }
     
     return(YES);
+}
+
+- (NSString *) currentDriverSide {
+    NSMutableDictionary *prefs = [prefsConfig objectForKey:@"CarFrontEnd"];
+    NSString            *currSide = nil;
+    if (prefs == nil) {
+        currSide = @"left";
+    } else {
+        currSide = [prefs objectForKey:@"DriverSide"];
+    }
+    
+    return(currSide);
 }
 
 #pragma mark AppleScript Utilities

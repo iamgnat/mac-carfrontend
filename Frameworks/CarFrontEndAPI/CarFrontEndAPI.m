@@ -34,3 +34,4 @@ NSString    *CFEMessageMenuShowView = @"CFEMessageMenuShowView";
 NSString    *CFEMessageMenuHideApp = @"CFEMessageMenuHideApp";
 NSString    *CFEMessageMenuQuitApp = @"CFEMessageMenuQuitApp";
 NSString    *CFEMessageMenuSwapSide = @"CFEMessageMenuSwapSide";
+NSString    *CFEMessageMenuSideSwapped = @"CFEMessageMenuSideSwapped";

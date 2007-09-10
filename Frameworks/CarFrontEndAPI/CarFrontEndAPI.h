@@ -34,15 +34,10 @@ extern NSString *CFENotificationChangeBackgroundColor;
 
 #pragma mark CarFrontEnd Plugin Messaging
 #pragma mark CarFrontEnd Volume Messages
-// Mute the volume if currently unmuted, otherwise no effect.
+// Toggles the current mute setting.
 //  CarFrontEnd will always respond to this message.
 //  Any userInfo object will be ignored.
 extern NSString *CFEMessageVolumeMute;
-
-// Unmute the volume if currently muted, otherwise no effect.
-//  CarFrontEnd will always respond to this message.
-//  Any userInfo object will be ignored.
-extern NSString *CFEMessageVolumeUnmute;
 
 // Set the volume level to the given value.
 //  CarFrontEnd will always respond to this message.
@@ -51,7 +46,7 @@ extern NSString *CFEMessageVolumeUnmute;
 //      0 to 100 range, no volume change will occur.
 extern NSString *CFEMessageVolumeSet;
 
-// Called when the volume level is changed.
+// Sent when the volume level is changed.
 //  It is expected for plugins that are interested in this information will
 //      add an observer for it.
 //  The current volume level will be passed as a NSNumber in the userInfo.
@@ -80,6 +75,12 @@ extern NSString *CFEMessageMenuQuitApp;
 //      If it does it will swap to the given side if that is not the current
 //      side.
 extern NSString *CFEMessageMenuSwapSide;
+
+// Sent when the driver's side is changed.
+//  It is expected for plugins that are interested in this information will
+//      add an observer for it.
+//  The current side (left/right) will be passed as a NSString in the userInfo.
+extern NSString *CFEMessageMenuSideSwapped;
 
 #import <CarFrontEndAPI/CarFrontEndProtocol.h>
 #import <CarFrontEndAPI/CarFrontEndButton.h>

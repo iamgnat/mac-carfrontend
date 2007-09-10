@@ -22,12 +22,16 @@
 
 @class MainViewController;
 @class PluginListView;
+@class SystemManager;
+@class AudioVolumeManager;
 
-@interface PluginManager : NSObject <PluginMessaging, PluginPlugins, PluginUtilities> {
+@interface PluginManager : NSObject <PluginMessaging, PluginPlugins, PluginUtilities, PluginCarFrontEnd> {
     IBOutlet CarFrontEndButton  *pluginButton1;
     IBOutlet CarFrontEndButton  *pluginButton2;
     IBOutlet CarFrontEndButton  *pluginButton3;
     IBOutlet MainViewController *controller;
+    IBOutlet SystemManager      *systemManager;
+    IBOutlet AudioVolumeManager *audioVolumeManager;
     IBOutlet PluginListView     *pluginListView;
     IBOutlet CarFrontEndButton  *modifyButton;
     IBOutlet NSTextField        *quickSlotText;
@@ -76,5 +80,9 @@
 
 #pragma mark Plugin generic utility methods
 - (NSWindow *) windowWithContentRect: (NSRect) frame;
+
+#pragma mark Plugin CarFrontEnd utility methods
+- (NSNumber *) currentVolumeLevel;
+- (NSString *) currentDriverSide;
 
 @end

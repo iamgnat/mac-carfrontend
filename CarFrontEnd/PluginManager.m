@@ -19,6 +19,8 @@
 #import "PluginManager.h"
 #import "MainViewController.h"
 #import "PluginListView.h"
+#import "AudioVolumeManager.h"
+#import "SystemManager.h"
 
 @implementation PluginManager
 
@@ -290,11 +292,15 @@
 
 - (void) addObserver: (id) object selector: (SEL) selector
                 name: (NSString *) message {
-    NSMutableArray  *objects = [messagingList objectForKey:message];
-    NSData          *sel = [NSData dataWithBytes:selector
-                                          length:sizeof(SEL)];
+    NSMutableArray      *objects = [messagingList objectForKey:message];
+    NSMethodSignature   *sig = [[object class]
+                                instanceMethodSignatureForSelector:selector];
+    NSInvocation        *sel = [NSInvocation invocationWithMethodSignature:sig];
     BOOL            found = NO;
     int             i = 0;
+    
+    [sel setTarget:object];
+    [sel setSelector:selector];
     
     if (objects == nil) {
         objects = [NSMutableArray array];
@@ -351,11 +357,11 @@
     
     for (i = 0 ; i < [objects count] ; i++) {
         NSMutableDictionary *info = [objects objectAtIndex:i];
-        id                  object = [info objectForKey:@"observer"];
-        SEL                 sel = (SEL) [[info objectForKey:@"selector"] bytes];
+        NSInvocation        *sel = [info objectForKey:@"selector"];
         
-        // call the selector
-        [object performSelector:sel withObject:message withObject:userInfo];
+        [sel setArgument:&message atIndex:2];
+        [sel setArgument:&userInfo atIndex:3];
+        [sel invoke];
     }
 }
 
@@ -404,5 +410,15 @@
     [window setLevel:[controller mainWindowLevel]];
     return(window);
 }
+
+#pragma mark Plugin CarFrontEnd utility methods
+- (NSNumber *) currentVolumeLevel {
+    return([NSNumber numberWithInt:[audioVolumeManager volumeLevel]]);
+}
+
+- (NSString *) currentDriverSide {
+    return([controller currentDriverSide]);
+}
+
 
 @end
