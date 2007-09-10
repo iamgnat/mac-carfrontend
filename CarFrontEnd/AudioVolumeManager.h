@@ -20,9 +20,11 @@
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 @class MainViewController;
+@class PluginManager;
 
 @interface AudioVolumeManager : NSObject {
     IBOutlet MainViewController *controller;
+    IBOutlet PluginManager      *pluginManager;
     IBOutlet CarFrontEndButton  *muteButton;
     IBOutlet CarFrontEndButton  *volumeButton;
     IBOutlet NSLevelIndicator   *volumeLevel;

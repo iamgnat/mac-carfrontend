@@ -20,9 +20,11 @@
 #import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 @class MainViewController;
+@class PluginManager
 
 @interface SystemManager : NSObject {
     IBOutlet MainViewController *controller;
+    IBOutlet PluginManager      *pluginManager;
     IBOutlet CarFrontEndButton  *systemButton;
     IBOutlet CarFrontEndButton  *swapSidesButton;
     IBOutlet NSView             *systemView;
