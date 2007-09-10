@@ -35,6 +35,7 @@
             CLASS = PluginManager; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                audioVolumeManager = AudioVolumeManager; 
                 controller = MainViewController; 
                 currentPlugin = id; 
                 modifyButton = CarFrontEndButton; 
@@ -43,6 +44,7 @@
                 pluginButton3 = CarFrontEndButton; 
                 pluginListView = PluginListView; 
                 quickSlotText = NSTextField; 
+                systemManager = SystemManager; 
                 updateQuickSlotsOkButton = CarFrontEndButton; 
                 updateQuickSlotsView = NSView; 
             }; 

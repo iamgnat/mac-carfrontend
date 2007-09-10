@@ -64,6 +64,7 @@
 - (NSString *) appSupportPath;
 - (NSRect) contentViewFrame;
 - (BOOL) swapDriverToSide: (NSString *) side;
+- (NSString *) currentDriverSide;
 
 #pragma mark AppleScript Utilities
 - (NSAppleEventDescriptor *) runWithSource: (id) source

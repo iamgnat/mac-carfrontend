@@ -18,18 +18,29 @@
 
 #import "SystemManager.h"
 #import "MainViewController.h"
+#import "PluginManager.h"
 
 @implementation SystemManager
 
 - (void) initalize {
-    NSDictionary    *prefs = [controller preferencesForKey:@"CarFrontEnd"];
-    
-    if ([[prefs objectForKey:@"DriverSide"] isEqualToString:@"right"]) {
+    if ([[controller currentDriverSide] isEqualToString:@"right"]) {
         [swapSidesButton setStringValue:@"L Drv"];
     } else {
         // Should also handle the pref not being set.
         [swapSidesButton setStringValue:@"R Drv"];
     }
+    
+    // Setup the plugin messaging observers
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageMenuShowView];
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageMenuHideApp];
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageMenuQuitApp];
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageMenuSwapSide];
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageMenuSideSwapped];
 }
 
 #pragma mark Actions
@@ -46,14 +57,37 @@
 }
 
 - (IBAction) sideSwap: (id) sender {
-    if ([[sender stringValue] isEqualToString:@"L Drv"]) {
-        if ([controller swapDriverToSide:@"left"]) {
-            [sender setStringValue:@"R Drv"];
-        }
+    if ([[controller currentDriverSide] isEqualToString:@"right"]) {
+        [controller swapDriverToSide:@"left"];
     } else {
-        if ([controller swapDriverToSide:@"right"]) {
-            [sender setStringValue:@"L Drv"];
+        [controller swapDriverToSide:@"right"];
+    }
+}
+
+#pragma mark Plugin Message observation
+- (void) observePluginMessage: (NSString *) message with: (id) userInfo {
+    if ([message isEqualToString:CFEMessageMenuShowView]) {
+        [self showSystemView:nil];
+    } else if ([message isEqualToString:CFEMessageMenuHideApp]) {
+        [self hide:nil];
+    } else if ([message isEqualToString:CFEMessageMenuQuitApp]) {
+        [self quit:nil];
+    } else if ([message isEqualToString:CFEMessageMenuSwapSide]) {
+        if (userInfo == nil || ![userInfo isKindOfClass:[NSString class]] ||
+            (![userInfo isEqualToString:@"left"] &&
+             ![userInfo isEqualToString:@"right"])) {
+            [self sideSwap:nil];
+        } else {
+            [controller swapDriverToSide:userInfo];
         }
+    } else if ([message isEqualToString:CFEMessageMenuSideSwapped]) {
+        if ([userInfo isEqualToString:@"right"]) {
+            [swapSidesButton setStringValue:@"L Drv"];
+        } else {
+            [swapSidesButton setStringValue:@"R Drv"];
+        }
+        
+        // Add code here to move the controls around to be side friendly.
     }
 }
 

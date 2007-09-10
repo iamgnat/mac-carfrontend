@@ -53,4 +53,7 @@
 - (int) volumeLevel;
 - (void) updateVolumeSettings: (id) ignored;
 
+#pragma mark Plugin Message observation
+- (void) observePluginMessage: (NSString *) message with: (id) userInfo;
+
 @end

@@ -85,6 +85,11 @@
                                    selector:@selector(updateVolumeSettings:)
                                    userInfo:nil repeats:YES];
     
+    // Setup the plugin messaging observers
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageVolumeMute];
+    [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
+                          name:CFEMessageVolumeSet];
 }
 
 #pragma mark Actions
@@ -138,12 +143,11 @@
     if (volumeWindowTimer != nil) {
         [volumeWindowTimer invalidate];
         [volumeWindowTimer release];
+        volumeWindowTimer = [[NSTimer scheduledTimerWithTimeInterval:5.0 target:self
+                                                            selector:@selector(closeVolumeWindow:)
+                                                            userInfo:nil repeats:NO]
+                            retain];
     }
-    
-    volumeWindowTimer = [[NSTimer scheduledTimerWithTimeInterval:5.0 target:self
-                                                        selector:@selector(closeVolumeWindow:)
-                                                        userInfo:nil repeats:NO]
-                         retain];
     
     NSDictionary            *error = nil;
     NSAppleScript           *script = nil;
@@ -210,12 +214,16 @@
     if (volumeWindowTimer != nil) {
         [volumeWindowTimer invalidate];
         [volumeWindowTimer release];
+    
+        volumeWindowTimer = [[NSTimer scheduledTimerWithTimeInterval:5.0 target:self
+                                                            selector:@selector(closeVolumeWindow:)
+                                                            userInfo:nil repeats:NO]
+                            retain];
     }
     
-    volumeWindowTimer = [[NSTimer scheduledTimerWithTimeInterval:5.0 target:self
-                                                        selector:@selector(closeVolumeWindow:)
-                                                        userInfo:nil repeats:NO]
-                         retain];
+    // Let everyone know the volume changed (at least from within the app).
+    [pluginManager sendMessage:CFEMessageVolumeChanged
+                    withObject:[NSNumber numberWithInt:level]];
 }
 
 - (int) volumeLevel {
@@ -250,6 +258,17 @@
     
     // Update the volume slider
     [volumeLevel setIntValue:[self volumeLevel]];
+}
+
+#pragma mark Plugin Message observation
+- (void) observePluginMessage: (NSString *) message with: (id) userInfo {
+    if ([message isEqualToString:CFEMessageVolumeMute]) {
+        [self muteVolume:nil];
+    } else if ([message isEqualToString:CFEMessageVolumeSet]) {
+        if (userInfo != nil && [userInfo respondsToSelector:@selector(intValue)]) {
+            [self setVolume:[userInfo intValue]];
+        }
+    }
 }
 
 @end
