@@ -77,3 +77,21 @@
 - (NSString *) currentDriverSide;
 
 @end
+
+#pragma mark Plugin Preferences methods
+@protocol PluginPreferences
+
+// Returns the current preferences for the given plugin.
+//  This is based on the value returned by the -name method of the plugin, so
+//      it is critical not to share names with other plugins.
+- (NSDictionary *) preferencesForPlugin: (id <CarFrontEndProtocol>) plugin;
+
+// Stores the given preferences dictionary.
+//  The structure of the dictionary is completely arbitrary from CFE's point
+//      of view and completely in the Plugin's control.
+//  This is based on the value returned by the -name method of the plugin, so
+//      it is critical not to share names with other plugins.
+- (void) savePreferences: (NSDictionary *) pluginPreferences
+              forPlugin: (id <CarFrontEndProtocol>) plugin;
+
+@end
