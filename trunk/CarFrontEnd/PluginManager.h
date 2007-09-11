@@ -85,4 +85,9 @@
 - (NSNumber *) currentVolumeLevel;
 - (NSString *) currentDriverSide;
 
+#pragma mark Plugin Preferences methods
+- (NSDictionary *) preferencesForPlugin: (id <CarFrontEndProtocol>) plugin;
+- (void) savePreferences: (NSDictionary *) pluginPreferences
+               forPlugin: (id <CarFrontEndProtocol>) plugin;
+
 @end

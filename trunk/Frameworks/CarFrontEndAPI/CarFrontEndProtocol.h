@@ -18,7 +18,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CarFrontEndProtocol
+@protocol CarFrontEndProtocol <NSObject>
 
 // The init method that the PluginManager will call.
 - (id) initWithPluginManager: (id) pluginManager;

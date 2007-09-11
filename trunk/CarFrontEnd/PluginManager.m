@@ -421,4 +421,39 @@
 }
 
 
+#pragma mark Plugin Preferences methods
+- (NSDictionary *) preferencesForPlugin: (id <CarFrontEndProtocol>) plugin {
+    NSDictionary    *prefs = [NSDictionary dictionaryWithDictionary:[pluginPrefs
+                                                        objectForKey:@"PluginPrefs"]];
+    
+    // Stupid hack to avoid "-className not found in protocol" warnings at
+    //  compile time.
+    NSString        *name = [[plugin name]
+                             stringByAppendingString:[plugin performSelector:@selector(className)]];
+    
+    if (prefs == nil) return(nil);
+    return([NSDictionary dictionaryWithDictionary:[prefs objectForKey:name]]);
+}
+
+- (void) savePreferences: (NSDictionary *) pluginPreferences
+               forPlugin: (id <CarFrontEndProtocol>) plugin {
+    NSMutableDictionary *prefs = [NSMutableDictionary
+                                  dictionaryWithDictionary:[pluginPrefs
+                                                            objectForKey:@"PluginPrefs"]];
+    NSString            *name = [[plugin name]
+                                 stringByAppendingString:[plugin performSelector:@selector(className)]];
+    
+    if (pluginPrefs == nil) return;
+    
+    if (prefs == nil) {
+        prefs = [NSMutableDictionary dictionary];
+        [pluginPrefs setObject:prefs forKey:@"PluginPrefs"];
+    }
+    
+    [prefs setObject:pluginPrefs forKey:name];
+    
+    return([controller setPreferences:pluginPrefs forKey:@"PluginManager"]);
+}
+
 @end
+
