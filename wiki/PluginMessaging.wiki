@@ -1,0 +1,72 @@
+#summary Plugin Messaging interface
+
+== Introduction ==
+Starting with v1.0a7, CarFrontEnd will support the ability for Plugins to communicate between themselves as well as with CarFrontEnd itself.
+
+== Code Support ==
+
+To utilize the messaging system, you have to implement some basic code. The CarFrontEnd Plugin Messaging interface works in a similar manner to _NSNotification_ in that you need a selector to respond to messages (if you are listening for messages), must register for messages you want to know about, and may send messages for the application or other plugins to respond to.
+
+With v1.0a7, the _-initWithPluginManager:_ method is added to the _CarFrontEndProtocol_. This method is called by the PluginManager after it loads your plugin and passes the PluginManager object as it's argument. You must store and retain this object if you wish to use the messaging interface. In the SamplePlugin code shown on the CreatePlugin wiki page, we use the _owner_ variable to store the PluginManager object.
+
+You must also import CarFrontEndAPI/CarFrontEndAPI.h which will load the PluginManager Protocols as well as the currently known messages.
+
+=== Sending Messages ===
+
+To send a message, use the _-sendMessage:with:_ method of PluginManager.
+{{{
+[owner sendMessage:SomePredefinedMessage with:nil]
+}}}
+  * *SomePredefinedMessage* - The message to be sent.
+  * *nil* - This is an object that will be passed to any of the observers of this message. The type and value of this argument is dependent on the message being sent (if it is needed at all).
+
+=== Processing Messages ===
+
+To respond to messages is slightly more difficult, but still rather simple. You will need a method to process the message(s) and will need to  register for the message.
+
+Your responder must accept two arguments. The first must be a _NSString_ for the message and the second should be the object type (or a plain _id_ is advised) you are expecting.
+{{{
+- (void) observePluginMessage: (NSString *) message with: (id) userInfo {
+    if ([message isEqualToString:SomePredefinedMessage]) {
+        if (userInfo != nil && [userInfo isKindOfClass:[NSString class]]) {
+            NSLog(@"SomePredefinedMessage: %@", userInfo);
+        } else {
+            NSLog(@"SomePredefinedMessage: No message supplied.");
+        }
+    }
+}
+}}}
+
+You register your responder using the _-addObserver:selector:name:_ method of the PluginManager. This method expects:
+  # *id* - The object observing the message (normally _self_).
+  # *SEL* - The selector of your responder method.
+  # *NSString* - The name of the message to respond to.
+{{{
+[owner addObserver:self
+                      selector:@selector(observePluginMessage:with:)
+                          name:SomePredefinedMessage];
+}}}
+
+We advise that also remove your responder from processing when your Plugin is not the currently active plugin if your response will make UI changes that are not needed at that time.
+{{{
+[owner removeObserver:self name:SomePredefinedMessage];
+}}}
+  # *id* - The object that was responding to the message.
+  # *NSString* - The name of the message.
+
+You may also remove all messages for your object at once with _-removeAllObserversFor:_ which takes the observing object as it's only argument.
+
+== CarFrontEnd Messages ==
+
+These are the messages that are built into CarFrontEnd.
+|| *Name* || *userInfo Type* || *Description* || *Notes* ||
+|| CFEMessageVolumeMute || N/A || Toggles the current mute setting. ||  ||
+|| CFEMessageVolumeSet || NSNumber || Set the volume level to the given value. || userInfo will be ignored if it is nil or the value is not between 0 and 100 ||
+|| CFEMessageVolumeChanged || NSNumber || Sent when the volume level is changed. || The userInfo value is the current volume level. This only occurs if the volume is changed by CarFrontEnd. ||
+|| CFEMessageMenuShowView || N/A || Causes the Menu content to be displayed. ||  ||
+|| CFEMessageMenuHideApp || N/A || Causes CarFrontEnd to be hidden. ||  ||
+|| CFEMessageMenuQuitApp || N/A || Causes CarFrontEnd to exit. ||  ||
+|| CFEMessageMenuSwapSide || NSString || Causes CarFrontEnd to swap the driver side display. || userInfo may be nil or a NSString that equals "left" or "right". If the object is nil or does not equal one of those vaules, it will swap the driver side based on the current setting. ||
+|| CFEMessageMenuSideSwapped || NSString || Sent when the driver's side is changed. || The userInfo will be "left" or "right" depending on the new driver side. ||
+
+Additional messages will be added over time (and should be added above), but you are free to listen for and send your own custom messages.
