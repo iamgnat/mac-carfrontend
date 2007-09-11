@@ -63,7 +63,7 @@ extern NSString *CFEMessageMenuShowView;
 //  Any userInfo value will be ignored.
 extern NSString *CFEMessageMenuHideApp;
 
-// Causes CarFrontEnd to be hidden.
+// Causes CarFrontEnd to exit.
 //  CarFrontEnd will always respond to this message.
 //  Any userInfo value will be ignored.
 extern NSString *CFEMessageMenuQuitApp;
