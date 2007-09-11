@@ -42,22 +42,24 @@ You should also be using the latest version of [http://developer.apple.com/tools
     # Go ahead and add an action so we can add a button.
     * You header should look something like:
       {{{
-      #import <Cocoa/Cocoa.h>
-      #import <CarFrontEndAPI/CarFrontEndAPI.h>
+#import <Cocoa/Cocoa.h>
+#import <CarFrontEndAPI/CarFrontEndAPI.h>
 
-      @interface SamplePlugin : NSObject <CarFrontEndProtocol> {
-          IBOutlet NSView     *samplePluginView;
-      }
+@interface SamplePlugin : NSObject <CarFrontEndProtocol> {
+    id                  owner;
+    IBOutlet NSView     *samplePluginView;
+}
 
-      - (NSString *) name;
-      - (void) initalize;
-      - (NSImage *) pluginButtonImage;
-      - (NSView *) contentViewForSize: (NSSize) size;
-      - (void) removePluginFromView;
+- (id) initWithPluginManager: (id) pluginManager;
+- (NSString *) name;
+- (void) initalize;
+- (NSImage *) pluginButtonImage;
+- (NSView *) contentViewForSize: (NSSize) size;
+- (void) removePluginFromView;
 
-      - (IBAction) buttonClicked: (id) sender;
+- (IBAction) buttonClicked: (id) sender;
 
-      @end
+@end
       }}}
   # Edit the class file
     # Add a static variable outside the _@implementation_ section.
@@ -69,78 +71,83 @@ You should also be using the latest version of [http://developer.apple.com/tools
     # Add the code for your action method.
     * Your object file should look something like:
       {{{
-      #import "SamplePlugin.h"
+#import "SamplePlugin.h"
 
-      static SamplePlugin *sharedSP = nil;
+static SamplePlugin *sharedSP = nil;
 
-      @implementation SamplePlugin
+@implementation SamplePlugin
 
-      - (id) init {
-          if (sharedSP != nil) {
-              [self release];
-              return(sharedSP);
-          }
+- (id) init {
+    return([self initWithPluginManager:nil]);
+}
 
-          [super init];
+- (id) initWithPluginManager: (id) pluginManager {
+    if (sharedSP != nil) {
+        [self release];
+        return(sharedSP);
+    }
+    
+    [super init];
+    owner = [pluginManager retain];
+    
+    // Setup for a single instance.
+    sharedSP = self;
+    
+    return(self);
+}
 
-          // Setup for a single instance.
-          sharedSP = self;
+- (NSString *) name {
+    return(@"Sample Plugin");
+}
 
-          return(self);
-      }
+- (void) initalize {
+    // No-op for this example.
+    //  Should generate the button image here rather than on demand.
+}
 
-      - (NSString *) name {
-          return(@"Sample Plugin");
-      }
+- (NSImage *) pluginButtonImage {
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    
+    [attributes setObject:[NSFont fontWithName:@"Helvetica" size:26]
+                   forKey:NSFontAttributeName];
+	[attributes setObject:[NSColor whiteColor]
+                   forKey:NSForegroundColorAttributeName];
+    
+    NSSize          size = [[self name] sizeWithAttributes:attributes];
+    NSImage         *image = [[[NSImage alloc] initWithSize:size] autorelease];
+    
+    [image lockFocus];
+    [[self name] drawAtPoint:NSZeroPoint withAttributes:attributes];
+    [image unlockFocus];
+    
+    return(image);
+}
 
-      - (void) initalize {
-          // No-op for this example.
-          //  Should generate the button image here rather than on demand.
-      }
+- (NSView *) contentViewForSize: (NSSize) size {
+    // We are ignoring the size value, but it is there incase you have differnt
+    //  views based on the size that CarFrontEnd sends you.
+    if (samplePluginView == nil) {
+        [NSBundle loadNibNamed:@"SamplePlugin" owner:self];
+    }
+    
+    return(samplePluginView);
+}
 
-      - (NSImage *) pluginButtonImage {
-      	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+- (void) removePluginFromView {
+    // No-op
+    //  If you need to do something when your view is no longer displayed,
+    //  add the code here.
+}
 
-          [attributes setObject:[NSFont fontWithName:@"Helvetica" size:26]
-                         forKey:NSFontAttributeName];
-      	[attributes setObject:[NSColor whiteColor]
-                         forKey:NSForegroundColorAttributeName];
+- (IBAction) buttonClicked: (id) sender {
+    if ([[sender stringValue] isEqualToString:@"Click"]) {
+        [sender setStringValue:@"Clock"];
+    } else if ([[sender stringValue] isEqualToString:@"Clock"]) {
+        [sender setStringValue:@"Click"];
+    }
+}
 
-          NSSize          size = [[self name] sizeWithAttributes:attributes];
-          NSImage         *image = [[[NSImage alloc] initWithSize:size] autorelease];
-
-          [image lockFocus];
-          [[self name] drawAtPoint:NSZeroPoint withAttributes:attributes];
-          [image unlockFocus];
-
-          return(image);
-      }
-
-      - (NSView *) contentViewForSize: (NSSize) size {
-          // We are ignoring the size value, but it is there incase you have differnt
-          //  views based on the size that CarFrontEnd sends you.
-          if (samplePluginView == nil) {
-              [NSBundle loadNibNamed:@"SamplePlugin" owner:self];
-          }
-
-          return(samplePluginView);
-      }
-
-      - (void) removePluginFromView {
-          // No-op
-          //  If you need to do something when your view is no longer displayed,
-          //  add the code here.
-      }
-
-      - (IBAction) buttonClicked: (id) sender {
-          if ([[sender stringValue] isEqualToString:@"Click"]) {
-              [sender setStringValue:@"Clock"];
-          } else if ([[sender stringValue] isEqualToString:@"Clock"]) {
-              [sender setStringValue:@"Click"];
-          }
-      }
-
-      @end
+@end
       }}}
   # Add a NIB file to your project and make sure that it uses the name that you used in your _-contentViewForSize:_ method ("SamplePlugin" in the example).
     # Read your object's header file into the NIB file.
