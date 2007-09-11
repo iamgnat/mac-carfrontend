@@ -25,7 +25,6 @@ NSString    *CFENotificationChangeBackgroundColor = @"CFENotificationChangeForeg
 #pragma mark CarFrontEnd Plugin Messaging
 #pragma mark CarFrontEnd Volume Messages
 NSString    *CFEMessageVolumeMute = @"CFEMessageVolumeMute";
-NSString    *CFEMessageVolumeUnmute = @"CFEMessageVolumeUnmute";
 NSString    *CFEMessageVolumeSet = @"CFEMessageVolumeSet";
 NSString    *CFEMessageVolumeChanged = @"CFEMessageVolumeChanged";
 
