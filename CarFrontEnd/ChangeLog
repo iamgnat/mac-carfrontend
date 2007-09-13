@@ -2,6 +2,11 @@
     Updated openVolumeWindow: to bring the volume window to the front if it is
         still open (e.g. the window has been hidden and the user clicks the
         volume button again).
+    Added PluginManager Protocols to the PluginManager object.
+    Added CFEMessage notification and observation to all objects and the
+        iTunesMusicPlayer plugin.
+    Updated the System Menu and iTunesMusicPlayer content views to adjust for
+        driver side changes.
 2007-09-05 - 1.0a6 - gnat
     Updated SplashView to reflect version change.
     See CarFrontEndAPI for changes.
