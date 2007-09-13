@@ -66,10 +66,10 @@
 
 #pragma mark Plugin message utility methods
 - (void) addObserver: (id) object selector: (SEL) selector
-                name: (NSString *) message;
-- (void) removeObserver: (id) object name: (NSString *) message;
+                name: (CFEMessage) message;
+- (void) removeObserver: (id) object name: (CFEMessage) message;
 - (void) removeAllObserversFor: (id) object;
-- (void) sendMessage: (NSString *) message withObject: (id) userInfo;
+- (void) sendMessage: (CFEMessage) message withObject: (id) userInfo;
 
 #pragma mark Plugin management utilities.
 - (NSArray *) plugins;

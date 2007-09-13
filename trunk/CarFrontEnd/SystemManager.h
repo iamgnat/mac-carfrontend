@@ -27,6 +27,7 @@
     IBOutlet PluginManager      *pluginManager;
     IBOutlet CarFrontEndButton  *systemButton;
     IBOutlet CarFrontEndButton  *swapSidesButton;
+    IBOutlet CarFrontEndButton  *hideButton;
     IBOutlet NSView             *systemView;
 }
 
@@ -39,6 +40,9 @@
 - (IBAction) sideSwap: (id) sender;
 
 #pragma mark Plugin Message observation
-- (void) observePluginMessage: (NSString *) message with: (id) userInfo;
+- (void) observePluginMessage: (CFEMessage) message with: (id) userInfo;
+
+#pragma mark Other methods
+- (void) swapDriverSide;
 
 @end

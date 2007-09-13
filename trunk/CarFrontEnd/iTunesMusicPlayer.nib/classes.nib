@@ -48,6 +48,8 @@
 				<string>CarFrontEndButton</string>
 				<key>nextTrackButton</key>
 				<string>CarFrontEndButton</string>
+				<key>owner</key>
+				<string>id</string>
 				<key>playPauseButton</key>
 				<string>CarFrontEndButton</string>
 				<key>prevPlaylistButton</key>

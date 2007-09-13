@@ -264,6 +264,11 @@ static iTunesViewController *sharedITVC = nil;
                                                 userInfo:nil repeats:YES]
                  retain];
     
+    // Update the driver side.
+    [owner addObserver:self selector:@selector(swapDriverSide:with:)
+                  name:CFEMessageMenuSideSwapped];
+    [self swapDriverSide:CFEMessageMenuSideSwapped with:nil];
+    
     // We don't care about the size, it's one view for all sizes here.
     return(iTunesView);
 }
@@ -283,6 +288,9 @@ static iTunesViewController *sharedITVC = nil;
     // Stop caring about disk mount activity
     NSNotificationCenter    *nc = [[NSWorkspace sharedWorkspace] notificationCenter];
     [nc removeObserver:self];
+    
+    // Ignore driver side swap messages
+    [owner removeObserver:self name:CFEMessageMenuSideSwapped];
 }
 
 #pragma mark Actions
@@ -578,6 +586,37 @@ static iTunesViewController *sharedITVC = nil;
     
     return [NSString stringWithFormat:@"%02i:%02i", mins, secs];
     
+}
+
+- (void) swapDriverSide: (CFEMessage) message with: (id) userInfo {
+    if (!CFEMessagesEqual(CFEMessageMenuSideSwapped, message)) return;
+    
+    NSRect      frame;
+    NSString    *side = [owner currentDriverSide];
+    
+    if ([side isEqualToString:@"left"] && [ejectMediaButton frame].origin.x <= 20) {
+        // Move the elements
+        NSArray *els = [iTunesView subviews];
+        int     i = 0;
+        for (i = 0 ; i < [els count] ; i++) {
+            NSView  *el = [els objectAtIndex:i];
+            frame = [el frame];
+            frame.origin.x = [iTunesView frame].size.width - frame.size.width - frame.origin.x;
+            [el setFrame:frame];
+        }
+        [iTunesView setNeedsDisplay:YES];
+    } else if ([side isEqualToString:@"right"] && [ejectMediaButton frame].origin.x >= 20) {
+        // Move the elements
+        NSArray *els = [iTunesView subviews];
+        int     i = 0;
+        for (i = 0 ; i < [els count] ; i++) {
+            NSView  *el = [els objectAtIndex:i];
+            frame = [el frame];
+            frame.origin.x = [iTunesView frame].size.width - frame.size.width - frame.origin.x;
+            [el setFrame:frame];
+        }
+        [iTunesView setNeedsDisplay:YES];
+    }
 }
 
 #pragma mark Playlist management

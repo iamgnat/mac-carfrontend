@@ -29,6 +29,7 @@
         // Should also handle the pref not being set.
         [swapSidesButton setStringValue:@"R Drv"];
     }
+    [self swapDriverSide];
     
     // Setup the plugin messaging observers
     [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
@@ -65,14 +66,14 @@
 }
 
 #pragma mark Plugin Message observation
-- (void) observePluginMessage: (NSString *) message with: (id) userInfo {
-    if ([message isEqualToString:CFEMessageMenuShowView]) {
+- (void) observePluginMessage: (CFEMessage) message with: (id) userInfo {
+    if (CFEMessagesEqual(CFEMessageMenuShowView, message)) {
         [self showSystemView:nil];
-    } else if ([message isEqualToString:CFEMessageMenuHideApp]) {
+    } else if (CFEMessagesEqual(CFEMessageMenuHideApp, message)) {
         [self hide:nil];
-    } else if ([message isEqualToString:CFEMessageMenuQuitApp]) {
+    } else if (CFEMessagesEqual(CFEMessageMenuQuitApp, message)) {
         [self quit:nil];
-    } else if ([message isEqualToString:CFEMessageMenuSwapSide]) {
+    } else if (CFEMessagesEqual(CFEMessageMenuSwapSide, message)) {
         if (userInfo == nil || ![userInfo isKindOfClass:[NSString class]] ||
             (![userInfo isEqualToString:@"left"] &&
              ![userInfo isEqualToString:@"right"])) {
@@ -80,14 +81,44 @@
         } else {
             [controller swapDriverToSide:userInfo];
         }
-    } else if ([message isEqualToString:CFEMessageMenuSideSwapped]) {
+    } else if (CFEMessagesEqual(CFEMessageMenuSideSwapped, message)) {
         if ([userInfo isEqualToString:@"right"]) {
             [swapSidesButton setStringValue:@"L Drv"];
         } else {
             [swapSidesButton setStringValue:@"R Drv"];
         }
         
-        // Add code here to move the controls around to be side friendly.
+        [self swapDriverSide];
+    }
+}
+
+#pragma mark Other methods
+- (void) swapDriverSide {
+    NSRect      frame;
+    NSString    *side = [controller currentDriverSide];
+    
+    if ([side isEqualToString:@"left"] && [hideButton frame].origin.x >= 20) {
+        // Move the elements
+        NSArray *els = [systemView subviews];
+        int     i = 0;
+        for (i = 0 ; i < [els count] ; i++) {
+            NSView  *el = [els objectAtIndex:i];
+            frame = [el frame];
+            frame.origin.x = [systemView frame].size.width - frame.size.width - frame.origin.x;
+            [el setFrame:frame];
+        }
+        [systemView setNeedsDisplay:YES];
+    } else if ([side isEqualToString:@"right"] && [hideButton frame].origin.x <= 20) {
+        // Move the elements
+        NSArray *els = [systemView subviews];
+        int     i = 0;
+        for (i = 0 ; i < [els count] ; i++) {
+            NSView  *el = [els objectAtIndex:i];
+            frame = [el frame];
+            frame.origin.x = [systemView frame].size.width - frame.size.width - frame.origin.x;
+            [el setFrame:frame];
+        }
+        [systemView setNeedsDisplay:YES];
     }
 }
 

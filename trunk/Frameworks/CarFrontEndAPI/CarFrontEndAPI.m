@@ -23,14 +23,31 @@ NSString    *CFENotificationChangeForegroundColor = @"CFENotificationChangeForeg
 NSString    *CFENotificationChangeBackgroundColor = @"CFENotificationChangeForegroundColor";
 
 #pragma mark CarFrontEnd Plugin Messaging
+
+CFEMessage CFECreateMessage(NSString *name, BOOL activeOnly) {
+    CFEMessage  msg;
+    
+    msg.name = [name retain];
+    msg.activeOnly = activeOnly;
+    return(msg);
+}
+
+void CFEDestroyMessage(CFEMessage msg) {
+    [msg.name release];
+}
+
+BOOL CFEMessagesEqual(CFEMessage msg1, CFEMessage msg2) {
+    return([msg1.name isEqualToString:msg2.name]);
+}
+
 #pragma mark CarFrontEnd Volume Messages
-NSString    *CFEMessageVolumeMute = @"CFEMessageVolumeMute";
-NSString    *CFEMessageVolumeSet = @"CFEMessageVolumeSet";
-NSString    *CFEMessageVolumeChanged = @"CFEMessageVolumeChanged";
+CFEMessage   CFEMessageVolumeMute =         {@"CFEMessageVolumeMute",       YES};
+CFEMessage   CFEMessageVolumeSet =          {@"CFEMessageVolumeSet",        YES};
+CFEMessage   CFEMessageVolumeChanged =      {@"CFEMessageVolumeChanged",    YES};
 
 #pragma mark CarFrontEnd Menu Messages
-NSString    *CFEMessageMenuShowView = @"CFEMessageMenuShowView";
-NSString    *CFEMessageMenuHideApp = @"CFEMessageMenuHideApp";
-NSString    *CFEMessageMenuQuitApp = @"CFEMessageMenuQuitApp";
-NSString    *CFEMessageMenuSwapSide = @"CFEMessageMenuSwapSide";
-NSString    *CFEMessageMenuSideSwapped = @"CFEMessageMenuSideSwapped";
+CFEMessage   CFEMessageMenuShowView =       {@"CFEMessageMenuShowView",     YES};
+CFEMessage   CFEMessageMenuHideApp =        {@"CFEMessageMenuHideApp",      YES};
+CFEMessage   CFEMessageMenuQuitApp =        {@"CFEMessageMenuQuitApp",      YES};
+CFEMessage   CFEMessageMenuSwapSide =       {@"CFEMessageMenuSwapSide",     YES};
+CFEMessage   CFEMessageMenuSideSwapped =    {@"CFEMessageMenuSideSwapped",  YES};
