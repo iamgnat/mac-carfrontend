@@ -1,68 +1,160 @@
-{
-    IBClasses = (
-        {
-            ACTIONS = {changeVolume = id; maxVolume = id; muteVolume = id; openVolumeWindow = id; }; 
-            CLASS = AudioVolumeManager; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                controller = MainViewController; 
-                muteButton = CarFrontEndButton; 
-                pluginManager = PluginManager; 
-                volumeButton = CarFrontEndButton; 
-                volumeLevel = NSLevelIndicator; 
-                volumeView = NSView; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {CLASS = CarFrontEndButton; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
-        {
-            CLASS = MainViewController; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                audioVolumeManager = AudioVolumeManager; 
-                contentView = NSView; 
-                dateTextField = NSTextField; 
-                mainView = NSView; 
-                pluginManager = PluginManager; 
-                splashView = NSView; 
-                systemManager = SystemManager; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {CLASS = PluginListView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
-        {
-            ACTIONS = {buttonAction = id; }; 
-            CLASS = PluginManager; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                audioVolumeManager = AudioVolumeManager; 
-                controller = MainViewController; 
-                currentPlugin = id; 
-                modifyButton = CarFrontEndButton; 
-                pluginButton1 = CarFrontEndButton; 
-                pluginButton2 = CarFrontEndButton; 
-                pluginButton3 = CarFrontEndButton; 
-                pluginListView = PluginListView; 
-                quickSlotText = NSTextField; 
-                systemManager = SystemManager; 
-                updateQuickSlotsOkButton = CarFrontEndButton; 
-                updateQuickSlotsView = NSView; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            ACTIONS = {hide = id; quit = id; showSystemView = id; sideSwap = id; }; 
-            CLASS = SystemManager; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                controller = MainViewController; 
-                pluginManager = PluginManager; 
-                swapSidesButton = CarFrontEndButton; 
-                systemButton = CarFrontEndButton; 
-                systemView = NSView; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }
-    ); 
-    IBVersion = 1; 
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBClasses</key>
+	<array>
+		<dict>
+			<key>CLASS</key>
+			<string>CarFrontEndButton</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSButton</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>MainViewController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>audioVolumeManager</key>
+				<string>AudioVolumeManager</string>
+				<key>contentView</key>
+				<string>NSView</string>
+				<key>dateTextField</key>
+				<string>NSTextField</string>
+				<key>mainView</key>
+				<string>NSView</string>
+				<key>pluginManager</key>
+				<string>PluginManager</string>
+				<key>splashView</key>
+				<string>NSView</string>
+				<key>systemManager</key>
+				<string>SystemManager</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>hide</key>
+				<string>id</string>
+				<key>quit</key>
+				<string>id</string>
+				<key>showSystemView</key>
+				<string>id</string>
+				<key>sideSwap</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>SystemManager</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>controller</key>
+				<string>MainViewController</string>
+				<key>hideButton</key>
+				<string>CarFrontEndButton</string>
+				<key>pluginManager</key>
+				<string>PluginManager</string>
+				<key>swapSidesButton</key>
+				<string>CarFrontEndButton</string>
+				<key>systemButton</key>
+				<string>CarFrontEndButton</string>
+				<key>systemView</key>
+				<string>NSView</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>changeVolume</key>
+				<string>id</string>
+				<key>maxVolume</key>
+				<string>id</string>
+				<key>muteVolume</key>
+				<string>id</string>
+				<key>openVolumeWindow</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>AudioVolumeManager</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>controller</key>
+				<string>MainViewController</string>
+				<key>muteButton</key>
+				<string>CarFrontEndButton</string>
+				<key>pluginManager</key>
+				<string>PluginManager</string>
+				<key>volumeButton</key>
+				<string>CarFrontEndButton</string>
+				<key>volumeLevel</key>
+				<string>NSLevelIndicator</string>
+				<key>volumeView</key>
+				<string>NSView</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>buttonAction</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>PluginManager</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>audioVolumeManager</key>
+				<string>AudioVolumeManager</string>
+				<key>controller</key>
+				<string>MainViewController</string>
+				<key>currentPlugin</key>
+				<string>id</string>
+				<key>modifyButton</key>
+				<string>CarFrontEndButton</string>
+				<key>pluginButton1</key>
+				<string>CarFrontEndButton</string>
+				<key>pluginButton2</key>
+				<string>CarFrontEndButton</string>
+				<key>pluginButton3</key>
+				<string>CarFrontEndButton</string>
+				<key>pluginListView</key>
+				<string>PluginListView</string>
+				<key>quickSlotText</key>
+				<string>NSTextField</string>
+				<key>systemManager</key>
+				<string>SystemManager</string>
+				<key>updateQuickSlotsOkButton</key>
+				<string>CarFrontEndButton</string>
+				<key>updateQuickSlotsView</key>
+				<string>NSView</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>PluginListView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSView</string>
+		</dict>
+	</array>
+	<key>IBVersion</key>
+	<string>1</string>
+</dict>
+</plist>

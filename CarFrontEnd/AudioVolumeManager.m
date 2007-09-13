@@ -261,10 +261,10 @@
 }
 
 #pragma mark Plugin Message observation
-- (void) observePluginMessage: (NSString *) message with: (id) userInfo {
-    if ([message isEqualToString:CFEMessageVolumeMute]) {
+- (void) observePluginMessage: (CFEMessage) message with: (id) userInfo {
+    if (CFEMessagesEqual(CFEMessageVolumeMute, message)) {
         [self muteVolume:nil];
-    } else if ([message isEqualToString:CFEMessageVolumeSet]) {
+    } else if (CFEMessagesEqual(CFEMessageVolumeSet, message)) {
         if (userInfo != nil && [userInfo respondsToSelector:@selector(intValue)]) {
             [self setVolume:[userInfo intValue]];
         }

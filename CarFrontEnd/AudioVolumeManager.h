@@ -54,6 +54,6 @@
 - (void) updateVolumeSettings: (id) ignored;
 
 #pragma mark Plugin Message observation
-- (void) observePluginMessage: (NSString *) message with: (id) userInfo;
+- (void) observePluginMessage: (CFEMessage) message with: (id) userInfo;
 
 @end

@@ -95,6 +95,7 @@
 #pragma mark UI management
 - (void) fastTimer: (id) ignored;
 - (NSString *) formatTime: (int) value;
+- (void) swapDriverSide: (CFEMessage) message with: (id) userInfo;
 
 #pragma mark Playlist management
 - (void) updateSourceList:(id) note;

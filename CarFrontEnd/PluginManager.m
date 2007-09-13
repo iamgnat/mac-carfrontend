@@ -82,7 +82,8 @@
     }
     
     // Load the prefs
-    pluginPrefs = [NSMutableDictionary dictionaryWithDictionary:[controller preferencesForKey:@"PluginManager"]];
+    pluginPrefs = [NSMutableDictionary dictionaryWithDictionary:[controller
+                                             preferencesForKey:@"PluginManager"]];
     if ([pluginPrefs count] == 0) {
         pluginPrefs = [NSMutableDictionary dictionary];
         [pluginPrefs setObject:[NSMutableDictionary
@@ -291,8 +292,8 @@
 #pragma mark Plugin message utility methods
 
 - (void) addObserver: (id) object selector: (SEL) selector
-                name: (NSString *) message {
-    NSMutableArray      *objects = [messagingList objectForKey:message];
+                name: (CFEMessage) message {
+    NSMutableArray      *objects = [messagingList objectForKey:message.name];
     NSMethodSignature   *sig = [[object class]
                                 instanceMethodSignatureForSelector:selector];
     NSInvocation        *sel = [NSInvocation invocationWithMethodSignature:sig];
@@ -304,15 +305,16 @@
     
     if (objects == nil) {
         objects = [NSMutableArray array];
-        [messagingList setObject:objects forKey:message];
+        [messagingList setObject:objects forKey:message.name];
     }
     
     // See if we are replacing an existing observation.
     for (i = 0 ; i < [objects count] ; i++) {
         NSMutableDictionary *info = [objects objectAtIndex:i];
         
-        if ([info objectForKey:@"observer"] == object) {
-            [info setObject:sel forKey:@"selector"];
+        if ([info objectForKey:@"observer"] == object &&
+            [[info objectForKey:@"activeOnly"] boolValue] == message.activeOnly) {
+            [info setObject:sel forKey:@"selector"];;
             found = YES;
             break;
         }
@@ -322,19 +324,22 @@
         NSMutableDictionary *info = [NSMutableDictionary dictionary];
         [info setObject:object forKey:@"observer"];
         [info setObject:sel forKey:@"selector"];
+        [info setObject:[NSNumber numberWithBool:message.activeOnly]
+                 forKey:@"activeOnly"];
         [objects addObject:info];
     }
 }
 
-- (void) removeObserver: (id) object name: (NSString *) message {
-    NSMutableArray  *objects = [messagingList objectForKey:message];
+- (void) removeObserver: (id) object name: (CFEMessage) message {
+    NSMutableArray  *objects = [messagingList objectForKey:message.name];
     int             i = 0;
     
     if (objects == nil) return;
     for (i = 0 ; i < [objects count] ; i++) {
         NSDictionary    *info = [objects objectAtIndex:i];
         
-        if ([info objectForKey:@"observer"] == object) {
+        if ([info objectForKey:@"observer"] == object &&
+            [[info objectForKey:@"activeOnly"] boolValue] == message.activeOnly) {
             [objects removeObjectAtIndex:i];
         }
     }
@@ -345,19 +350,26 @@
     int         i = 0;
     
     for (i = 0 ; i < [messages count] ; i++) {
-        [self removeObserver:object name:[messages objectAtIndex:i]];
+        [self removeObserver:object name:(CFEMessage){[messages objectAtIndex:i], YES}];
     }
 }
 
-- (void) sendMessage: (NSString *) message withObject: (id) userInfo {
-    NSMutableArray  *objects = [messagingList objectForKey:message];
+- (void) sendMessage: (CFEMessage) message withObject: (id) userInfo {
+    NSMutableArray  *objects = [messagingList objectForKey:message.name];
     int             i = 0;
     
     if (objects == nil) return;
     
     for (i = 0 ; i < [objects count] ; i++) {
         NSMutableDictionary *info = [objects objectAtIndex:i];
+        id                  obj = [info objectForKey:@"observer"];
         NSInvocation        *sel = [info objectForKey:@"selector"];
+        BOOL                activeOnly = [[info objectForKey:@"activeOnly"]
+                                          boolValue];
+        
+        // Next object if not the current plugin or a CFE object.
+        if (activeOnly && [obj conformsToProtocol:@protocol(CarFrontEndProtocol)] &&
+            currentPlugin != obj) continue;
         
         [sel setArgument:&message atIndex:2];
         [sel setArgument:&userInfo atIndex:3];

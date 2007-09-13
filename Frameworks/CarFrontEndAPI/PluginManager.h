@@ -17,22 +17,23 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 #pragma mark Plugin message utility methods
 @protocol PluginMessaging
 
 // Register a method to respond to a given message.
 - (void) addObserver: (id) object selector: (SEL) selector
-                name: (NSString *) message;
+                name: (CFEMessage) message;
 
 // Unregister your method for a message.
-- (void) removeObserver: (id) object name: (NSString *) message;
+- (void) removeObserver: (id) object name: (CFEMessage) message;
 
 // Unregister the object for all messages it listens for.
 - (void) removeAllObserversFor: (id) object;
 
 // Send a message for other plugins or CFE to respond to.
-- (void) sendMessage: (NSString *) message withObject: (id) userInfo;
+- (void) sendMessage: (CFEMessage) message withObject: (id) userInfo;
 
 @end
 

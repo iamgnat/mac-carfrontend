@@ -436,6 +436,7 @@ float       defaultFontSize = 30;
     [image drawInRect:imageSize fromRect:NSZeroRect
             operation:NSCompositeSourceOver fraction:1.0];
     if (!userImage) {
+        NSLog(@"string: %@", string);
         [string drawAtPoint:stringOrigin withAttributes:attributes];
     } else {
         NSSize  size;
