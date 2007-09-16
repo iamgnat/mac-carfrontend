@@ -26,8 +26,8 @@ To respond to messages is slightly more difficult, but still rather simple. You 
 
 Your responder must accept two arguments. The first must be a _NSString_ for the message and the second should be the object type (or a plain _id_ is advised) you are expecting.
 {{{
-- (void) observePluginMessage: (NSString *) message with: (id) userInfo {
-    if ([message isEqualToString:SomePredefinedMessage]) {
+- (void) observePluginMessage: (CFEMessage) message with: (id) userInfo {
+    if (CFEMessagesEqual(SomePredefinedMessage, message)]) {
         if (userInfo != nil && [userInfo isKindOfClass:[NSString class]]) {
             NSLog(@"SomePredefinedMessage: %@", userInfo);
         } else {
@@ -40,7 +40,7 @@ Your responder must accept two arguments. The first must be a _NSString_ for the
 You register your responder using the _-addObserver:selector:name:_ method of the PluginManager. This method expects:
   # *id* - The object observing the message (normally _self_).
   # *SEL* - The selector of your responder method.
-  # *NSString* - The name of the message to respond to.
+  # *CFEMessage* - The message to respond to.
 {{{
 [owner addObserver:self
                       selector:@selector(observePluginMessage:with:)
@@ -52,21 +52,51 @@ We advise that also remove your responder from processing when your Plugin is no
 [owner removeObserver:self name:SomePredefinedMessage];
 }}}
   # *id* - The object that was responding to the message.
-  # *NSString* - The name of the message.
+  # *CFEMessage* - The name of the message.
 
 You may also remove all messages for your object at once with _-removeAllObserversFor:_ which takes the observing object as it's only argument.
 
 == CarFrontEnd Messages ==
 
 These are the messages that are built into CarFrontEnd.
-|| *Name* || *userInfo Type* || *Description* || *Notes* ||
-|| CFEMessageVolumeMute || N/A || Toggles the current mute setting. ||  ||
-|| CFEMessageVolumeSet || NSNumber || Set the volume level to the given value. || userInfo will be ignored if it is nil or the value is not between 0 and 100 ||
-|| CFEMessageVolumeChanged || NSNumber || Sent when the volume level is changed. || The userInfo value is the current volume level. This only occurs if the volume is changed by CarFrontEnd. ||
-|| CFEMessageMenuShowView || N/A || Causes the Menu content to be displayed. ||  ||
-|| CFEMessageMenuHideApp || N/A || Causes CarFrontEnd to be hidden. ||  ||
-|| CFEMessageMenuQuitApp || N/A || Causes CarFrontEnd to exit. ||  ||
-|| CFEMessageMenuSwapSide || NSString || Causes CarFrontEnd to swap the driver side display. || userInfo may be nil or a NSString that equals "left" or "right". If the object is nil or does not equal one of those vaules, it will swap the driver side based on the current setting. ||
-|| CFEMessageMenuSideSwapped || NSString || Sent when the driver's side is changed. || The userInfo will be "left" or "right" depending on the new driver side. ||
+|| *Name* || *userInfo Type* || *activeOnly* || *Description* || *Notes* ||
+|| CFEMessageVolumeMute || N/A || YES || Toggles the current mute setting. ||  ||
+|| CFEMessageVolumeSet || NSNumber || YES || Set the volume level to the given value. || userInfo will be ignored if it is nil or the value is not between 0 and 100 ||
+|| CFEMessageVolumeChanged || NSNumber || YES || Sent when the volume level is changed. || The userInfo value is the current volume level. This only occurs if the volume is changed by CarFrontEnd. ||
+|| CFEMessageMenuShowView || N/A || YES || Causes the Menu content to be displayed. ||  ||
+|| CFEMessageMenuHideApp || N/A || YES || Causes CarFrontEnd to be hidden. ||  ||
+|| CFEMessageMenuQuitApp || N/A || YES || Causes CarFrontEnd to exit. ||  ||
+|| CFEMessageMenuSwapSide || NSString || YES || Causes CarFrontEnd to swap the driver side display. || userInfo may be nil or a NSString that equals "left" or "right". If the object is nil or does not equal one of those vaules, it will swap the driver side based on the current setting. ||
+|| CFEMessageMenuSideSwapped || NSString || YES || Sent when the driver's side is changed. || The userInfo will be "left" or "right" depending on the new driver side. ||
 
 Additional messages will be added over time (and should be added above), but you are free to listen for and send your own custom messages.
+
+=== CFEMessage & Helper Functions ===
+{{{
+typedef struct cfe_message_struct {
+    NSString    *name;      // The name of the message
+    BOOL        activeOnly; // Determines if the message should be sent only
+                            //  to the active plugin, or all plugins.
+                            //  CFE application objects will always get the
+                            //  the messages that tey observe.
+} CFEMessage;
+}}}
+
+{{{
+CFEMessage CFECreateMessage(NSString *name, BOOL activeOnly)
+}}}
+This function will return a new _CFEMessage_ for you.
+  * *name* - The textual name of your message.
+  * *activeOnly* - YES = The message is only sent to the active plugin. NO = It is sent to all plugins.
+
+{{{
+void CFEDestroyMessage(CFEMessage message)
+}}}
+Does the proper cleanup on the given message.
+
+{{{
+BOOL CFEMessagesEqual(CFEMessage message1, CFEMessage2)
+}}}
+Tests to see if the name value of the message are equal.
+ 
+ 
