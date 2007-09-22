@@ -1,0 +1,18 @@
+2007-09-21 - 1.0a7 - gnat
+    Added PluginManager Protocols so the plugins can utilize the PluginManager
+        to communicate with each other and CFE.
+    Updated CarFrontEndProtocol to add the -initWithPluginManager: method.
+    Added definitions for built in CFEMessages.
+    Added definition of CFEMessage structure and helper functions.
+2007-09-05 - 1.0a6 - gnat
+    Fixed the button images so they don't have vertical lines anymore.
+    Added support for changing the font and font size being used by
+        CarFrontEndButton.
+    Added NSNotification support to change the string color for
+        CarFrontEndButton.
+
+2007-08-08 - 1.0a1 - gnat
+    Force CarFrontEndButton to use NSMomentaryChange button type.
+
+2007-07-18 - 1.0 - gnat
+    Initial release
