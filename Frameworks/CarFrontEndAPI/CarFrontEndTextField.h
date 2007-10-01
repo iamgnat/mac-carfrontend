@@ -26,6 +26,11 @@
     NSColor         *backgroundColor;
     int             currPos;
     BOOL            inInit;
+    
+    // Configuration options
+    BOOL            scrolling;
+    BOOL            scrollOnlyInFrame;
+    BOOL            endWithEllipsis;
 }
 
 #pragma mark NSCoding methods
@@ -47,6 +52,12 @@
 - (void) setFontName: (NSString *) name;
 - (float) fontSize;
 - (void) setFontSize: (float) size;
+- (BOOL) scrolling;
+- (void) setScrolling: (BOOL) value;
+- (BOOL) scrollOnlyInFrame;
+- (void) setScrollOnlyInFrame: (BOOL) value;
+- (BOOL) endWithEllipsis;
+- (void) setEndWithEllipsis: (BOOL) value;
 
 #pragma mark CarFrontEndTextField class methods
 + (NSColor *) defaultForegroundColor;
