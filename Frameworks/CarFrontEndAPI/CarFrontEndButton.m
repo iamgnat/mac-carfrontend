@@ -20,9 +20,9 @@
 #import "NSImageUtils.h"
 #import "CarFrontEndAPI.h"
 
-NSColor     *defaultStringColor = nil;
-NSString    *defaultFontName = nil;
-float       defaultFontSize = 30;
+static NSColor  *defaultStringColor = nil;
+static NSString *defaultFontName = nil;
+static float    defaultFontSize = 30.0;
 
 #pragma mark private declarations
 @interface CarFrontEndButton (private)
@@ -436,7 +436,6 @@ float       defaultFontSize = 30;
     [image drawInRect:imageSize fromRect:NSZeroRect
             operation:NSCompositeSourceOver fraction:1.0];
     if (!userImage) {
-        NSLog(@"string: %@", string);
         [string drawAtPoint:stringOrigin withAttributes:attributes];
     } else {
         NSSize  size;

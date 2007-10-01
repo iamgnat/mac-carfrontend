@@ -18,10 +18,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-extern NSColor     *defaultStringColor;
-extern NSString    *defaultFontName;
-extern float               defaultFontSize;
-
 @interface CarFrontEndButton : NSButton <NSCoding> {
     NSImage     *image;
     NSImage     *altImage;
