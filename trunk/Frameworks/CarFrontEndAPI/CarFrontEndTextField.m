@@ -208,6 +208,30 @@ static float            defaultFontSize = 27.0;
     [self updateStringValue];
 }
 
+- (BOOL) scrolling {
+    return(scrolling);
+}
+
+- (void) setScrolling: (BOOL) value {
+    scrolling = value;
+}
+
+- (BOOL) scrollOnlyInFrame {
+    return(scrollOnlyInFrame);
+}
+
+- (void) setScrollOnlyInFrame: (BOOL) value {
+    scrollOnlyInFrame = value;
+}
+
+- (BOOL) endWithEllipsis {
+    return(endWithEllipsis);
+}
+
+- (void) setEndWithEllipsis: (BOOL) value {
+    endWithEllipsis = value;
+}
+
 #pragma mark CarFrontEndTextField class methods
 + (NSColor *) defaultForegroundColor {
     if (defaultForegroundColor == nil) {
