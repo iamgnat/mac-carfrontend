@@ -33,9 +33,9 @@
 				<key>albumArtImage</key>
 				<string>NSImageView</string>
 				<key>albumNameField</key>
-				<string>NSTextField</string>
+				<string>CarFrontEndTextField</string>
 				<key>artistNameField</key>
-				<string>NSTextField</string>
+				<string>CarFrontEndTextField</string>
 				<key>currentTrackTimeField</key>
 				<string>NSTextField</string>
 				<key>ejectMediaButton</key>
@@ -63,7 +63,7 @@
 				<key>sourceList</key>
 				<string>NSArrayController</string>
 				<key>trackNameField</key>
-				<string>NSTextField</string>
+				<string>CarFrontEndTextField</string>
 				<key>trackTimeField</key>
 				<string>NSTextField</string>
 				<key>trackTimeIndicator</key>

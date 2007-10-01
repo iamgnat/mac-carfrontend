@@ -33,9 +33,9 @@
     IBOutlet CarFrontEndButton      *ejectMediaButton;
     
     IBOutlet NSImageView            *albumArtImage;
-    IBOutlet NSTextField            *artistNameField;
-    IBOutlet NSTextField            *albumNameField;
-    IBOutlet NSTextField            *trackNameField;
+    IBOutlet CarFrontEndTextField   *artistNameField;
+    IBOutlet CarFrontEndTextField   *albumNameField;
+    IBOutlet CarFrontEndTextField   *trackNameField;
     
     IBOutlet NSLevelIndicator       *trackTimeIndicator;
     IBOutlet NSTextField            *currentTrackTimeField;
