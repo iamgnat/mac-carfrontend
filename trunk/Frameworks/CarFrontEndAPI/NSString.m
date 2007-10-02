@@ -50,7 +50,7 @@
         strSize = [string sizeWithAttributes:attributes];
     }
     
-    if (length <= 0) {
+    if (length < 0) {
         [NSException raise:@"CTFNSStringException"
                     format:@"No portion of the string can fit in the given size with the supplied attributes."];
     }
