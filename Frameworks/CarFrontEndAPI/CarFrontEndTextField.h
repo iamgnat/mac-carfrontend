@@ -19,29 +19,33 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CarFrontEndTextField : NSTextField {
-    NSString        *fullTitle;
-    NSString        *fontName;
-    float           fontSize;
-    NSColor         *foregroundColor;
-    NSColor         *backgroundColor;
-    int             currPos;
-    BOOL            inInit;
+    NSString            *fullTitle;
+    NSString            *fontName;
+    float               fontSize;
+    NSColor             *foregroundColor;
+    NSColor             *backgroundColor;
+    int                 currPos;
+    BOOL                inInit;
     
     // Configuration options
-    BOOL            scrolling;
-    BOOL            scrollOnlyInFrame;
-    BOOL            endWithEllipsis;
+    BOOL                scrolling;
+    BOOL                scrollOnlyInFrame;
+    BOOL                endWithEllipsis;
+    
+    NSTrackingRectTag   _trackingFrame;
+
 }
 
 #pragma mark NSCoding methods
 - (id) initWithCoder: (NSCoder *) coder;
 - (void) encodeWithCoder: (NSCoder *) coder;
 
-#pragma mark NSButton override methods
+#pragma mark NSTextField override methods
 - (void) setAttributedString: (NSAttributedString *) value;
 - (NSAttributedString *) attributedString;
 - (void) setStringValue: (NSString *) value;
 - (NSString *) stringValue;
+- (void) setEditable: (BOOL) flag;
 
 #pragma mark CarFrontEndTextField methods
 - (NSColor *) foregroundColor;

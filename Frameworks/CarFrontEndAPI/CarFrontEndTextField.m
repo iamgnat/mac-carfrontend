@@ -21,12 +21,12 @@
 #import "CarFrontEndAPI.h"
 
 #define SCROLL_TIMER_INTERVAL   0.2
-static NSTimer          *ScrollTimer = nil;
-static NSMutableArray   *ScrollTimerEvents = nil;
-static NSColor          *defaultForegroundColor = nil;
-static NSColor          *defaultBackgroundColor = nil;
-static NSString         *defaultFontName = nil;
-static float            defaultFontSize = 27.0;
+static NSTimer                  *ScrollTimer = nil;
+static NSMutableArray           *ScrollTimerEvents = nil;
+static NSColor                  *defaultForegroundColor = nil;
+static NSColor                  *defaultBackgroundColor = nil;
+static NSString                 *defaultFontName = nil;
+static float                    defaultFontSize = 27.0;
 
 #pragma mark private declarations
 @interface CarFrontEndTextField (private)
@@ -36,21 +36,27 @@ static float            defaultFontSize = 27.0;
 - (void) addToScrollTimerWithDelay: (float) delay;
 - (void) removeScrollTimer;
 - (void) handleNotifications: (NSNotification *) note;
+- (void) mouseEntered: (NSEvent *) event;
+- (void) mouseExited: (NSEvent *) event;
 
 @end
 
 @implementation CarFrontEndTextField
 
-- (id) init {
-    self = [super init];
+- (id) initWithFrame: (NSRect) frameRect {
+    self = [super initWithFrame:frameRect];
     
     inInit = YES;
     currPos = 0;
+    _trackingFrame = -1;
     [self setForegroundColor:[CarFrontEndTextField defaultForegroundColor]];
     [self setBackgroundColor:[CarFrontEndTextField defaultBackgroundColor]];
     [self setFontName:[CarFrontEndTextField defaultFontName]];
     [self setFontSize:[CarFrontEndTextField defaultFontSize]];
     [self setStringValue:[NSString string]];
+    [self setScrolling:YES];
+    [self setScrollOnlyInFrame:NO];
+    [self setEndWithEllipsis:NO];
     
     NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(handleNotifications:)
@@ -73,6 +79,7 @@ static float            defaultFontSize = 27.0;
     if (self = [super initWithCoder:coder]) {
         inInit = YES;
         currPos = 0;
+        _trackingFrame = -1;
         [self setStringValue:[super stringValue]];
         
         fontName = [[coder decodeObjectForKey:@"CFETextFieldFontName"] retain];
@@ -82,6 +89,12 @@ static float            defaultFontSize = 27.0;
                            retain];
         NSNumber    *size = [[coder decodeObjectForKey:@"CFETextFieldFontSize"]
                              retain];
+        NSNumber    *scrollingNum = [[coder decodeObjectForKey:@"CFETextFieldScrolling"]
+                                        retain];
+        NSNumber    *scrollOnlyInFrameNum = [[coder decodeObjectForKey:@"CFETextFieldScrollOnlyInFrame"]
+                                                retain];
+        NSNumber    *endWithEllipsisNum = [[coder decodeObjectForKey:@"CFETextFieldEndWithEllipsis"]
+                                            retain];
         
         if (fontName == nil) {
             [self setFontName:[CarFrontEndTextField defaultFontName]];
@@ -96,6 +109,21 @@ static float            defaultFontSize = 27.0;
             [self setFontSize:[CarFrontEndTextField defaultFontSize]];
         } else {
             [self setFontSize:[size floatValue]];
+        }
+        if (scrollingNum == nil) {
+            [self setScrolling:YES];
+        } else {
+            [self setScrolling:[scrollingNum boolValue]];
+        }
+        if (scrollOnlyInFrameNum == nil) {
+            [self setScrollOnlyInFrame:NO];
+        } else {
+            [self setScrollOnlyInFrame:[scrollOnlyInFrameNum boolValue]];
+        }
+        if (endWithEllipsisNum == nil) {
+            [self setEndWithEllipsis:NO];
+        } else {
+            [self setEndWithEllipsis:[endWithEllipsisNum boolValue]];
         }
         
         NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
@@ -118,10 +146,16 @@ static float            defaultFontSize = 27.0;
     [coder encodeObject:backgroundColor forKey:@"CFETextFieldBackgroundColor"];
     [coder encodeObject:[NSNumber numberWithFloat:fontSize]
                  forKey:@"CFETextFieldFontSize"];
+    [coder encodeObject:[NSNumber numberWithBool:scrolling]
+                 forKey:@"CFETextFieldScrolling"];
+    [coder encodeObject:[NSNumber numberWithBool:scrollOnlyInFrame]
+                 forKey:@"CFETextFieldScrollOnlyInFrame"];
+    [coder encodeObject:[NSNumber numberWithBool:endWithEllipsis]
+                 forKey:@"CFETextFieldEndWithEllipsis"];
 }
 
 
-#pragma mark NSButton override methods
+#pragma mark NSTextField override methods
 - (void) dealloc {
     NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
     [nc removeObserver:self];
@@ -152,6 +186,7 @@ static float            defaultFontSize = 27.0;
 }
 
 - (void) setStringValue: (NSString *) value {
+    [self removeScrollTimer];
     if ([super isEditable]) {
         [super setStringValue:value];
     } else {
@@ -167,6 +202,14 @@ static float            defaultFontSize = 27.0;
         return([super stringValue]);
     } else {
         return(fullTitle);
+    }
+}
+
+- (void) setEditable: (BOOL) flag {
+    [super setEditable:flag];
+    if (flag) {
+        // Don't scroll if it is editable.
+        [self setScrolling:NO];
     }
 }
 
@@ -214,6 +257,9 @@ static float            defaultFontSize = 27.0;
 
 - (void) setScrolling: (BOOL) value {
     scrolling = value;
+    if (!value) {
+        [self removeScrollTimer];
+    }
 }
 
 - (BOOL) scrollOnlyInFrame {
@@ -222,6 +268,20 @@ static float            defaultFontSize = 27.0;
 
 - (void) setScrollOnlyInFrame: (BOOL) value {
     scrollOnlyInFrame = value;
+    if (!value) {
+        if (_trackingFrame != -1) {
+            [self removeTrackingRect:_trackingFrame];
+            _trackingFrame = -1;
+        }
+    } else if ([[self window] isVisible] && _trackingFrame == -1) {
+        // Find where our mouse is and if it is already in our frame.
+        NSPoint     point = [NSEvent mouseLocation];
+        BOOL        inside = [self mouse:point inRect:[self frame]];
+        
+        [[self window] setAcceptsMouseMovedEvents:YES];
+        _trackingFrame = [self addTrackingRect:[self frame] owner:self
+                                      userData:NULL assumeInside:inside];
+    }
 }
 
 - (BOOL) endWithEllipsis {
@@ -230,6 +290,11 @@ static float            defaultFontSize = 27.0;
 
 - (void) setEndWithEllipsis: (BOOL) value {
     endWithEllipsis = value;
+    if (value) {
+        // We only end with ellipsis if we are not scrolling.
+        [self setScrolling:NO];
+        [self setScrollOnlyInFrame:NO];
+    }
 }
 
 #pragma mark CarFrontEndTextField class methods
@@ -283,7 +348,7 @@ static float            defaultFontSize = 27.0;
 @implementation CarFrontEndTextField (private)
 
 - (void) updateStringValue {
-    if ([super isEditable]) return;
+    if (![self scrolling]) return;
     if (inInit) return;
     
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
@@ -296,29 +361,22 @@ static float            defaultFontSize = 27.0;
     NSSize      size = [self frame].size;
     
     size.width -= 5;
-    
-    if (currPos == 0) {
-        string = [fullTitle stringForSize:size
-                           withAttributes:attrs
-                                     from:currPos];
-    } else {
-        string = [fullTitle stringForSize:size
-                           withAttributes:attrs
-                                     from:currPos];
-        if ([fullTitle hasSuffix:string]) {
-            currPos = -1;
-        }
+    string = [fullTitle stringForSize:size
+                       withAttributes:attrs
+                                 from:currPos];
+    if ([string length] == 0) {
+        currPos = -1;
     }
-    
     currPos++;
+    
     [super setAttributedStringValue:[[[NSAttributedString alloc]
                                       initWithString:string attributes:attrs]
                                      autorelease]];
     if (![string isEqualToString:fullTitle]) {
         float   timeInt = 0.5;
         
-        if (currPos < 2) {
-            // Pause at the begining or end of the string.
+        if (currPos == 1) {
+            // Pause at the begining of the string.
             timeInt = 1.5;
         }
         [self addToScrollTimerWithDelay:timeInt];
@@ -354,6 +412,19 @@ static float            defaultFontSize = 27.0;
             continue;
         }
         
+        if ([inst scrollOnlyInFrame]) {
+            // Scrolling in frame, but the mouse isn't in frame.
+            if (![self mouse:[NSEvent mouseLocation] inRect:[self frame]]) {
+                [inst removeScrollTimer];
+                continue;
+            }
+        }
+        
+        if (![inst scrolling]) {
+            [inst removeScrollTimer];
+            continue;
+        }
+        
         if (time > SCROLL_TIMER_INTERVAL) {
             // Not time to fire yet.
             [info setObject:[NSNumber numberWithFloat:time]
@@ -368,7 +439,8 @@ static float            defaultFontSize = 27.0;
 }
 
 - (void) addToScrollTimerWithDelay: (float) delay {
-    if ([self window] == nil || ![[self window] isVisible]) return;
+    if ([self window] == nil || ![[self window] isVisible] ||
+        ![self scrolling]) return;
     
     NSNumber            *num = [NSNumber numberWithFloat:delay];
     NSMutableDictionary *info = [NSMutableDictionary dictionary];
@@ -433,10 +505,45 @@ static float            defaultFontSize = 27.0;
 - (void) viewDidMoveToWindow {
     if ([self window] != nil) {
         currPos = 0;
+        if (scrollOnlyInFrame) {
+            // Find where our mouse is and if it is already in our frame.
+            NSPoint     point = [NSEvent mouseLocation];
+            BOOL        inside = [self mouse:point inRect:[self frame]];
+            
+            // Make sure the window supports mouse tracking.
+            //NSLog(@"accepting mouse moved events");
+            [[self window] setAcceptsMouseMovedEvents:YES];
+            
+            if (_trackingFrame == -1) {
+                _trackingFrame = [self addTrackingRect:[self frame] owner:self
+                                              userData:NULL assumeInside:inside];
+            }
+        }
         [self updateStringValue];
     } else {
-        [self removeScrollTimer];
+        [self mouseExited:nil]; // Why dupe code..
+        
+        // No more mouse monitoring.
+        if (_trackingFrame != -1) {
+            [self removeTrackingRect:_trackingFrame];
+            _trackingFrame = -1;
+        }
     }
+}
+
+// Handle the mouse moving in and out of the frame.
+- (void) mouseEntered: (NSEvent *) event {
+    NSLog(@"mouseEntered");
+    [self setScrolling:YES];
+    [self updateStringValue];
+}
+
+- (void) mouseExited: (NSEvent *) event {
+    NSLog(@"mouseExited");
+    // Force it to go back to the begining first.
+    currPos = 0;
+    [self updateStringValue];
+    if ([self scrollOnlyInFrame]) [self setScrolling:NO];
 }
 
 @end
