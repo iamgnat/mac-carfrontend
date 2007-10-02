@@ -193,6 +193,12 @@ static iTunesViewController *sharedITVC = nil;
     [super dealloc];
 }
 
+- (void) awakeFromNib {
+    [artistNameField setScrollOnlyInFrame:YES];
+    [albumNameField setScrollOnlyInFrame:YES];
+    [trackNameField setScrollOnlyInFrame:YES];
+}
+
 #pragma mark CarFrontEndProtocol methods
 - (NSString *) name {
     return(@"iTunesMusicPlayer");
