@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E2220F80CADE2CB009DD914 /* CarFrontEndTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E2220F60CADE2CB009DD914 /* CarFrontEndTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E2220F90CADE2CB009DD914 /* CarFrontEndTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2220F70CADE2CB009DD914 /* CarFrontEndTextField.m */; };
-		2E2221050CAE022D009DD914 /* NSString.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E2221030CAE022D009DD914 /* NSString.h */; };
-		2E2221060CAE022D009DD914 /* NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2221040CAE022D009DD914 /* NSString.m */; };
 		2E2372250C7FF067009718B7 /* CarFrontEndAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */; };
 		2E23738B0C921D69009718B7 /* PluginManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E23738A0C921D69009718B7 /* PluginManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EA4AF4D0C3F07D1009A861F /* NSImageUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,10 +41,6 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		2E2220F60CADE2CB009DD914 /* CarFrontEndTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarFrontEndTextField.h; sourceTree = "<group>"; };
-		2E2220F70CADE2CB009DD914 /* CarFrontEndTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarFrontEndTextField.m; sourceTree = "<group>"; };
-		2E2221030CAE022D009DD914 /* NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString.h; sourceTree = "<group>"; };
-		2E2221040CAE022D009DD914 /* NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString.m; sourceTree = "<group>"; };
 		2E2372240C7FF067009718B7 /* CarFrontEndAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarFrontEndAPI.m; sourceTree = "<group>"; };
 		2E23738A0C921D69009718B7 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSImageUtils.h; sourceTree = "<group>"; };
@@ -151,14 +143,10 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2E2221030CAE022D009DD914 /* NSString.h */,
-				2E2221040CAE022D009DD914 /* NSString.m */,
 				2EBBEEB80C31ECF900690505 /* CarFrontEndButton.h */,
 				2EBBEEB90C31ECF900690505 /* CarFrontEndButton.m */,
 				2EA4AF4B0C3F07D1009A861F /* NSImageUtils.h */,
 				2EA4AF4C0C3F07D1009A861F /* NSImageUtils.m */,
-				2E2220F60CADE2CB009DD914 /* CarFrontEndTextField.h */,
-				2E2220F70CADE2CB009DD914 /* CarFrontEndTextField.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -204,8 +192,6 @@
 				2EBBEEBA0C31ECF900690505 /* CarFrontEndButton.h in Headers */,
 				2EA4AF4D0C3F07D1009A861F /* NSImageUtils.h in Headers */,
 				2E23738B0C921D69009718B7 /* PluginManager.h in Headers */,
-				2E2220F80CADE2CB009DD914 /* CarFrontEndTextField.h in Headers */,
-				2E2221050CAE022D009DD914 /* NSString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +271,6 @@
 				2EBBEEBB0C31ECF900690505 /* CarFrontEndButton.m in Sources */,
 				2EA4AF4E0C3F07D1009A861F /* NSImageUtils.m in Sources */,
 				2E2372250C7FF067009718B7 /* CarFrontEndAPI.m in Sources */,
-				2E2220F90CADE2CB009DD914 /* CarFrontEndTextField.m in Sources */,
-				2E2221060CAE022D009DD914 /* NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
