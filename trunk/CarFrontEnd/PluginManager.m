@@ -22,12 +22,18 @@
 #import "AudioVolumeManager.h"
 #import "SystemManager.h"
 
+static PluginManager    *sharedPM = nil;
+
 @implementation PluginManager
 
 - (id) init {
+    if (sharedPM != nil) return(sharedPM);
+    
     [super init];
+    sharedPM = [self retain];
     
     messagingList = [[NSMutableDictionary alloc] init];
+    keyBindingList = [[NSMutableDictionary alloc] init];
     
     // Setup the plugin paths
     pluginList = [[NSMutableDictionary alloc] init];
@@ -114,6 +120,15 @@
     [NSTimer scheduledTimerWithTimeInterval:0.50 target:self
                                    selector:@selector(updateQuickSlots:)
                                    userInfo:nil repeats:YES];
+    
+    // Setup the key bindings
+    [self addKeyBinding:self selector:@selector(keyDown:options:)
+                    key:'1' options:NSCommandKeyMask];
+    [self addKeyBinding:self selector:@selector(keyDown:options:)
+                    key:'2' options:NSCommandKeyMask];
+    [self addKeyBinding:self selector:@selector(keyDown:options:)
+                    key:'3' options:NSCommandKeyMask];
+    
 }
 
 #pragma mark Actions
@@ -169,16 +184,7 @@
         }
     } else {
         int     tag = [sender tag];
-        if (tag < 0 || tag >= [orderedPluginList count]) return;
-        
-        id      plugin = [orderedPluginList objectAtIndex:tag];
-        if (plugin == currentPlugin) return;
-        
-        // changeContentView will have been called by the time
-        //  replaceContentWith: returns.
-        NSView  *view = [plugin contentViewForSize:[controller contentViewFrame].size];
-        [controller replaceContentWith:view];
-        currentPlugin = [plugin retain];
+        [self displayPluginByTag:tag];
     }
 }
 
@@ -277,6 +283,10 @@
                                                 target:self
                                                 andSelector:@selector(buttonAction:)]
              setTag:[orderedPluginList count] - 1];
+            [self addKeyBinding:self selector:@selector(keyDown:options:)
+                            key:[orderedPluginList count] - 1 + 32
+                        options:NSCommandKeyMask|NSShiftKeyMask];
+
         }
     }
 }
@@ -289,6 +299,19 @@
     currentPlugin = nil;
 }
 
+- (void) displayPluginByTag: (int) tag {
+    if (tag < 0 || tag >= [orderedPluginList count]) return;
+    
+    id      plugin = [orderedPluginList objectAtIndex:tag];
+    if (plugin == currentPlugin) return;
+    
+    // changeContentView will have been called by the time
+    //  replaceContentWith: returns.
+    NSView  *view = [plugin contentViewForSize:[controller contentViewFrame].size];
+    [controller replaceContentWith:view];
+    currentPlugin = [plugin retain];
+}
+
 #pragma mark Plugin message utility methods
 
 - (void) addObserver: (id) object selector: (SEL) selector
@@ -297,8 +320,8 @@
     NSMethodSignature   *sig = [[object class]
                                 instanceMethodSignatureForSelector:selector];
     NSInvocation        *sel = [NSInvocation invocationWithMethodSignature:sig];
-    BOOL            found = NO;
-    int             i = 0;
+    BOOL                found = NO;
+    int                 i = 0;
     
     [sel setTarget:object];
     [sel setSelector:selector];
@@ -465,6 +488,178 @@
     [prefs setObject:pluginPrefs forKey:name];
     
     return([controller setPreferences:pluginPrefs forKey:@"PluginManager"]);
+}
+
+#pragma mark Key Binding methods
+- (void) keyDown: (NSEvent *) event {
+    if ([event type] != NSKeyDown) return;
+    
+    unsigned short  key = [[event charactersIgnoringModifiers] characterAtIndex:0];
+    int             options = [event modifierFlags];
+    NSString        *keyStr = [NSString stringWithFormat:@"%@%i",
+                                [self keyOptionsToString:options], key];
+    id              obj = [keyBindingList objectForKey:keyStr];
+    
+#ifdef CFE_DEBUG
+    NSLog(@"Processing %@", keyStr);
+#endif
+    
+    if (obj == nil) return; // Key bound, but not with modifiers.
+
+    if ([obj class] != [[NSMutableDictionary dictionary] class]) {
+        NSDictionary    *temp = nil;
+        int i = 0;
+        
+        for (i = 0 ; i < [obj count] ; i++) {
+            if (currentPlugin == [[obj objectAtIndex:i] objectForKey:@"observer"]) {
+                temp = [obj objectAtIndex:i];
+            }
+        }
+        if (temp == nil) return; // Current plugin not watching for the key.
+        obj = temp;
+    }
+    
+    // Call the selector
+    NSInvocation    *sel = [obj objectForKey:@"selector"];
+    
+    [sel setArgument:&key atIndex:2];
+    [sel setArgument:&options atIndex:3];
+    [sel invoke];
+}
+
+- (void) addKeyBinding: (id) object selector: (SEL) selector
+                 key: (unsigned short) key options: (unsigned int) options {
+    NSString            *keyStr = [NSString stringWithFormat:@"%@%i",
+                                    [self keyOptionsToString:options], key];
+    id                  objects = [keyBindingList objectForKey:keyStr];
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    NSMethodSignature   *sig = [[object class]
+                                instanceMethodSignatureForSelector:selector];
+    NSInvocation        *sel = [NSInvocation invocationWithMethodSignature:sig];
+    
+    [sel setTarget:object];
+    [sel setSelector:selector];
+    [info setObject:object forKey:@"observer"];
+    [info setObject:sel forKey:@"selector"];
+    
+    if (object == controller || object == systemManager ||
+        object == audioVolumeManager || object == self) {
+        if (objects == nil) {
+            [keyBindingList setObject:info forKey:keyStr];
+        } else if ([objects class] == [[NSMutableDictionary dictionary] class] &&
+                   [objects objectForKey:@"observer"] != object) {
+            NSLog(@"PluginManager: %@: %@ is already in use!", [object class],
+                  keyStr);
+        } else {
+            NSLog(@"PluginManager: %@ being overridden by CarFrontEnd!", keyStr);
+            [keyBindingList setObject:info forKey:keyStr];
+        }
+    } else {
+        if ([objects class] == [[NSMutableDictionary dictionary] class]) {
+            NSLog(@"PluginManager: %@: %@ is already in use by CarFrontEnd!",
+                  [object class], keyStr);
+        } else {
+            int     i = 0;
+            BOOL    found = NO;
+            
+            if (objects == nil) {
+                objects = [NSMutableArray array];
+                [keyBindingList setObject:objects forKey:keyStr];
+            }
+            
+            for (i = 0 ; i < [objects count] ; i++) {
+                if ([[objects objectAtIndex:i] objectForKey:@"observer"] == object) {
+                    found = YES;
+                    break;
+                }
+            }
+            
+            if (!found) [objects addObject:info];
+        }
+    }
+    
+#ifdef CFE_DEBUG
+    NSLog(@"Bound %@", keyStr);
+#endif
+}
+
+- (void) removeKeyBinding: (id) object forKey: (unsigned short) key
+                  options: (unsigned int) options {
+    NSString    *keyStr = [NSString stringWithFormat:@"%@%i",
+                                    [self keyOptionsToString:options], key];
+    id          objects = [keyBindingList objectForKey:keyStr];
+    
+    if (objects == nil) return;
+    
+    if ([objects class] == [[NSMutableDictionary dictionary] class] &&
+        [objects objectForKey:@"observer"] == object) {
+        [keyBindingList removeObjectForKey:keyStr];
+    } else {
+        int     i = 0;
+        for (i = 0 ; i < [objects count] ; i++) {
+            NSDictionary    *info = [objects objectAtIndex:i];
+            
+            if ([info objectForKey:@"observer"] == object) {
+                [objects removeObjectAtIndex:i];
+            }
+        }
+    }
+}
+
+- (void) removeAllKeyBindingsFor: (id) object {
+    NSArray     *keyBindings = [keyBindingList allKeys];
+    int         i = 0;
+    
+    // Loop through all the bound keys.
+    for (i = 0 ; i < [keyBindings count] ; i++) {
+        NSArray *opts = [[keyBindingList
+                            objectForKey:[keyBindings objectAtIndex:i]]
+                            allKeys];
+        int     c = 0;
+        
+        // Loop through all the options for the given key.
+        for (c = 0 ; c < [opts count] ; c++) {
+            [self removeKeyBinding:object
+                            forKey:[[keyBindings objectAtIndex:i]
+                                        characterAtIndex:0]
+                           options:[[opts objectAtIndex:c] intValue]];
+        }
+    }
+}
+
+// See NSEvent class reference for modifier flags.
+//  NB: Not supporting the NSDeviceIndependentModifierFlagsMask flag.
+- (NSString *) keyOptionsToString: (unsigned int) options {
+    NSMutableString *str = [NSMutableString string];
+    
+    if (options & NSAlphaShiftKeyMask) [str appendString:@"Caps + "];
+    if (options & NSShiftKeyMask) [str appendString:@"Shift + "];
+    if (options & NSControlKeyMask) [str appendString:@"Ctrl + "];
+    if (options & NSAlternateKeyMask) [str appendString:@"Opt + "];
+    if (options & NSCommandKeyMask) [str appendString:@"Cmd + "];
+    if (options & NSNumericPadKeyMask) [str appendString:@"Num + "];
+    if (options & NSHelpKeyMask) [str appendString:@"Help + "];
+    if (options & NSFunctionKeyMask) [str appendString:@"Func + "];
+    
+    return([[str copyWithZone:NULL] autorelease]);
+}
+
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options {
+    if (options & NSCommandKeyMask && options & NSShiftKeyMask) {
+        // Cmd + Shift + ... = Load plugin based on tag + 32
+        int tag = key - 32;
+        [self displayPluginByTag:tag];
+    } else if (key == '1' && options & NSCommandKeyMask) {
+        // Cmd + 1 = Load Quick Slot 1.
+        [self displayPluginByTag:[pluginButton1 tag]];
+    } else if (key == '2' && options & NSCommandKeyMask) {
+        // Cmd + 2 = Load Quick Slot 2
+        [self displayPluginByTag:[pluginButton2 tag]];
+    } else if (key == '3' && options & NSCommandKeyMask) {
+        // Cmd + 3 = Load Quick Slot 3
+        [self displayPluginByTag:[pluginButton3 tag]];
+    }
 }
 
 @end

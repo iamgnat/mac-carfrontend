@@ -86,7 +86,7 @@
 - (IBAction) playPause: (id) sender;
 - (IBAction) nextTrack: (id) sender;
 - (IBAction) changeMixMode: (id) sender;
-- (IBAction) changRepeatMode: (id) sender;
+- (IBAction) changeRepeatMode: (id) sender;
 
 #pragma mark AppleScript Utilities
 - (NSAppleEventDescriptor *) runWithSource: (id) source
@@ -99,5 +99,8 @@
 
 #pragma mark Playlist management
 - (void) updateSourceList:(id) note;
+
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options;
 
 @end

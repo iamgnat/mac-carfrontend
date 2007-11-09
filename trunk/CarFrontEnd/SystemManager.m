@@ -19,6 +19,7 @@
 #import "SystemManager.h"
 #import "MainViewController.h"
 #import "PluginManager.h"
+#import <CarFrontEndAPI/PluginManager.h>
 
 @implementation SystemManager
 
@@ -42,6 +43,17 @@
                           name:CFEMessageMenuSwapSide];
     [pluginManager addObserver:self selector:@selector(observePluginMessage:with:)
                           name:CFEMessageMenuSideSwapped];
+    
+    // Setup the key bindings
+    [pluginManager addKeyBinding:self selector:@selector(keyDown:options:)
+                             key:'m' options:NSCommandKeyMask];
+    [pluginManager addKeyBinding:self selector:@selector(keyDown:options:)
+                             key:'h' options:NSCommandKeyMask];
+    [pluginManager addKeyBinding:self selector:@selector(keyDown:options:)
+                             key:'q' options:NSCommandKeyMask];
+    [pluginManager addKeyBinding:self selector:@selector(keyDown:options:)
+                             key:'d' options:NSCommandKeyMask];
+    
 }
 
 #pragma mark Actions
@@ -119,6 +131,23 @@
             [el setFrame:frame];
         }
         [systemView setNeedsDisplay:YES];
+    }
+}
+
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options {
+    if (key == 'm' && options & NSCommandKeyMask) {
+        // Cmd + m = display the Menu screen.
+        [self showSystemView:nil];
+    } else if (key == 'h' && options & NSCommandKeyMask) {
+        // Cmd + h = Hide CarFrontEnd
+        [self hide:nil];
+    } else if (key == 'q' && options & NSCommandKeyMask) {
+        // Cmd + q = Quit
+        [[NSApplication sharedApplication] terminate:nil];
+    } else if (key == 'd' && options & NSCommandKeyMask) {
+        // Cmd + d = Swap driver's side.
+        [self sideSwap:nil];
     }
 }
 

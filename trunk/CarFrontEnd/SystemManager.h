@@ -45,4 +45,7 @@
 #pragma mark Other methods
 - (void) swapDriverSide;
 
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options;
+
 @end

@@ -19,6 +19,8 @@
 		2EC8F3810C3609F5000F3CE2 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */; };
 		2EC8F38E0C3619BE000F3CE2 /* AudioVolumeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */; };
 		2EC8F39F0C3621D4000F3CE2 /* SystemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */; };
+		2ECB768E0CE2C829005273CC /* CFEApplication.h in Copy Plugins (1) */ = {isa = PBXBuildFile; fileRef = 2ECB768C0CE2C829005273CC /* CFEApplication.h */; };
+		2ECB768F0CE2C82A005273CC /* CFEApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB768D0CE2C829005273CC /* CFEApplication.m */; };
 		2EF917490C5AAFD300A05648 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917480C5AAFD300A05648 /* LICENSE */; };
 		2EF9174A0C5AAFD300A05648 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917480C5AAFD300A05648 /* LICENSE */; };
 		2EF9179A0C5EE44B00A05648 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917990C5EE44B00A05648 /* ChangeLog */; };
@@ -49,6 +51,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				2E7CA84D0C36EB3900B12442 /* iTunesMusicPlayer.cfep in Copy Plugins (1) */,
+				2ECB768E0CE2C829005273CC /* CFEApplication.h in Copy Plugins (1) */,
 			);
 			name = "Copy Plugins (1)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +81,8 @@
 		2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioVolumeManager.m; sourceTree = "<group>"; };
 		2EC8F39D0C3621D4000F3CE2 /* SystemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemManager.h; sourceTree = "<group>"; };
 		2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemManager.m; sourceTree = "<group>"; };
+		2ECB768C0CE2C829005273CC /* CFEApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFEApplication.h; sourceTree = "<group>"; };
+		2ECB768D0CE2C829005273CC /* CFEApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFEApplication.m; sourceTree = "<group>"; };
 		2EF917480C5AAFD300A05648 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2EF917990C5EE44B00A05648 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
 		2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = iTunesMusicPlayer.nib; sourceTree = "<group>"; };
@@ -125,6 +130,8 @@
 				2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */,
 				2EF918B50C64294300A05648 /* PluginListView.h */,
 				2EF918B60C64294300A05648 /* PluginListView.m */,
+				2ECB768C0CE2C829005273CC /* CFEApplication.h */,
+				2ECB768D0CE2C829005273CC /* CFEApplication.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -308,6 +315,7 @@
 				2EC8F38E0C3619BE000F3CE2 /* AudioVolumeManager.m in Sources */,
 				2EC8F39F0C3621D4000F3CE2 /* SystemManager.m in Sources */,
 				2EF918B70C64294300A05648 /* PluginListView.m in Sources */,
+				2ECB768F0CE2C82A005273CC /* CFEApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

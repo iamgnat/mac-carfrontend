@@ -340,4 +340,9 @@
     [prefsConfig writeToFile:prefsConfigPath atomically:YES];
 }
 
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options {
+    // Stub as there is nothing to monitor here.
+}
+
 @end
