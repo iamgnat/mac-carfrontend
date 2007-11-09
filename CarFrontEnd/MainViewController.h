@@ -74,4 +74,7 @@
 - (NSDictionary *) preferencesForKey: (NSString *) key;
 - (void) setPreferences: (NSDictionary *) prefs forKey: (NSString *) key;
 
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options;
+
 @end

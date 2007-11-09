@@ -1,3 +1,8 @@
+2007-11-09 - 1.0a8 - gnat
+    Added CFEApplication sub-class of NSApplication.
+    Added Key Bindings methods to PluginManager.
+    Added Key Bindings to SystemManager, PluginManager, and iTunesViewController.
+    Fixed typo in the changeRepeatMode: method of iTunesViewController.
 2007-09-21 - 1.0a7 - gnat
     Updated openVolumeWindow: to bring the volume window to the front if it is
         still open (e.g. the window has been hidden and the user clicks the

@@ -25,7 +25,9 @@
 @class SystemManager;
 @class AudioVolumeManager;
 
-@interface PluginManager : NSObject <PluginMessaging, PluginPlugins, PluginUtilities, PluginCarFrontEnd> {
+@interface PluginManager : NSObject <PluginMessaging, PluginPlugins,
+                                    PluginUtilities, PluginCarFrontEnd,
+                                    PluginKeyBindings> {
     IBOutlet CarFrontEndButton  *pluginButton1;
     IBOutlet CarFrontEndButton  *pluginButton2;
     IBOutlet CarFrontEndButton  *pluginButton3;
@@ -50,6 +52,7 @@
     NSWindow                    *quickSlotsWindow;
     
     NSMutableDictionary         *messagingList;
+    NSMutableDictionary         *keyBindingList;
 }
 
 - (void) initalize;
@@ -63,6 +66,7 @@
 #pragma mark Utilities
 - (void) loadPluginsFromPath: (NSString *) pluginPath;
 - (void) changeContentView;
+- (void) displayPluginByTag: (int) tag;
 
 #pragma mark Plugin message utility methods
 - (void) addObserver: (id) object selector: (SEL) selector
@@ -89,5 +93,12 @@
 - (NSDictionary *) preferencesForPlugin: (id <CarFrontEndProtocol>) plugin;
 - (void) savePreferences: (NSDictionary *) pluginPreferences
                forPlugin: (id <CarFrontEndProtocol>) plugin;
+
+#pragma mark Key Binding methods
+- (void) keyDown: (NSEvent *) event;
+- (NSString *) keyOptionsToString: (unsigned int) options;
+
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options;
 
 @end

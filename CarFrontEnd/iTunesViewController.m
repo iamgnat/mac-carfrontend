@@ -226,6 +226,37 @@ static iTunesViewController *sharedITVC = nil;
     [@" iTunes" drawAtPoint:origin withAttributes:attributes];
     [itunes unlockFocus];
     
+    // Setup the key bindings
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:NSRightArrowFunctionKey
+                 options:NSShiftKeyMask|NSFunctionKeyMask|NSNumericPadKeyMask];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:10 options:0];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:13 options:0];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:3 options:NSNumericPadKeyMask];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:NSLeftArrowFunctionKey
+                 options:NSShiftKeyMask|NSFunctionKeyMask|NSNumericPadKeyMask];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:NSUpArrowFunctionKey
+                 options:NSShiftKeyMask|NSFunctionKeyMask|NSNumericPadKeyMask];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:NSRightArrowFunctionKey
+                 options:NSFunctionKeyMask|NSNumericPadKeyMask];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:' ' options:0];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:NSLeftArrowFunctionKey
+                 options:NSFunctionKeyMask|NSNumericPadKeyMask];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:'m' options:0];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:'s' options:0];
+    [owner addKeyBinding:self selector:@selector(keyDown:options:)
+                     key:'r' options:0];
+
     return;
 }
 
@@ -435,7 +466,7 @@ static iTunesViewController *sharedITVC = nil;
     }
 }
 
-- (IBAction) changRepeatMode: (id) sender {
+- (IBAction) changeRepeatMode: (id) sender {
     NSDictionary            *error = nil;
     NSAppleScript           *script = nil;
     NSAppleEventDescriptor  *res = nil;
@@ -449,7 +480,7 @@ static iTunesViewController *sharedITVC = nil;
     }
     res = [self runWithSource:script andReturnError:&error];
     if (error != nil) {
-        NSLog(@"iTunesViewController: changRepeatMode: %@",
+        NSLog(@"iTunesViewController: changeRepeatMode: %@",
               [error objectForKey:@"NSAppleScriptErrorMessage"]);
         return;
     }
@@ -685,6 +716,42 @@ static iTunesViewController *sharedITVC = nil;
             }
         }
         if (i == [playlists count]) [sourceList setSelectionIndex:0];
+    }
+}
+
+# pragma mark Key Binding handling
+- (void) keyDown: (unsigned short) key options: (unsigned int) options {
+    if (key == NSRightArrowFunctionKey && options & NSShiftKeyMask) {
+        // Shift + right arrow = Previous playlist
+        if ([sourceList selectionIndex] == 0) return;
+        [sourceList setSelectionIndex:[sourceList selectionIndex] - 1];
+    } else if (key == 10 || key == 13 || (key == 3 &&
+               options & NSNumericPadKeyMask)) {
+        // Enter/Return = select playlist
+        [self selectPlaylist:nil];
+    } else if (key == NSLeftArrowFunctionKey && options & NSShiftKeyMask) {
+        // Shift + left arrow = Previous playlist
+        if ([sourceList selectionIndex] + 1 >= [[sourceList arrangedObjects] count])
+            return;
+        [sourceList setSelectionIndex:[sourceList selectionIndex] + 1];
+    } else if (key == NSUpArrowFunctionKey && options & NSShiftKeyMask) {
+        // Shift + up arrow = Eject device
+        [self ejectMedia:self];
+    } else if (key == NSRightArrowFunctionKey) {
+        // right arrow = prev track
+        [self prevTrack:nil];
+    } else if (key == ' ') {
+        // space = play/pause
+        [self playPause:nil];
+    } else if (key == NSLeftArrowFunctionKey) {
+        // left arrow = next track
+        [self nextTrack:nil];
+    } else if (key == 's' || key == 'm') {
+        // s/m = change shuffle mode
+        [self changeMixMode:nil];
+    } else if (key == 'r') {
+        // r = change repeat mode
+        [self changeRepeatMode:nil];
     }
 }
 
