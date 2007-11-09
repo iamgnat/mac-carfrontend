@@ -96,3 +96,19 @@
               forPlugin: (id <CarFrontEndProtocol>) plugin;
 
 @end
+
+#pragma mark Key Bindings
+@protocol PluginKeyBindings
+
+// Add a key observer
+- (void) addKeyBinding: (id) object selector: (SEL) selector
+                   key: (unsigned short) key options: (unsigned int) options;
+
+// Unregister your method for a key binding.
+- (void) removeKeyBinding: (id) object forKey: (unsigned short) key
+                  options: (unsigned int) options;
+
+// Unregister the object for all key bindings it listens for.
+- (void) removeAllKeyBindingsFor: (id) object;
+
+@end
