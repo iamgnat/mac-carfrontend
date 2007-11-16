@@ -236,7 +236,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SamplePlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "/Users/$(USER)/Library/Application Support/CarFrontEnd/PlugIns";
 				PRODUCT_NAME = SamplePlugin;
 				WRAPPER_EXTENSION = cfep;
 			};
@@ -265,8 +265,11 @@
 					ppc,
 					i386,
 				);
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Users/$(USER)/Library/Application Support/CarFrontEnd/PlugIns";
 				MACH_O_TYPE = mh_bundle;
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
