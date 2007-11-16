@@ -19,21 +19,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CarFrontEndTextField : NSTextField {
-    NSString            *fullTitle;
-    NSString            *fontName;
-    float               fontSize;
-    NSColor             *foregroundColor;
-    NSColor             *backgroundColor;
-    int                 currPos;
-    BOOL                inInit;
-    
-    // Configuration options
-    BOOL                scrolling;
-    BOOL                scrollOnlyInFrame;
-    BOOL                endWithEllipsis;
-    
-    NSTrackingRectTag   _trackingFrame;
-
 }
 
 #pragma mark NSCoding methods
@@ -41,36 +26,17 @@
 - (void) encodeWithCoder: (NSCoder *) coder;
 
 #pragma mark NSTextField override methods
-- (void) setAttributedString: (NSAttributedString *) value;
-- (NSAttributedString *) attributedString;
-- (void) setStringValue: (NSString *) value;
-- (NSString *) stringValue;
-- (void) setEditable: (BOOL) flag;
-
-#pragma mark CarFrontEndTextField methods
-- (NSColor *) foregroundColor;
-- (void) setForegroundColor: (NSColor *) color;
+- (NSColor *) textColor;
 - (NSColor *) backgroundColor;
-- (void) setBackgroundColor: (NSColor *) color;
-- (NSString *) fontName;
-- (void) setFontName: (NSString *) name;
-- (float) fontSize;
-- (void) setFontSize: (float) size;
-- (BOOL) scrolling;
-- (void) setScrolling: (BOOL) value;
-- (BOOL) scrollOnlyInFrame;
-- (void) setScrollOnlyInFrame: (BOOL) value;
-- (BOOL) endWithEllipsis;
-- (void) setEndWithEllipsis: (BOOL) value;
+- (NSFont *) font;
+- (void) setDrawsBackground: (BOOL) value;
 
 #pragma mark CarFrontEndTextField class methods
-+ (NSColor *) defaultForegroundColor;
-+ (void) setDefaultForegroundColor: (NSColor *) color;
++ (NSColor *) defaultTextColor;
++ (void) setDefaultTextColor: (NSColor *) color;
 + (NSColor *) defaultBackgroundColor;
 + (void) setDefaultBackgroundColor: (NSColor *) color;
-+ (NSString *) defaultFontName;
-+ (void) setDefaultFontName: (NSString *) name;
-+ (float) defaultFontSize;
-+ (void) setDefaultFontSize: (float) size;
++ (NSFont *) defaultFont;
++ (void) setDefaultFont: (NSFont *) value;
 
 @end
