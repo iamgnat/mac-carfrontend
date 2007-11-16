@@ -94,7 +94,7 @@ static float    defaultFontSize = 30.0;
         
         NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(notificationHandler:)
-                   name:CFENotificationChangeBackgroundColor object:nil];
+                   name:CFENotificationChangeForegroundColor object:nil];
     }
     
     inInit = NO;
@@ -159,7 +159,7 @@ static float    defaultFontSize = 30.0;
         
         NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(notificationHandler:)
-                   name:CFENotificationChangeBackgroundColor object:nil];
+                   name:CFENotificationChangeForegroundColor object:nil];
     }
     
     inInit = NO;
