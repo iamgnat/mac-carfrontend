@@ -366,7 +366,7 @@
 			};
 			name = Release;
 		};
-		2E98B5B40CED081C007F913E /* Install */ = {
+		2E98B5B40CED081C007F913E /* Package */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -385,9 +385,9 @@
 				PRODUCT_NAME = CarFrontEndAPI;
 				WRAPPER_EXTENSION = framework;
 			};
-			name = Install;
+			name = Package;
 		};
-		2E98B5B50CED081C007F913E /* Install */ = {
+		2E98B5B50CED081C007F913E /* Package */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -404,7 +404,7 @@
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Install;
+			name = Package;
 		};
 /* End XCBuildConfiguration section */
 
@@ -414,7 +414,7 @@
 			buildConfigurations = (
 				1DEB91AE08733DA50010E9CD /* Debug */,
 				1DEB91AF08733DA50010E9CD /* Release */,
-				2E98B5B40CED081C007F913E /* Install */,
+				2E98B5B40CED081C007F913E /* Package */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -424,7 +424,7 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
-				2E98B5B50CED081C007F913E /* Install */,
+				2E98B5B50CED081C007F913E /* Package */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
