@@ -17,6 +17,7 @@
  */
 
 #import "SamplePlugin.h"
+#import <CarFrontEndAPI/CarFrontEndAPI.h>
 
 static SamplePlugin *sharedSP = nil;
 
@@ -24,6 +25,12 @@ static SamplePlugin *sharedSP = nil;
 
 - (id) init {
     return([self initWithPluginManager:nil]);
+}
+
+- (void) dealloc {
+    [buttonImage release];
+    
+    [super dealloc];
 }
 
 - (id) initWithPluginManager: (id) pluginManager {
@@ -46,26 +53,27 @@ static SamplePlugin *sharedSP = nil;
 }
 
 - (void) initalize {
-    // No-op for this example.
-    //  Should generate the button image here rather than on demand.
+    CarFrontEndButton   *button = [CarFrontEndButton new];
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    
+    [attributes setObject:[NSFont fontWithName:[button fontName]
+                                          size:[button fontSize]]
+                   forKey:NSFontAttributeName];
+	[attributes setObject:[button textColor]
+                   forKey:NSForegroundColorAttributeName];
+    [button release];
+    [buttonImage release];
+    
+    NSSize  size = [[self name] sizeWithAttributes:attributes];
+    buttonImage = [[[NSImage alloc] initWithSize:size] autorelease];
+    
+    [buttonImage lockFocus];
+    [[self name] drawAtPoint:NSZeroPoint withAttributes:attributes];
+    [buttonImage unlockFocus];
 }
 
 - (NSImage *) pluginButtonImage {
-	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    
-    [attributes setObject:[NSFont fontWithName:@"Helvetica" size:26]
-                   forKey:NSFontAttributeName];
-	[attributes setObject:[NSColor whiteColor]
-                   forKey:NSForegroundColorAttributeName];
-    
-    NSSize          size = [[self name] sizeWithAttributes:attributes];
-    NSImage         *image = [[[NSImage alloc] initWithSize:size] autorelease];
-    
-    [image lockFocus];
-    [[self name] drawAtPoint:NSZeroPoint withAttributes:attributes];
-    [image unlockFocus];
-    
-    return(image);
+    return(buttonImage);
 }
 
 - (NSView *) contentViewForSize: (NSSize) size {
