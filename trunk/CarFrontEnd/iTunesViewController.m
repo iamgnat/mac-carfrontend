@@ -205,10 +205,14 @@ static iTunesViewController *sharedITVC = nil;
                             stringByAppendingPathComponent:@"iTunes.tif"]]
                            autorelease];
 	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    CarFrontEndButton   *button = [CarFrontEndButton new];
 
-    [attributes setObject:[NSFont fontWithName:@"Helvetica" size:26]
+    [attributes setObject:[NSFont fontWithName:[button fontName]
+                                          size:[button fontSize] * 0.85]
                    forKey:NSFontAttributeName];
-	[attributes setObject:[NSColor whiteColor] forKey:NSForegroundColorAttributeName];
+	[attributes setObject:[button textColor]
+                   forKey:NSForegroundColorAttributeName];
+    [button release];
 	NSSize  size = [@" iTunes" sizeWithAttributes:attributes];
     
     [itunes setScalesWhenResized:YES];
