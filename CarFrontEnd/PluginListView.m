@@ -81,6 +81,7 @@
     
     CarFrontEndButton   *button = [[[CarFrontEndButton alloc]
                                     initWithFrame:bounds] autorelease];
+    [button setImagePosition:NSImageLeft];
     [button setImage:image];
     [button setAlternateImage:image];
     [button setTarget:target];
