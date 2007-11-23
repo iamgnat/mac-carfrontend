@@ -17,45 +17,12 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import <CarFrontEndAPI/CarFrontEndButtonCell.h>
 
-@interface CarFrontEndButton : NSButton <NSCoding> {
-    NSImage     *image;
-    NSImage     *altImage;
-    NSImage     *userImage;
-    NSImage     *userAltImage;
-    
-    NSImage     *leftUpImage;
-    NSImage     *middleUpImage;
-    NSImage     *rightUpImage;
-    NSImage     *leftDownImage;
-    NSImage     *middleDownImage;
-    NSImage     *rightDownImage;
-    
-    NSString    *string;
-    
-    NSColor     *stringColor;
-    NSString    *fontName;
-    float       fontSize;
-    
-    BOOL        inInit;
-}
+@interface CarFrontEndButton : NSButton <NSCoding> {}
 
 #pragma mark NSCoding methods
 - (id) initWithCoder: (NSCoder *) coder;
-- (void) encodeWithCoder: (NSCoder *) coder;
-
-#pragma mark NSButton override methods
-- (void) setStringValue: (NSString *) value;
-- (NSString *) stringValue;
-- (void) setImage: (NSImage *) value;
-- (void) setAlternateImage: (NSImage *) value;
-- (void) setFrame: (NSRect) frame;
-
-// Stub out these methods as they could have adverse effects.
-- (void) setButtonType: (NSButtonType) type;            // Noop
-- (void) setImagePosition: (NSCellImagePosition) pos;   // Noop
-- (void) setBordered: (BOOL) flag;                      // Noop
-- (void) setTransparent: (BOOL) flag;                   // Noop
 
 #pragma mark CFEButton methods
 - (NSColor *) stringColor;
@@ -66,11 +33,29 @@
 - (void) setFontSize: (float) size;
 
 #pragma mark CFEButton class methods
-+ (NSColor *) defaultStringColor;
-+ (void) setDefaultStringColor: (NSColor *) color;
++ (NSColor *) defaultStringColor;                   // Deprecated
++ (void) setDefaultStringColor: (NSColor *) color;  // Deprecated
 + (NSString *) defaultFontName;
 + (void) setDefaultFontName: (NSString *) name;
 + (float) defaultFontSize;
 + (void) setDefaultFontSize: (float) size;
+
+#pragma mark CFEButtonCell methods
+- (void) setButtonTexture: (CFEButtonTexture) texture;
+- (CFEButtonTexture) buttonTexture;
+- (void) setFlatTextureColor: (NSColor *) color;
+- (NSColor *) flatTextureColor;
+- (void) setFlatHighlightTextureColor: (NSColor *) color;
+- (NSColor *) flatHighlightTextureColor;
+- (void) setGradientTextureColors: (NSArray *) colors;
+- (NSArray *) gradientTextureColors;
+- (void) setGradientHighlightTextureColors: (NSArray *) colors;
+- (NSArray *) gradientHighlightTextureColors;
+- (void) setBorderColor: (NSColor *) color;
+- (NSColor *) borderColor;
+- (void) setTextColor: (NSColor *) color;
+- (NSColor *) textColor;
+- (void) setFont: (NSFont *) font;
+- (NSFont *) font;
 
 @end

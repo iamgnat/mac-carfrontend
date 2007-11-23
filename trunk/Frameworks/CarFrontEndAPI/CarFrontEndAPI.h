@@ -103,6 +103,7 @@ extern CFEMessage   CFEMessageMenuSideSwapped;
 
 #import <CarFrontEndAPI/CarFrontEndProtocol.h>
 #import <CarFrontEndAPI/CarFrontEndButton.h>
+#import <CarFrontEndAPI/CarFrontEndButtonCell.h>
 #import <CarFrontEndAPI/CarFrontEndTextField.h>
 #import <CarFrontEndAPI/NSImageUtils.h>
 #import <CarFrontEndAPI/PluginManager.h>
