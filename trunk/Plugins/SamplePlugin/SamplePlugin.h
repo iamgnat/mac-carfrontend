@@ -22,6 +22,7 @@
 @interface SamplePlugin : NSObject <CarFrontEndProtocol> {
     id                  owner;
     IBOutlet NSView     *samplePluginView;
+    NSImage             *buttonImage;
 }
 
 - (id) initWithPluginManager: (id) pluginManager;
