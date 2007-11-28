@@ -467,6 +467,8 @@
         NSSize  imageSize = [self drawImage:image withFrame:imageRect
                                      inView:control];
         
+        imageRect.size = imageSize;
+        
         // Update the leftover space for the title.
         switch ([self imagePosition]) {
             case NSImageLeft:
@@ -573,9 +575,9 @@
             [image scaleToFitSize:frame.size];
             imageSize = [image size];
             
-            imageRect.origin.y += (imageRect.size.height / 2.0) - (imageSize.height / 2.0);
+            frame.origin.y += (imageRect.size.height / 2.0) - (imageSize.height / 2.0);
             if ([self imagePosition] == NSImageRight) {
-                imageRect.origin.x += imageRect.size.width - imageSize.width;
+                frame.origin.x += imageRect.size.width - imageSize.width;
             }
             break;
         case NSImageAbove:
@@ -585,10 +587,10 @@
             [image scaleToFitSize:frame.size];
             imageSize = [image size];
             
-            imageRect.origin.x += (imageRect.size.width / 2.0) - (imageSize.width / 2.0);
-            imageRect.origin.y += (imageRect.size.height / 2.0) - (imageSize.height / 2.0);
+            frame.origin.x += (imageRect.size.width / 2.0) - (imageSize.width / 2.0);
+            frame.origin.y += (imageRect.size.height / 2.0) - (imageSize.height / 2.0);
             if ([self imagePosition] == NSImageAbove) {
-                imageRect.origin.y += imageRect.size.height;
+                frame.origin.y += imageRect.size.height;
             }
             break;
         case NSImageOverlaps:
@@ -597,8 +599,8 @@
             [image scaleToFitSize:frame.size];
             imageSize = [image size];
             
-            imageRect.origin.y += (imageRect.size.height / 2.0) - (imageSize.height / 2.0);
-            imageRect.origin.x += (imageRect.size.width / 2.0) - (imageSize.width / 2.0);
+            frame.origin.y += (imageRect.size.height / 2.0) - (imageSize.height / 2.0);
+            frame.origin.x += (imageRect.size.width / 2.0) - (imageSize.width / 2.0);
             break;
     }
     

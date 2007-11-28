@@ -47,11 +47,12 @@
         return(size);
     }
     
-    if (size.width > size.height) {
-        // Short & fat.
+    float   hDiff = base.height / size.height;
+    float   wDiff = base.width / size.width;
+    
+    if (wDiff < hDiff) {
         return([NSImage scaleSize:size forWidth:base.width]);
     } else {
-        // Long & emaciated
         return([NSImage scaleSize:size forHeight:base.height]);
     }
 }
