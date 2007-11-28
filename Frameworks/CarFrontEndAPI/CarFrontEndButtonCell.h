@@ -27,6 +27,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CTGradient;
+
 typedef enum _CFEButtonTexture {
     CFEFirstButtonTexture       = 0, // Place holder
     CFEFlatButtonTexture        = 0, // Single color background
@@ -35,12 +37,20 @@ typedef enum _CFEButtonTexture {
     CFELastButtonTexture        = 2, // Place holder
 } CFEButtonTexture;
 
+/*
+ * NOTE: Until there is an IB Palette available, you will need to manually set
+ *          set the font information in IB. For consistance, please use
+ *          Helvetica as the face and 27 for the point size.
+ */
+
 @interface CarFrontEndButtonCell : NSButtonCell <NSCoding> {
     CFEButtonTexture    _buttonTexture;
     NSArray             *_gradientColors;
     NSArray             *_gradientHighlightColors;
     NSColor             *_borderColor;
     NSColor             *_textColor;
+    
+    NSButtonType        _buttonType;
 }
 
 #pragma mark NSCoding methods
@@ -52,6 +62,10 @@ typedef enum _CFEButtonTexture {
 - (id) initImageCell: (NSImage *) image;
 - (id) initTextCell: (NSString *) string;
 - (void) dealloc;
+
+#pragma mark Button Type
+- (void) setButtonType: (NSButtonType) type;
+- (NSButtonType) buttonType;    // Why Apple? Why can we not have this?
 
 #pragma mark Button texture
 - (void) setButtonTexture: (CFEButtonTexture) texture;
@@ -88,8 +102,15 @@ typedef enum _CFEButtonTexture {
 - (NSColor *) textColor;
 
 #pragma mark Button drawing
-- (void) drawImage: (NSImage*) image withFrame: (NSRect) frame
-            inView: (NSView*) view;
 - (void) drawWithFrame: (NSRect) frame inView: (NSView *) view;
+- (void) drawBorderAndBackgroundWithFrame: (NSRect) frame
+                                   inView: (NSView *) view;
+- (void) drawInteriorWithFrame: (NSRect) frame inView: (NSView *) control;
+- (void) drawTitle: (NSAttributedString *) title withFrame: (NSRect) frame
+            inView: (NSView *) control;
+- (NSSize) drawImage: (NSImage *) image withFrame: (NSRect) frame
+              inView: (NSView *) control;
+- (NSImage *) drawCustomImageForSize: (NSSize) size;
+- (CTGradient *) backgroundGradient;
 
 @end

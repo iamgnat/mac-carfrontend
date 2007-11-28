@@ -41,12 +41,31 @@
     return(size);
 }
 
++ (NSSize) scaleSize: (NSSize) size toFitSize: (NSSize) base {
+    if ((size.width == base.width && size.height <= base.height) ||
+        (size.height == base.height && size.width <= base.width)) {
+        return(size);
+    }
+    
+    if (size.width > size.height) {
+        // Short & fat.
+        return([NSImage scaleSize:size forWidth:base.width]);
+    } else {
+        // Long & emaciated
+        return([NSImage scaleSize:size forHeight:base.height]);
+    }
+}
+
 - (void) scaleForWidth: (double) width {
     [self setSize:[NSImage scaleSize:[self size] forWidth:width]];
 }
 
 - (void) scaleForHeight: (double) height {
     [self setSize:[NSImage scaleSize:[self size] forHeight:height]];
+}
+
+- (void) scaleToFitSize: (NSSize) size {
+    [self setSize:[NSImage scaleSize:[self size] toFitSize:size]];
 }
 
 @end
