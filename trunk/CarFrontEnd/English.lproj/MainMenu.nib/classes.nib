@@ -1,7 +1,7 @@
 {
     IBClasses = (
         {
-            ACTIONS = {changeVolume = id; maxVolume = id; muteVolume = id; openVolumeWindow = id; }; 
+            ACTIONS = {changeVolume = id; muteVolume = id; openVolumeWindow = id; }; 
             CLASS = AudioVolumeManager; 
             LANGUAGE = ObjC; 
             OUTLETS = {
@@ -9,7 +9,9 @@
                 muteButton = CarFrontEndButton; 
                 pluginManager = PluginManager; 
                 volumeButton = CarFrontEndButton; 
+                volumeDownButton = NSButton; 
                 volumeLevel = NSLevelIndicator; 
+                volumeUpButton = NSButton; 
                 volumeView = NSView; 
             }; 
             SUPERCLASS = NSObject; 

@@ -15,11 +15,26 @@
 		2E7CA80B0C36CEEB00B12442 /* iTunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */; };
 		2E7CA84D0C36EB3900B12442 /* iTunesMusicPlayer.cfep in Copy Plugins (1) */ = {isa = PBXBuildFile; fileRef = 2E7CA7F90C36BFF800B12442 /* iTunesMusicPlayer.cfep */; };
 		2EA4B03E0C41CF4B009A861F /* iTunes.tif in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4B03D0C41CF4B009A861F /* iTunes.tif */; };
+		2EB531DD0CFDE04600099E50 /* volumeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531D90CFDE04600099E50 /* volumeDown.png */; };
+		2EB531DE0CFDE04600099E50 /* volumeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531DA0CFDE04600099E50 /* volumeUp.png */; };
+		2EB531EB0CFDE06100099E50 /* ejectMedia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531DF0CFDE06100099E50 /* ejectMedia.png */; };
+		2EB531EC0CFDE06100099E50 /* nextPlaylist.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E00CFDE06100099E50 /* nextPlaylist.png */; };
+		2EB531ED0CFDE06100099E50 /* nextTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E10CFDE06100099E50 /* nextTrack.png */; };
+		2EB531EE0CFDE06100099E50 /* pauseTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E20CFDE06100099E50 /* pauseTrack.png */; };
+		2EB531EF0CFDE06100099E50 /* playTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E30CFDE06100099E50 /* playTrack.png */; };
+		2EB531F00CFDE06100099E50 /* prevPlaylist.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E40CFDE06100099E50 /* prevPlaylist.png */; };
+		2EB531F10CFDE06100099E50 /* prevTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E50CFDE06100099E50 /* prevTrack.png */; };
+		2EB531F20CFDE06100099E50 /* repeatAll.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E60CFDE06100099E50 /* repeatAll.png */; };
+		2EB531F30CFDE06100099E50 /* repeatOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E70CFDE06100099E50 /* repeatOff.png */; };
+		2EB531F40CFDE06100099E50 /* repeatOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E80CFDE06100099E50 /* repeatOne.png */; };
+		2EB531F50CFDE06100099E50 /* shuffleOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531E90CFDE06100099E50 /* shuffleOff.png */; };
+		2EB531F60CFDE06100099E50 /* shuffleOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531EA0CFDE06100099E50 /* shuffleOn.png */; };
+		2EB531FD0CFDE81700099E50 /* volumeMute.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB531F90CFDE0A300099E50 /* volumeMute.png */; };
+		2EB5320E0CFDE95C00099E50 /* volumeControls.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB5320C0CFDE93E00099E50 /* volumeControls.png */; };
 		2EBBEF060C31FDA900690505 /* CarFrontEnd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBEF050C31FDA900690505 /* CarFrontEnd.icns */; };
 		2EC8F3810C3609F5000F3CE2 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F3800C3609F5000F3CE2 /* PluginManager.m */; };
 		2EC8F38E0C3619BE000F3CE2 /* AudioVolumeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F38D0C3619BE000F3CE2 /* AudioVolumeManager.m */; };
 		2EC8F39F0C3621D4000F3CE2 /* SystemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F39E0C3621D4000F3CE2 /* SystemManager.m */; };
-		2ECB768E0CE2C829005273CC /* CFEApplication.h in Copy Plugins (1) */ = {isa = PBXBuildFile; fileRef = 2ECB768C0CE2C829005273CC /* CFEApplication.h */; };
 		2ECB768F0CE2C82A005273CC /* CFEApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB768D0CE2C829005273CC /* CFEApplication.m */; };
 		2EF917490C5AAFD300A05648 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917480C5AAFD300A05648 /* LICENSE */; };
 		2EF9174A0C5AAFD300A05648 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2EF917480C5AAFD300A05648 /* LICENSE */; };
@@ -51,7 +66,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				2E7CA84D0C36EB3900B12442 /* iTunesMusicPlayer.cfep in Copy Plugins (1) */,
-				2ECB768E0CE2C829005273CC /* CFEApplication.h in Copy Plugins (1) */,
 			);
 			name = "Copy Plugins (1)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +88,22 @@
 		2E7CA8090C36CEEB00B12442 /* iTunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesViewController.h; sourceTree = "<group>"; };
 		2E7CA80A0C36CEEB00B12442 /* iTunesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesViewController.m; sourceTree = "<group>"; };
 		2EA4B03D0C41CF4B009A861F /* iTunes.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = iTunes.tif; sourceTree = "<group>"; };
+		2EB531D90CFDE04600099E50 /* volumeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeDown.png; sourceTree = "<group>"; };
+		2EB531DA0CFDE04600099E50 /* volumeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeUp.png; sourceTree = "<group>"; };
+		2EB531DF0CFDE06100099E50 /* ejectMedia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ejectMedia.png; sourceTree = "<group>"; };
+		2EB531E00CFDE06100099E50 /* nextPlaylist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextPlaylist.png; sourceTree = "<group>"; };
+		2EB531E10CFDE06100099E50 /* nextTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextTrack.png; sourceTree = "<group>"; };
+		2EB531E20CFDE06100099E50 /* pauseTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseTrack.png; sourceTree = "<group>"; };
+		2EB531E30CFDE06100099E50 /* playTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playTrack.png; sourceTree = "<group>"; };
+		2EB531E40CFDE06100099E50 /* prevPlaylist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prevPlaylist.png; sourceTree = "<group>"; };
+		2EB531E50CFDE06100099E50 /* prevTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prevTrack.png; sourceTree = "<group>"; };
+		2EB531E60CFDE06100099E50 /* repeatAll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatAll.png; sourceTree = "<group>"; };
+		2EB531E70CFDE06100099E50 /* repeatOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatOff.png; sourceTree = "<group>"; };
+		2EB531E80CFDE06100099E50 /* repeatOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatOne.png; sourceTree = "<group>"; };
+		2EB531E90CFDE06100099E50 /* shuffleOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuffleOff.png; sourceTree = "<group>"; };
+		2EB531EA0CFDE06100099E50 /* shuffleOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuffleOn.png; sourceTree = "<group>"; };
+		2EB531F90CFDE0A300099E50 /* volumeMute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMute.png; sourceTree = "<group>"; };
+		2EB5320C0CFDE93E00099E50 /* volumeControls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeControls.png; sourceTree = "<group>"; };
 		2EBBEF050C31FDA900690505 /* CarFrontEnd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CarFrontEnd.icns; sourceTree = "<group>"; };
 		2EC8F37F0C3609F5000F3CE2 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		2EC8F3800C3609F5000F3CE2 /* PluginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginManager.m; sourceTree = "<group>"; };
@@ -187,6 +217,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2EB531D60CFDE00C00099E50 /* Images */,
 				2EF918460C622E4C00A05648 /* iTunesMusicPlayer.nib */,
 				2EF917990C5EE44B00A05648 /* ChangeLog */,
 				2E7CA7FA0C36BFF800B12442 /* iTunesMusicPlayer-Info.plist */,
@@ -208,6 +239,29 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EB531D60CFDE00C00099E50 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2EB5320C0CFDE93E00099E50 /* volumeControls.png */,
+				2EB531DF0CFDE06100099E50 /* ejectMedia.png */,
+				2EB531E00CFDE06100099E50 /* nextPlaylist.png */,
+				2EB531E10CFDE06100099E50 /* nextTrack.png */,
+				2EB531E20CFDE06100099E50 /* pauseTrack.png */,
+				2EB531E30CFDE06100099E50 /* playTrack.png */,
+				2EB531E40CFDE06100099E50 /* prevPlaylist.png */,
+				2EB531E50CFDE06100099E50 /* prevTrack.png */,
+				2EB531E60CFDE06100099E50 /* repeatAll.png */,
+				2EB531E70CFDE06100099E50 /* repeatOff.png */,
+				2EB531E80CFDE06100099E50 /* repeatOne.png */,
+				2EB531E90CFDE06100099E50 /* shuffleOff.png */,
+				2EB531EA0CFDE06100099E50 /* shuffleOn.png */,
+				2EB531F90CFDE0A300099E50 /* volumeMute.png */,
+				2EB531D90CFDE04600099E50 /* volumeDown.png */,
+				2EB531DA0CFDE04600099E50 /* volumeUp.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +333,18 @@
 				2EF9174A0C5AAFD300A05648 /* LICENSE in Resources */,
 				2EF9179B0C5EE44B00A05648 /* ChangeLog in Resources */,
 				2EF918470C622E4C00A05648 /* iTunesMusicPlayer.nib in Resources */,
+				2EB531EB0CFDE06100099E50 /* ejectMedia.png in Resources */,
+				2EB531EC0CFDE06100099E50 /* nextPlaylist.png in Resources */,
+				2EB531ED0CFDE06100099E50 /* nextTrack.png in Resources */,
+				2EB531EE0CFDE06100099E50 /* pauseTrack.png in Resources */,
+				2EB531EF0CFDE06100099E50 /* playTrack.png in Resources */,
+				2EB531F00CFDE06100099E50 /* prevPlaylist.png in Resources */,
+				2EB531F10CFDE06100099E50 /* prevTrack.png in Resources */,
+				2EB531F20CFDE06100099E50 /* repeatAll.png in Resources */,
+				2EB531F30CFDE06100099E50 /* repeatOff.png in Resources */,
+				2EB531F40CFDE06100099E50 /* repeatOne.png in Resources */,
+				2EB531F50CFDE06100099E50 /* shuffleOff.png in Resources */,
+				2EB531F60CFDE06100099E50 /* shuffleOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +357,10 @@
 				2EBBEF060C31FDA900690505 /* CarFrontEnd.icns in Resources */,
 				2EF917490C5AAFD300A05648 /* LICENSE in Resources */,
 				2EF9179A0C5EE44B00A05648 /* ChangeLog in Resources */,
+				2EB531DD0CFDE04600099E50 /* volumeDown.png in Resources */,
+				2EB531DE0CFDE04600099E50 /* volumeUp.png in Resources */,
+				2EB531FD0CFDE81700099E50 /* volumeMute.png in Resources */,
+				2EB5320E0CFDE95C00099E50 /* volumeControls.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
