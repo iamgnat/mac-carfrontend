@@ -23,7 +23,9 @@
 #pragma mark Size Scaling
 + (NSSize) scaleSize: (NSSize) size forWidth: (double) width;
 + (NSSize) scaleSize: (NSSize) size forHeight: (double) height;
++ (NSSize) scaleSize: (NSSize) size toFitSize: (NSSize) base;
 - (void) scaleForWidth: (double) width;
 - (void) scaleForHeight: (double) height;
+- (void) scaleToFitSize: (NSSize) size;
 
 @end

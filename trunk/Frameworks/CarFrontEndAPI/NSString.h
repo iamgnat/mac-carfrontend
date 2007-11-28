@@ -25,5 +25,7 @@
 - (NSString *) stringForSize: (NSSize) size
               withAttributes: (NSDictionary *) attributes
                         from: (int) start;
+- (NSAttributedString *) attributedStringForSize: (NSSize) size
+                                  withAttributes: (NSDictionary *) attrs;
 
 @end

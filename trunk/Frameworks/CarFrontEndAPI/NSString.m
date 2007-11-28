@@ -58,4 +58,54 @@
     return(string);
 }
 
+- (NSAttributedString *) attributedStringForSize: (NSSize) size
+                                  withAttributes: (NSDictionary *) attrs {
+    NSMutableDictionary *myAttrs = [[attrs mutableCopy] autorelease];
+    NSFont              *font = [myAttrs objectForKey:NSFontAttributeName];
+    NSSize              stringSize = NSZeroSize;
+    int                 i = 0;
+    
+    if (font == nil) {
+        font = [NSFont systemFontOfSize:[NSFont systemFontSize]];
+    }
+    
+    [myAttrs setObject:font forKey:NSFontAttributeName];
+    stringSize = [self sizeWithAttributes:myAttrs];
+    
+    if (stringSize.height > size.height || stringSize.width > size.width) {
+        for (i = 0 ; [font pointSize] > 0.0 ; i++) {
+            font = [NSFont fontWithName:[font fontName]
+                                   size:[font pointSize] - 1.0];
+            [myAttrs setObject:font forKey:NSFontAttributeName];
+            stringSize = [self sizeWithAttributes:myAttrs];
+            
+            if (stringSize.height <= size.height &&
+                stringSize.width <= size.width) {
+                break;
+            }
+        }
+    } else if (stringSize.height < size.height || stringSize.width < size.width) {
+        for (i = 0 ; [font pointSize] < 256.0 ; i++) {
+            font = [NSFont fontWithName:[font fontName]
+                                   size:[font pointSize] + 1.0];
+            [myAttrs setObject:font forKey:NSFontAttributeName];
+            stringSize = [self sizeWithAttributes:myAttrs];
+            
+            if (stringSize.height > size.height ||
+                stringSize.width > size.width) {
+                font = [NSFont fontWithName:[font fontName]
+                                       size:[font pointSize] - 1.0];
+                [myAttrs setObject:font forKey:NSFontAttributeName];
+                break;
+            }
+        }
+    }
+    
+    if ([font pointSize] <= 0.0) {
+        return(nil);
+    }
+    return([[[NSAttributedString alloc] initWithString:self
+                                            attributes:myAttrs] autorelease]);
+}
+
 @end

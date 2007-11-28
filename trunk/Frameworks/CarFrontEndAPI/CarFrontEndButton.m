@@ -28,11 +28,16 @@ static float    defaultFontSize = 27.0;
 @interface CarFrontEndButton (private)
 
 - (void) notificationHandler: (NSNotification *) note;
-- (void) _init;
 
 @end
 
 @implementation CarFrontEndButton
+
+/*
+ * NOTE: Until there is an IB Palette available, you will need to manually set
+ *          set the font information in IB. For consistance, please use
+ *          Helvetica as the face and 27 for the point size.
+ */
 
 #pragma mark NSCoding methods
 - (id) initWithCoder: (NSCoder *) origCoder {
@@ -50,8 +55,6 @@ static float    defaultFontSize = 27.0;
 		[coder setClass:[[self class] cellClass] forClassName:oldClassName];
 		self = [super initWithCoder:coder];
 		[coder setClass:oldClass forClassName:oldClassName];
-		
-        [self _init];
         
         NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(notificationHandler:)
@@ -72,7 +75,6 @@ static float    defaultFontSize = 27.0;
 
 - (id) initWithFrame: (NSRect) frameRect {
 	if ((self = [super initWithFrame:frameRect]) != nil) {
-        [self _init];
         
         NSNotificationCenter    *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(notificationHandler:)
@@ -153,6 +155,10 @@ static float    defaultFontSize = 27.0;
 }
 
 #pragma mark CFEButtonCell methods
+- (NSButtonType) buttonType {
+    return([[self cell] buttonType]);
+}
+
 - (void) setButtonTexture: (CFEButtonTexture) texture {
     [[self cell] setButtonTexture:texture];
 }
@@ -228,22 +234,6 @@ static float    defaultFontSize = 27.0;
             [self setTextColor:color];
         }
     }
-}
-
-- (void) _init {
-    // Set the default font information
-    NSString    *fontName = [CarFrontEndButton defaultFontName];
-    float       fontSize = [CarFrontEndButton defaultFontSize];
-    if ([self font] != nil && ![[[self font] fontName] isEqualToString:@"LucidaGrande"] &&
-        ([[self font] pointSize] != 10.0 || [[self font] pointSize] != 12.0)) {
-        if (![[[self font] fontName] isEqualToString:@"LucidaGrande"]) {
-            fontName = [[self font] fontName];
-        }
-        if ([[self font] pointSize] != 10.0 || [[self font] pointSize] != 12.0) {
-            fontSize = [[self font] pointSize];
-        }
-    }
-    [self setFont:[NSFont fontWithName:fontName size:fontSize]];
 }
 
 @end

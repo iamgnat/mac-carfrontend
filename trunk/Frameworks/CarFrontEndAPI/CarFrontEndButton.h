@@ -21,6 +21,12 @@
 
 @interface CarFrontEndButton : NSButton <NSCoding> {}
 
+/*
+ * NOTE: Until there is an IB Palette available, you will need to manually set
+ *          set the font information in IB. For consistance, please use
+ *          Helvetica as the face and 27 for the point size.
+ */
+
 #pragma mark NSCoding methods
 - (id) initWithCoder: (NSCoder *) coder;
 
@@ -41,6 +47,7 @@
 + (void) setDefaultFontSize: (float) size;
 
 #pragma mark CFEButtonCell methods
+- (NSButtonType) buttonType;
 - (void) setButtonTexture: (CFEButtonTexture) texture;
 - (CFEButtonTexture) buttonTexture;
 - (void) setFlatTextureColor: (NSColor *) color;
