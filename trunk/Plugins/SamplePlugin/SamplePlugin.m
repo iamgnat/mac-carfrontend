@@ -56,8 +56,7 @@ static SamplePlugin *sharedSP = nil;
     CarFrontEndButton   *button = [CarFrontEndButton new];
 	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     
-    [attributes setObject:[NSFont fontWithName:[button fontName]
-                                          size:[button fontSize]]
+    [attributes setObject:[NSFont systemFontOfSize:27.0]
                    forKey:NSFontAttributeName];
 	[attributes setObject:[button textColor]
                    forKey:NSForegroundColorAttributeName];
