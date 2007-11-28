@@ -3,6 +3,13 @@
     Added Key Bindings methods to PluginManager.
     Added Key Bindings to SystemManager, PluginManager, and iTunesViewController.
     Fixed typo in the changeRepeatMode: method of iTunesViewController.
+    Added images for Volume control.
+    Updated the volume window to span the entire width of the screen to make
+        fine tuning with large fingers easier.
+    Updated the volume window controls to be volume up/down vs mute/max.
+    Added images to the iTunes plugin.
+    The main window no longer is a shielding window (e.g. always on top) when
+        using a Debug build.
 2007-09-21 - 1.0a7 - gnat
     Updated openVolumeWindow: to bring the volume window to the front if it is
         still open (e.g. the window has been hidden and the user clicks the
