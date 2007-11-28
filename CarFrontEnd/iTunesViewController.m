@@ -207,8 +207,7 @@ static iTunesViewController *sharedITVC = nil;
 	NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     CarFrontEndButton   *button = [CarFrontEndButton new];
 
-    [attributes setObject:[NSFont fontWithName:[button fontName]
-                                          size:[button fontSize] * 0.85]
+    [attributes setObject:[NSFont systemFontOfSize:27.0]
                    forKey:NSFontAttributeName];
 	[attributes setObject:[button textColor]
                    forKey:NSForegroundColorAttributeName];
