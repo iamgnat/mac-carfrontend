@@ -73,6 +73,7 @@
     // Get the screen rect of our main display
     NSRect  screenRect = [[NSScreen mainScreen] frame];
 #ifdef CFE_DEBUG
+    windowLevel = NSNormalWindowLevel;
     screenRect.origin.y = screenRect.size.height - 480;
     screenRect.origin.x = 0;
     screenRect.size.width = 800;

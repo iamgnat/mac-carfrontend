@@ -7,11 +7,13 @@
 	<key>IBEditorPositions</key>
 	<dict>
 		<key>375</key>
-		<string>417 407 820 522 0 0 1600 1002 </string>
+		<string>291 390 820 522 0 0 1600 1002 </string>
 		<key>407</key>
-		<string>97 370 671 522 0 0 1600 1002 </string>
+		<string>492 407 671 522 0 0 1600 1002 </string>
 		<key>408</key>
 		<string>492 407 671 522 0 0 1600 1002 </string>
+		<key>504</key>
+		<string>603 597 449 142 0 0 1600 1002 </string>
 		<key>631</key>
 		<string>645 535 364 265 0 0 1600 1002 </string>
 	</dict>

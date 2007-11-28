@@ -29,11 +29,16 @@
     IBOutlet CarFrontEndButton  *volumeButton;
     IBOutlet NSLevelIndicator   *volumeLevel;
     IBOutlet NSView             *volumeView;
+    IBOutlet NSButton           *volumeDownButton;
+    IBOutlet NSButton           *volumeUpButton;
     
     NSAppleScript               *outputMuted;
     NSAppleScript               *outputMute;
     NSAppleScript               *outputUnMute;
     NSAppleScript               *outputVolume;
+    
+    NSImage                     *volumeMute;
+    NSImage                     *volumeUnmute;
     
     NSWindow                    *volumeWindow;
     NSTimer                     *volumeWindowTimer;
@@ -45,7 +50,6 @@
 - (IBAction) openVolumeWindow: (id) sender;
 - (IBAction) changeVolume: (id) sender;
 - (IBAction) muteVolume: (id) sender;
-- (IBAction) maxVolume: (id) sender;
 
 #pragma mark Utility Methods
 - (void) closeVolumeWindow: (id) ignored;

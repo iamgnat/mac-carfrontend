@@ -161,6 +161,24 @@ static iTunesViewController *sharedITVC = nil;
         return(nil);
     }
     
+    NSString    *resourcePath = [[NSBundle bundleForClass:[iTunesViewController
+                                    class]] resourcePath];
+    
+    playImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"playTrack.png"]];
+    pauseImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"pauseTrack.png"]];
+    repeatAllImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"repeatAll.png"]];
+    repeatOffImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"repeatOff.png"]];
+    repeatOneImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"repeatOne.png"]];
+    shuffleOffImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"shuffleOff.png"]];
+    shuffleOnImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"shuffleOn.png"]];
+    
     return(self);
 }
 
@@ -188,6 +206,13 @@ static iTunesViewController *sharedITVC = nil;
     if (trackInfoScript != nil) [trackInfoScript release];
     if (playlistsScript != nil) [playlistsScript release];
     if (currentPlaylistScript != nil) [currentPlaylistScript release];
+    if (playImage != nil) [playImage release];
+    if (pauseImage != nil) [pauseImage release];
+    if (repeatAllImage != nil) [repeatAllImage release];
+    if (repeatOffImage != nil) [repeatOffImage release];
+    if (repeatOneImage != nil) [repeatOneImage release];
+    if (shuffleOffImage != nil) [shuffleOffImage release];
+    if (shuffleOnImage != nil) [shuffleOnImage release];
     if (owner != nil) [owner release];
     
     [super dealloc];
@@ -425,7 +450,7 @@ static iTunesViewController *sharedITVC = nil;
     NSAppleScript           *script = nil;
     NSAppleEventDescriptor  *res = nil;
     
-    if ([[playPauseButton stringValue] isEqualToString:@">"]) {
+    if ([playPauseButton image] == playImage) {
         script = playScript;
     } else {
         script = pauseScript;
@@ -456,7 +481,7 @@ static iTunesViewController *sharedITVC = nil;
     NSAppleScript           *script = nil;
     NSAppleEventDescriptor  *res = nil;
     
-    if ([[mixModeButton stringValue] isEqualToString:@"no mix"]) {
+    if ([mixModeButton image] == shuffleOnImage) {
         script = shuffleOffScript;
     } else {
         script = shuffleOnScript;
@@ -474,9 +499,9 @@ static iTunesViewController *sharedITVC = nil;
     NSAppleScript           *script = nil;
     NSAppleEventDescriptor  *res = nil;
     
-    if ([[repeatModeButton stringValue] isEqualToString:@"off"]) {
+    if ([repeatModeButton image] == repeatOffImage) {
         script = repeatAllScript;
-    } else if ([[repeatModeButton stringValue] isEqualToString:@"all"]) {
+    } else if ([repeatModeButton image] == repeatAllImage) {
         script = repeatOneScript;
     } else {
         script = repeatOffScript;
@@ -533,20 +558,26 @@ static iTunesViewController *sharedITVC = nil;
     
     // Play/Pause
     if ([[[res descriptorAtIndex:3] stringValue] isEqualToString:@"paused"]) {
-        [playPauseButton setStringValue:@">"];
+        [playPauseButton setImage:playImage];
     } else {
-        [playPauseButton setStringValue:@"||"];
+        [playPauseButton setImage:pauseImage];
     }
     
     // Mix Mode
     if ([[[res descriptorAtIndex:4] stringValue] isEqualToString:@"true"]) {
-        [mixModeButton setStringValue:@"no mix"];
+        [mixModeButton setImage:shuffleOnImage];
     } else {
-        [mixModeButton setStringValue:@"mix"];
+        [mixModeButton setImage:shuffleOffImage];
     }
 
     // Repeat Mode
-    [repeatModeButton setStringValue:[[res descriptorAtIndex:5] stringValue]];
+    if ([[[res descriptorAtIndex:5] stringValue] isEqualToString:@"off"]) {
+        [repeatModeButton setImage:repeatOffImage];
+    } else if ([[[res descriptorAtIndex:5] stringValue] isEqualToString:@"one"]) {
+        [repeatModeButton setImage:repeatOneImage];
+    } else {
+        [repeatModeButton setImage:repeatAllImage];
+    }
     
     int trackId = [[res descriptorAtIndex:6] int32Value];
     

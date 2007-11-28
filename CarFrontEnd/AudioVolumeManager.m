@@ -24,6 +24,12 @@
 - (id) init {
     [super init];
     
+    NSString    *resourcePath = [[NSBundle mainBundle] resourcePath];
+    volumeMute = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"volumeMute.png"]];
+    volumeUnmute = [[NSImage alloc] initWithContentsOfFile:[resourcePath
+                            stringByAppendingPathComponent:@"volumeUp.png"]];
+
     volumeWindow = nil;
     outputMuted = [[NSAppleScript alloc]
                    initWithSource:@"get output muted of (get volume settings)"];
@@ -68,6 +74,8 @@
     if (outputMute != nil) [outputMute release];
     if (outputUnMute != nil) [outputUnMute release];
     if (outputVolume != nil) [outputVolume release];
+    if (volumeMute != nil) [volumeMute release];
+    if (volumeUnmute != nil) [volumeUnmute release];
     if (volumeWindow != nil) {
         [volumeWindow close];
     }
@@ -102,13 +110,8 @@
     NSRect  mainFrame = [controller mainWindowFrame];
     NSRect  volFrame = [volumeView frame];
     
-    NSDictionary    *prefs = [controller preferencesForKey:@"CarFrontEnd"];
-    if ([[prefs objectForKey:@"DriverSide"] isEqualToString:@"right"]) {
-        volFrame.origin.x = mainFrame.size.width - volFrame.size.width;
-    } else {
-        volFrame.origin.x = 0;
-    }
-    volFrame.origin.y = mainFrame.origin.y;
+    volFrame.origin = mainFrame.origin;
+    volFrame.size.width = mainFrame.size.width;
     
     [volumeLevel setIntValue:[self volumeLevel]];
     
@@ -136,7 +139,15 @@
 }
 
 - (IBAction) changeVolume: (id) sender {
-    [self setVolume:[volumeLevel intValue]];
+    int     vol = [volumeLevel intValue];
+    
+    if (sender == volumeDownButton) {
+        vol--;
+    } else if (sender == volumeUpButton) {
+        vol++;
+    }
+    
+    [self setVolume:vol];
 }
 
 - (IBAction) muteVolume: (id) sender {
@@ -175,10 +186,6 @@
               [error objectForKey:@"NSAppleScriptErrorMessage"]);
         return;
     }
-}
-
-- (IBAction) maxVolume: (id) sender {
-    [self setVolume:100];
 }
 
 #pragma mark Utility Methods
@@ -250,9 +257,9 @@
               source, [error objectForKey:@"NSAppleScriptErrorMessage"]);
     } else {
         if ([res int32Value]) {
-            [muteButton setTitle:@"unmute"];
+            [muteButton setImage:volumeUnmute];
         } else {
-            [muteButton setTitle:@"mute"];
+            [muteButton setImage:volumeMute];
         }
     }
     

@@ -48,6 +48,13 @@
     IBOutlet CarFrontEndButton      *repeatModeButton;
     
     NSImage                         *pluginButtonImage;
+    NSImage                         *playImage;
+    NSImage                         *pauseImage;
+    NSImage                         *repeatAllImage;
+    NSImage                         *repeatOffImage;
+    NSImage                         *repeatOneImage;
+    NSImage                         *shuffleOffImage;
+    NSImage                         *shuffleOnImage;
     
     NSTimer                         *fastTimer;
     NSTimer                         *playlistTimer;
