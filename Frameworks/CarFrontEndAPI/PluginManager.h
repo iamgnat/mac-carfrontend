@@ -66,6 +66,9 @@
 // Return a new window object configured to meet the basic CFE standards.
 - (NSWindow *) windowWithContentRect: (NSRect) frame;
 
+// Return the NSWindow pointer to the main CarFrontEnd window.
+- (NSWindow *) mainWindow;
+
 @end
 
 #pragma mark Plugin CarFrontEnd utility methods
