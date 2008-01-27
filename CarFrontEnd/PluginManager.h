@@ -66,6 +66,7 @@
 #pragma mark Utilities
 - (void) loadPluginsFromPath: (NSString *) pluginPath;
 - (void) changeContentView;
+- (void) changingContentView;
 - (void) displayPluginByTag: (int) tag;
 
 #pragma mark Plugin message utility methods

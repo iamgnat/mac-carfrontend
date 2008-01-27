@@ -164,6 +164,8 @@
 
 #pragma mark Manage Content View
 - (void) replaceContentWith: (NSView *) view {
+    [pluginManager changingContentView];
+    
     NSRect  frame = [contentView frame];
     
     frame.origin.x = 0;
@@ -246,6 +248,10 @@
 
 - (int) mainWindowLevel {
     return([mainWindow level]);
+}
+
+- (NSWindow *) mainWindow {
+    return(mainWindow);
 }
 
 - (NSString *) appSupportPath {
