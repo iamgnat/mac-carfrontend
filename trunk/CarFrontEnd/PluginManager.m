@@ -299,6 +299,16 @@ static PluginManager    *sharedPM = nil;
     currentPlugin = nil;
 }
 
+- (void) changingContentView {
+    if (currentPlugin == nil) return;
+    
+    id  cp = currentPlugin; // Just to get rid of warnings about the method
+    //  not being part of the protocol.
+    if ([cp respondsToSelector:@selector(viewWillBeRemovedFromView)]) {
+        [cp viewWillBeRemovedFromView];
+    }
+}
+
 - (void) displayPluginByTag: (int) tag {
     if (tag < 0 || tag >= [orderedPluginList count]) return;
     
@@ -308,8 +318,12 @@ static PluginManager    *sharedPM = nil;
     // changeContentView will have been called by the time
     //  replaceContentWith: returns.
     NSView  *view = [plugin contentViewForSize:[controller contentViewFrame].size];
+    
     [controller replaceContentWith:view];
     currentPlugin = [plugin retain];
+    if ([plugin respondsToSelector:@selector(viewWasMadeVisible)]) {
+        [plugin viewWasMadeVisible];
+    }
 }
 
 #pragma mark Plugin message utility methods
@@ -444,6 +458,10 @@ static PluginManager    *sharedPM = nil;
     [window setBackgroundColor:[NSColor blackColor]];
     [window setLevel:[controller mainWindowLevel]];
     return(window);
+}
+
+- (NSWindow *) mainWindow {
+    return([controller mainWindow]);
 }
 
 #pragma mark Plugin CarFrontEnd utility methods

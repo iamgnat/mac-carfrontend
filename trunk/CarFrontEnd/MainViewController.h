@@ -61,6 +61,7 @@
 - (void) changeDisplayTo: (NSDictionary *) mode;
 - (NSRect) mainWindowFrame;
 - (int) mainWindowLevel;
+- (NSWindow *) mainWindow;
 - (NSString *) appSupportPath;
 - (NSRect) contentViewFrame;
 - (BOOL) swapDriverToSide: (NSString *) side;
