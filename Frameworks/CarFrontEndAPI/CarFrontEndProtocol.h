@@ -47,6 +47,10 @@
 //  before it is displayed.
 - (NSView *) contentViewForSize: (NSSize) size;
 
+// Optional method that the PluginManager will attempt to call AFTER your
+//  NSView has been made the current content view.
+// - (void) viewDidDisplay;
+
 // Allow the plugin to perform actions when it's view is replaced.
 //  Ideally you should stop all processing that is not needed (e.g. UI updates,
 //  etc..), but obviously some cases will not fit this scenario.
@@ -54,3 +58,19 @@
 
 @end
 
+// Optional methods
+@interface NSObject (CarFrontEndProtocolOptional)
+
+// The PluginManager will attempt to call AFTER your NSView has been made
+//  the current content view.
+- (void) viewWasMadeVisible;
+
+// The PluginManager will call (and wait for) just before it replaces your
+//  NSView as the content view.
+// Return NO if you do not want the view replaced at this time.
+//  Note: You should almost never prevent your view from being removed, but if
+//          you need to prevent it there should be some notification to the user
+//          so they aren't left wondering why the switch didn't occur.
+- (BOOL) viewWillBeRemovedFromView;
+
+@end
