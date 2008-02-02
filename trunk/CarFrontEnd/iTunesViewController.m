@@ -557,10 +557,10 @@ static iTunesViewController *sharedITVC = nil;
     }
     
     // Play/Pause
-    if ([[[res descriptorAtIndex:3] stringValue] isEqualToString:@"paused"]) {
-        [playPauseButton setImage:playImage];
-    } else {
+    if ([[[res descriptorAtIndex:3] stringValue] isEqualToString:@"playing"]) {
         [playPauseButton setImage:pauseImage];
+    } else {
+        [playPauseButton setImage:playImage];
     }
     
     // Mix Mode
