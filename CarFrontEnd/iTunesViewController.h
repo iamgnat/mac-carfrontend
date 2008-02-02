@@ -41,6 +41,9 @@
     IBOutlet NSTextField            *currentTrackTimeField;
     IBOutlet NSTextField            *trackTimeField;
     
+    IBOutlet NSTextField            *currentTrackIndexField;
+    IBOutlet NSTextField            *trackCountField;
+    
     IBOutlet CarFrontEndButton      *prevTrackButton;
     IBOutlet CarFrontEndButton      *playPauseButton;
     IBOutlet CarFrontEndButton      *nextTrackButton;
