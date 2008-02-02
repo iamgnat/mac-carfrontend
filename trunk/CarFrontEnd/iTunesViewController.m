@@ -72,7 +72,7 @@ static iTunesViewController *sharedITVC = nil;
     repeatOffScript = [[NSAppleScript alloc]
                     initWithSource:@"tell application \"iTunes\" to set song repeat of current playlist to off"];
     playerInfoScript = [[NSAppleScript alloc]
-                        initWithSource:@"set info to {}\ntell application \"iTunes\"\nset info to info & {(player position)}\nset info to info & {(duration of current track as integer)}\nset info to info & {(player state as string)}\nset info to info & {(shuffle of current playlist)}\nset info to info & {(song repeat of current playlist as string)}\nset info to info & {(id of current track)}\nend tell\nget info"];
+                        initWithSource:@"set info to {}\ntell application \"iTunes\"\nset info to info & {(player position)}\nset info to info & {(duration of current track as integer)}\nset info to info & {(player state as string)}\nset info to info & {(shuffle of current playlist)}\nset info to info & {(song repeat of current playlist as string)}\nset info to info & {(id of current track)}\nset val to 0\ntry\nset val to index of current track\nend try\nset info to info & val\nset info to info & {count tracks of current playlist}\nend tell\nget info"];
     trackInfoScript = [[NSAppleScript alloc]
                        initWithSource:@"set info to {}\ntell application \"iTunes\"\nset info to info & {(artist of current track)}\nset info to info & {(album of current track)}\nset info to info & {(name of current track)}\ntry\nset info to info & {(data of (get first artwork of current track))}\nend try\nend tell\nget info"];
     playlistsScript = [[NSAppleScript alloc]
@@ -585,6 +585,12 @@ static iTunesViewController *sharedITVC = nil;
     [trackTimeIndicator setIntValue:[[res descriptorAtIndex:1] int32Value]];
     [currentTrackTimeField
      setStringValue:[self formatTime:[[res descriptorAtIndex:1] int32Value]]];
+    
+    // Track index & count
+    int trackIndex = [[res descriptorAtIndex:7] int32Value];
+    [currentTrackIndexField setIntValue:trackIndex];
+    int trackCount = [[res descriptorAtIndex:8] int32Value];
+    [trackCountField setIntValue:trackCount];
     
     // Track time
     float   maxValue = [[res descriptorAtIndex:2] int32Value] * 1.0;

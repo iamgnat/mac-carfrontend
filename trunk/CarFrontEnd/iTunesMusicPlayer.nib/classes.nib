@@ -36,6 +36,8 @@
 				<string>NSTextField</string>
 				<key>artistNameField</key>
 				<string>NSTextField</string>
+				<key>currentTrackIndexField</key>
+				<string>NSTextField</string>
 				<key>currentTrackTimeField</key>
 				<string>NSTextField</string>
 				<key>ejectMediaButton</key>
@@ -62,6 +64,8 @@
 				<string>CarFrontEndButton</string>
 				<key>sourceList</key>
 				<string>NSArrayController</string>
+				<key>trackCountField</key>
+				<string>NSTextField</string>
 				<key>trackNameField</key>
 				<string>NSTextField</string>
 				<key>trackTimeField</key>
