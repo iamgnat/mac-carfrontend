@@ -2,6 +2,7 @@
     Fixed play/pause bug in iTunesMusicPlayer where it could not start playing
         a track after the next or prev track buttons were used while the current
         track was paused.
+    Added Current Track Index and Playlist track count to iTunesMusicPlayer.
 2008-01-27 - 1.0a9 - gnat
     Fixed placement of elapsed time and track length fields in the iTunes
         plugin when the height of the screen is greater than 480.
