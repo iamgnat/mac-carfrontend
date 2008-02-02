@@ -1,3 +1,8 @@
+2008-01-27 - 1.0a9 - gnat
+    Added -mainWindow method to the PluginManager to provide a pointer to the 
+        main CarFrontEnd window.
+    Added support for Plugins to respond to -viewWasMadeVisible and 
+        -viewWillBeRemovedFromView.
 2007-11-09 - 1.0a8 - gnat
     Added Key Binding protocol to PluginManager.h
     Changed CarFrontEndButton images to be dyanmically generated!!! :)
