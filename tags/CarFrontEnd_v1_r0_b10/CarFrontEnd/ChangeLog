@@ -1,0 +1,76 @@
+2008-XX-XX - 1.0a10 - gnat
+    Fixed play/pause bug in iTunesMusicPlayer where it could not start playing
+        a track after the next or prev track buttons were used while the current
+        track was paused.
+    Added Current Track Index and Playlist track count to iTunesMusicPlayer.
+2008-01-27 - 1.0a9 - gnat
+    Fixed placement of elapsed time and track length fields in the iTunes
+        plugin when the height of the screen is greater than 480.
+    Added -mainWindow method to the PluginManager to provide a pointer to the 
+        main CarFrontEnd window.
+    Added support for Plugins to respond to -viewWasMadeVisible and 
+        -viewWillBeRemovedFromView.
+2007-11-09 - 1.0a8 - gnat
+    Added CFEApplication sub-class of NSApplication.
+    Added Key Bindings methods to PluginManager.
+    Added Key Bindings to SystemManager, PluginManager, and iTunesViewController.
+    Fixed typo in the changeRepeatMode: method of iTunesViewController.
+    Added images for Volume control.
+    Updated the volume window to span the entire width of the screen to make
+        fine tuning with large fingers easier.
+    Updated the volume window controls to be volume up/down vs mute/max.
+    Added images to the iTunes plugin.
+    The main window no longer is a shielding window (e.g. always on top) when
+        using a Debug build.
+2007-09-21 - 1.0a7 - gnat
+    Updated openVolumeWindow: to bring the volume window to the front if it is
+        still open (e.g. the window has been hidden and the user clicks the
+        volume button again).
+    Added PluginManager Protocols to the PluginManager object.
+    Added CFEMessage notification and observation to all objects and the
+        iTunesMusicPlayer plugin.
+    Updated the System Menu and iTunesMusicPlayer content views to adjust for
+        driver side changes.
+2007-09-05 - 1.0a6 - gnat
+    Updated SplashView to reflect version change.
+    See CarFrontEndAPI for changes.
+2007-08-21 - 1.0a5 - gnat
+    BUG: On larger displays the buttons were not working. The buttons were bound
+        to the wrong side of the screen causing them to be pulled under the
+        splash view. Corrected the bindings.
+    BUG: Artifacting on some displays when the driver side is swapped. Added
+        setNeedsDisplay: calls to the mainView which appears to have corrected
+        the issue in the test case.
+2007-08-19 - 1.0a4 - gnat
+    BUG: Inadvertantly (ok, I was screwing around and forgot about it) changed
+        the AppleScript for the Next Track button that caused the screen to
+        go black. Returned the script to the proper state.
+    BUG: Due to the 1.0a3 NIB changes, the QuickSlot buttons were not calling
+        their plugins. Relinked the buttons to the proper action.
+2007-08-19 - 1.0a3 - gnat
+    Added driver side selection option to the Menu view.
+    Updated the Volume window to pop to the bottom of the screen rather than
+        the center. This should make it easier for the user to use.
+    Added a title bar to the main window if it is built in Debug mode.
+2007-08-08 - 1.0a2 - gnat
+    Update previous track button to skip to the begining of the current track
+        if more than 10 seconds have elapsed.
+    Added PluginListView to manage new plugin management.
+    Updated MainMenu.nib to add a PluginListView to the SystemView view for
+        displaying the loaded plugins.
+    Updated MainMenu.nib to change the 6 plugin buttons in the MainView to 
+        3 QuickSlot buttons to act as quick access to commonly used plugins.
+    Updated PluginManager.h/m to add new PluginListView and QuickSlot logic.
+    Updated MainViewController to add support for preference management.
+    Updated iTunesMusicPlayer to add "iTunes" to the pluginButtonImage.
+
+2007-07-27 - 1.0a1 - gnat
+    Fix to timer being fired when a device (iPod, CD, HDD, etc..) is mounted.
+    An infinite loop was possible that would cause the available playlists to
+        not be updated when changes occurred.
+    If two consecutive tracks had the same duration, the track info would not
+        change when the track changed. Corrected by using the id from iTunes
+        rather than the duration.
+
+2007-07-18 - 1.0 - gnat
+    Initial release
