@@ -1,5 +1,5 @@
 /*
- * CarFrontEnd - CFEApplication.h - David Whittle (iamgnat@gmail.com)
+ * CarFrontEnd - shade.h - Alexander Bock (myself@alexander-bock.eu)
  * Copyright (C) 2008  Alexander Bock (myself@alexander-bock.eu)
  * 
  * This program is free software: you can redistribute it and/or modify
