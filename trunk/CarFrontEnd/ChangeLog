@@ -1,3 +1,5 @@
+2008-XX-XX - 1.0a11 - gnat
+    Fixed key bindings that had prev & next track keys reversed.
 2008-03-09 - 1.0a10 - gnat
     Fixed play/pause bug in iTunesMusicPlayer where it could not start playing
         a track after the next or prev track buttons were used while the current
