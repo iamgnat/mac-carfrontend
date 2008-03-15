@@ -1,0 +1,64 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {changeVolume = id; maxVolume = id; muteVolume = id; openVolumeWindow = id; }; 
+            CLASS = AudioVolumeManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                controller = MainViewController; 
+                muteButton = CarFrontEndButton; 
+                volumeButton = CarFrontEndButton; 
+                volumeLevel = NSLevelIndicator; 
+                volumeView = NSView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = CarFrontEndButton; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
+        {
+            CLASS = MainViewController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                audioVolumeManager = AudioVolumeManager; 
+                contentView = NSView; 
+                dateTextField = NSTextField; 
+                mainView = NSView; 
+                pluginManager = PluginManager; 
+                splashView = NSView; 
+                systemManager = SystemManager; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = PluginListView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {buttonAction = id; }; 
+            CLASS = PluginManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                controller = MainViewController; 
+                currentPlugin = id; 
+                modifyButton = CarFrontEndButton; 
+                pluginButton1 = CarFrontEndButton; 
+                pluginButton2 = CarFrontEndButton; 
+                pluginButton3 = CarFrontEndButton; 
+                pluginListView = PluginListView; 
+                quickSlotText = NSTextField; 
+                updateQuickSlotsOkButton = CarFrontEndButton; 
+                updateQuickSlotsView = NSView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {hide = id; quit = id; showSystemView = id; sideSwap = id; }; 
+            CLASS = SystemManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                controller = MainViewController; 
+                swapSidesButton = CarFrontEndButton; 
+                systemButton = CarFrontEndButton; 
+                systemView = NSView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
