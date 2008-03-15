@@ -777,13 +777,13 @@ static iTunesViewController *sharedITVC = nil;
     } else if (key == NSUpArrowFunctionKey && options & NSShiftKeyMask) {
         // Shift + up arrow = Eject device
         [self ejectMedia:self];
-    } else if (key == NSLeftArrowFunctionKey) {
+    } else if (key == NSRightArrowFunctionKey) {
         // right arrow = prev track
         [self prevTrack:nil];
     } else if (key == ' ') {
         // space = play/pause
         [self playPause:nil];
-    } else if (key == NSRightArrowFunctionKey) {
+    } else if (key == NSLeftArrowFunctionKey) {
         // left arrow = next track
         [self nextTrack:nil];
     } else if (key == 's' || key == 'm') {
