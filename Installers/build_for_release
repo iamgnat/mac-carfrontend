@@ -1,0 +1,206 @@
+#!/usr/bin/php
+<?
+# build_for_release
+#   Script to retrieve all the Release tags and build them.
+#
+# 2008-03-15 David Whittle (iamgnat@gmail.com)
+#   Initial version.
+
+$url = "http://mac-carfrontend.googlecode.com/svn/tags";
+$svn = "/usr/bin/svn";
+
+logMsg("Setting up directories...");
+if (is_dir("CarFrontEnd.pkg")) {
+    if (!scrubDir("CarFrontEnd.pkg")) {
+        logError("Unable to delete old CarFrontEnd.pkg: " . lastError());
+        exit(1);
+    }
+}
+if (is_dir("source")) {
+    if (!scrubDir("source")) {
+        logError("Unable to delete old source directory: " . lastError());
+        exit(1);
+    }
+}
+if (!@mkdir("source")) {
+    logError("Unable to create the base source directory: " . lastError());
+    exit(1);
+}
+if (is_dir("build")) {
+    if (!scrubDir("build")) {
+        logError("Unable to delete old build directory: " . lastError());
+        exit(1);
+    }
+}
+if (!@mkdir("build")) {
+    logError("Unable to create the base build directory: " . lastError());
+    exit(1);
+}
+
+@exec("$svn ls $url", $groups, $res);
+if ($res) {
+    logError("Unable to get SVN tags from $url!");
+    exit(1);
+}
+if (!count($groups)) {
+    logError("No tags found in $url!");
+    exit(1);
+}
+
+$projects = array();
+
+logMsg("Retrieving projects from SVN...");
+foreach ($groups as $group) {
+    if (!is_dir("source/$group") && !@mkdir("source/$group")) {
+        logError("Unable to create source/$group: " . lastError());
+        exit(1);
+    }
+    
+    $subgroups = array();
+    @exec("$svn ls $url/$group", $subgroups, $res);
+    if ($res) {
+        logError("Unable to get SVN tags from $url/$group!");
+        exit(1);
+    }
+    if (!count($subgroups)) continue;
+    
+    foreach ($subgroups as $sub) {
+        $output = array();
+        @exec("$svn ls $url/$group${sub}Release", $output, $res);
+        if ($res) continue;
+        
+        @exec("$svn export $url/$group${sub}Release source/$group$sub",
+                $output, $res);
+        if ($res) {
+            logError("Unable to export $url/$group${sub}Release to " .
+                        "source/$group$sub.");
+            exit(1);
+        }
+        logMsg("Retrieved $group$sub");
+        $projects[] = "$group$sub";
+    }
+}
+
+logMsg("Building xcode projects...");
+$dir = getcwd();
+foreach ($projects as $project) {
+    logMsg("Building $project...");
+    if (!@chdir("source/$project")) {
+        logError("Unable to cd to source/$project: " . lastError());
+        exit(1);
+    }
+    $output = array();
+    $path = dirname($project);
+    if (preg_match('/^Frameworks/', $path)) $path = "Library/$path";
+    if (preg_match('/^Plugins/', $path))
+        $path = preg_replace('/^Plugins/', 'Library/PlugIns/CarFrontEnd',
+                                $path);
+    @exec("/usr/bin/xcodebuild -configuration Release -alltargets " .
+            "DSTROOT=$dir/build/ INSTALL_PATH=$path" .
+            " clean install", $output, $res);
+    if ($res) {
+        logError("Unable to build $project.");
+        exit(1);
+    }
+    if (!@chdir($dir)) {
+        logError("Unable to cd to $dir: " . lastError());
+        exit(1);
+    }
+}
+
+logMsg("Cleaning up...");
+$dirsToClean = array(
+    "build/Applications/iTunesMusicPlayer.cfep",
+    "build/Library/PlugIns/CarFrontEnd/SamplePlugin.cfep"
+);
+foreach ($dirsToClean as $dir) {
+    if (is_dir($dir)) {
+        if (!scrubDir($dir)) {
+            logError("Unable to delete $dir: " . lastError());
+            exit(1);
+        }
+    }
+}
+
+logMsg("Building installer...");
+@exec("/Developer/usr/bin/packagemaker --title CarFrontEnd " .
+        "--target 10.4 --out CarFrontEnd.pkg --id " .
+        "com.googlecode.mac-carfrontend --root build")
+
+exit(0);
+
+?>
+<?
+# Functions
+
+# logMsg($msg) -
+#   Standardized logging format.
+#   Args:
+#       $msg    - The message to write.
+#   Results:
+#       Writes the supplied message to STDOUT with a timestamp
+#       pre-pended to it and a new line appended.
+#       The timestamp is in the format YYYY/MM/DD HH:MM:SS
+#
+# 2008-03-15 - David Whittle (iamgnat@gmail.com)
+#   Initial version.
+function logMsg ($msg) {
+    file_put_contents('php://stdout', date("Y/m/d H:i:s") . " $msg\n");
+}
+
+# logError($msg) -
+#   Standardized logging format.
+#   Args:
+#       $msg    - The message to write.
+#   Results:
+#       Writes the supplied message to STDERR with a timestamp
+#       pre-pended to it and a new line appended.
+#       The timestamp is in the format YYYY/MM/DD HH:MM:SS
+#
+# 2008-03-15 - David Whittle (iamgnat@gmail.com)
+#   Initial version.
+function logError ($msg) {
+    file_put_contents('php://stderr', date("Y/m/d H:i:s") . " ERROR: $msg\n");
+}
+
+# lastError()
+#   Get the last error message
+#   Args:
+#       None
+#   Results:
+#       Returns the last error message.
+#
+# 2008-03-15 - David Whittle (iamgnat@gmail.com)
+#   Initial version.
+function lastError() {
+    $info = error_get_last();
+    return($info['message']);
+}
+
+# scrubDir($dir)
+#   Delete the directory and all it's contents.
+#   Args:
+#       $dir    - The directory to delete.
+#   Results:
+#       TRUE/FALSE on success/fail
+#
+# 2008-03-15 - David Whittle (iamgnat@gmail.com)
+#   Initial version.
+function scrubDir($dir) {
+    exec("chmod -R +w $dir", $output, $res);
+    
+    $entries = @glob("$dir/*");
+    if ($entries === FALSE) return(FALSE);
+    foreach ($entries as $entry) {
+        if (!is_dir($entry) || is_link($entry)) {
+            if (!@unlink($entry)) return(FALSE);
+        } else {
+            if (!scrubDir($entry)) return(FALSE);
+        }
+    }
+    
+    if (!@rmdir($dir)) return(FALSE);
+    return(TRUE);
+}
+
+?>
