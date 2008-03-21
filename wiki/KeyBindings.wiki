@@ -26,9 +26,9 @@ iTunes Plugin:
 || Return/Enter || Select Playlist ||
 || Shift + Left Arrow || Next Playlist ||
 || Shift + Up Arrow || Eject Media ||
-|| Right Arrow || Previous Track ||
+|| Left Arrow || Previous Track ||
 || Space || Play/Pause ||
-|| Left Arrow || Next Track ||
+|| Right Arrow || Next Track ||
 || m/s || Change Mix/Shuffle mode ||
 || r || Change Repeat Mode ||
 
