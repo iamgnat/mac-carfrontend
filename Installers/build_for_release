@@ -125,7 +125,7 @@ foreach ($dirsToClean as $dir) {
 logMsg("Building installer...");
 @exec("/Developer/usr/bin/packagemaker --title CarFrontEnd " .
         "--target 10.4 --out CarFrontEnd.pkg --id " .
-        "com.googlecode.mac-carfrontend --root build")
+        "com.googlecode.mac-carfrontend --root build");
 
 exit(0);
 
