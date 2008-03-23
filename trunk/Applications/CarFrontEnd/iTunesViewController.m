@@ -618,11 +618,10 @@ static iTunesViewController *sharedITVC = nil;
         } else {
             NSImage *art = [[[NSImage alloc] initWithData:[[res descriptorAtIndex:4] data]]
                             autorelease];
-            [art setScalesWhenResized:YES];
-            if ([art size].width > [art size].height) {
-                [art scaleForWidth:[albumArtImage frame].size.width];
-            } else {
-                [art scaleForHeight:[albumArtImage frame].size.height];
+            if ([art size].width > [albumArtImage frame].size.width ||
+                [art size].height > [albumArtImage frame].size.height) {
+                [art setScalesWhenResized:YES];
+                [art scaleToFitSize:[albumArtImage frame].size];
             }
             [albumArtImage setImage:art];
         }
