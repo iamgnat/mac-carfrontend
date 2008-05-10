@@ -184,55 +184,15 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 232111335;
-			PBXWorkspaceStateSaveDate = 232111335;
+			PBXPerProjectTemplateStateSaveDate = 232121862;
+			PBXWorkspaceStateSaveDate = 232121862;
 		};
 		perUserProjectItems = {
-			FA6B44430DD5BD5800FB5C17 /* PBXTextBookmark */ = FA6B44430DD5BD5800FB5C17 /* PBXTextBookmark */;
-			FA6B44480DD5BD9000FB5C17 /* PBXTextBookmark */ = FA6B44480DD5BD9000FB5C17 /* PBXTextBookmark */;
-			FA6B444A0DD5BDB100FB5C17 /* PBXTextBookmark */ = FA6B444A0DD5BDB100FB5C17 /* PBXTextBookmark */;
-			FA6B444C0DD5BE1D00FB5C17 /* PBXTextBookmark */ = FA6B444C0DD5BE1D00FB5C17 /* PBXTextBookmark */;
-			FA6B444D0DD5BE4800FB5C17 /* PBXTextBookmark */ = FA6B444D0DD5BE4800FB5C17 /* PBXTextBookmark */;
-			FA6B444F0DD5BE5300FB5C17 /* PBXTextBookmark */ = FA6B444F0DD5BE5300FB5C17 /* PBXTextBookmark */;
-			FA6B44530DD5BF6700FB5C17 /* PBXTextBookmark */ = FA6B44530DD5BF6700FB5C17 /* PBXTextBookmark */;
-			FA6B44550DD5BFA800FB5C17 /* PBXTextBookmark */ = FA6B44550DD5BFA800FB5C17 /* PBXTextBookmark */;
-			FA6B446F0DD5C04700FB5C17 /* PBXTextBookmark */ = FA6B446F0DD5C04700FB5C17 /* PBXTextBookmark */;
-			FA6B44760DD5C0AD00FB5C17 /* PBXTextBookmark */ = FA6B44760DD5C0AD00FB5C17 /* PBXTextBookmark */;
-			FA6B447A0DD5D38B00FB5C17 /* PBXTextBookmark */ = FA6B447A0DD5D38B00FB5C17 /* PBXTextBookmark */;
-			FA6B447C0DD5D3B400FB5C17 /* PBXTextBookmark */ = FA6B447C0DD5D3B400FB5C17 /* PBXTextBookmark */;
-			FA6B447E0DD5D3D700FB5C17 /* PBXTextBookmark */ = FA6B447E0DD5D3D700FB5C17 /* PBXTextBookmark */;
-			FA6B44830DD5D50C00FB5C17 /* PBXTextBookmark */ = FA6B44830DD5D50C00FB5C17 /* PBXTextBookmark */;
-			FA6B44850DD5D5BD00FB5C17 /* PBXTextBookmark */ = FA6B44850DD5D5BD00FB5C17 /* PBXTextBookmark */;
-			FA6B44870DD5D66C00FB5C17 /* PBXTextBookmark */ = FA6B44870DD5D66C00FB5C17 /* PBXTextBookmark */;
-			FA6B448A0DD5D94600FB5C17 /* PBXTextBookmark */ = FA6B448A0DD5D94600FB5C17 /* PBXTextBookmark */;
-			FA6B448C0DD5D98600FB5C17 /* PBXTextBookmark */ = FA6B448C0DD5D98600FB5C17 /* PBXTextBookmark */;
-			FA6B448E0DD5D9BB00FB5C17 /* PBXTextBookmark */ = FA6B448E0DD5D9BB00FB5C17 /* PBXTextBookmark */;
-			FA6B44900DD5D9F500FB5C17 /* PBXTextBookmark */ = FA6B44900DD5D9F500FB5C17 /* PBXTextBookmark */;
-			FA6B44910DD5DA2F00FB5C17 /* PBXTextBookmark */ = FA6B44910DD5DA2F00FB5C17 /* PBXTextBookmark */;
-			FA6B44920DD5DA8F00FB5C17 /* PBXTextBookmark */ = FA6B44920DD5DA8F00FB5C17 /* PBXTextBookmark */;
-			FA6B44950DD5DC2B00FB5C17 /* PBXTextBookmark */ = FA6B44950DD5DC2B00FB5C17 /* PBXTextBookmark */;
-			FA6B44970DD5DCF900FB5C17 /* PBXTextBookmark */ = FA6B44970DD5DCF900FB5C17 /* PBXTextBookmark */;
-			FA6B44990DD5DE5E00FB5C17 /* PBXTextBookmark */ = FA6B44990DD5DE5E00FB5C17 /* PBXTextBookmark */;
-			FA6B449B0DD5E16500FB5C17 /* PBXTextBookmark */ = FA6B449B0DD5E16500FB5C17 /* PBXTextBookmark */;
-			FA6B449D0DD5E2CF00FB5C17 /* PBXTextBookmark */ = FA6B449D0DD5E2CF00FB5C17 /* PBXTextBookmark */;
-			FA6B449F0DD5E2D700FB5C17 /* PBXTextBookmark */ = FA6B449F0DD5E2D700FB5C17 /* PBXTextBookmark */;
-			FA6B44A10DD5E35700FB5C17 /* PBXTextBookmark */ = FA6B44A10DD5E35700FB5C17 /* PBXTextBookmark */;
+			FA6B44A60DD5E5E300FB5C17 = FA6B44A60DD5E5E300FB5C17 /* PBXTextBookmark */;
+			FACC49BF0DD5E60A00643F28 /* PBXTextBookmark */ = FACC49BF0DD5E60A00643F28 /* PBXTextBookmark */;
 			FAEE4B730DD4B2BF00A5CFDF = FAEE4B730DD4B2BF00A5CFDF /* PBXTextBookmark */;
 			FAEE4B740DD4B2BF00A5CFDF = FAEE4B740DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B750DD4B2BF00A5CFDF = FAEE4B750DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B760DD4B2BF00A5CFDF = FAEE4B760DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B770DD4B2BF00A5CFDF = FAEE4B770DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B780DD4B2BF00A5CFDF = FAEE4B780DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B790DD4B2BF00A5CFDF = FAEE4B790DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B7A0DD4B2BF00A5CFDF = FAEE4B7A0DD4B2BF00A5CFDF /* PBXTextBookmark */;
-			FAEE4B9A0DD4B54700A5CFDF = FAEE4B9A0DD4B54700A5CFDF /* PBXTextBookmark */;
-			FAEE4B9B0DD4B54700A5CFDF = FAEE4B9B0DD4B54700A5CFDF /* PBXTextBookmark */;
-			FAEE4BAA0DD4B73700A5CFDF = FAEE4BAA0DD4B73700A5CFDF /* PBXTextBookmark */;
-			FAEE4BAB0DD4B73700A5CFDF = FAEE4BAB0DD4B73700A5CFDF /* PBXTextBookmark */;
 			FAEE4C060DD4C3FF00A5CFDF = FAEE4C060DD4C3FF00A5CFDF /* PBXTextBookmark */;
-			FAEE4C070DD4C3FF00A5CFDF = FAEE4C070DD4C3FF00A5CFDF /* PBXTextBookmark */;
-			FAEE4C080DD4C3FF00A5CFDF = FAEE4C080DD4C3FF00A5CFDF /* PBXTextBookmark */;
-			FAEE4C090DD4C3FF00A5CFDF = FAEE4C090DD4C3FF00A5CFDF /* PBXTextBookmark */;
 			FAEE4C600DD4DB9900A5CFDF = FAEE4C600DD4DB9900A5CFDF /* PBXTextBookmark */;
 		};
 		sourceControlManager = FA64233F0DA115EA008B4B77 /* Source Control */;
@@ -279,293 +239,13 @@
 	};
 	FA6423490DA1167C008B4B77 /* artistsAlbums.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1676, 5656}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1676, 4746}}";
 			sepNavSelRange = "{2779, 0}";
-			sepNavVisRange = "{1706, 1770}";
+			sepNavVisRange = "{1765, 1711}";
 			sepNavWindowFrame = "{{592, 97}, {703, 776}}";
 		};
 	};
-	FA6B44430DD5BD5800FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 101";
-		rLen = 0;
-		rLoc = 4781;
-		rType = 0;
-		vrLen = 1683;
-		vrLoc = 2387;
-	};
-	FA6B44480DD5BD9000FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 95";
-		rLen = 0;
-		rLoc = 2948;
-		rType = 0;
-		vrLen = 1689;
-		vrLoc = 2387;
-	};
-	FA6B444A0DD5BDB100FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 93";
-		rLen = 0;
-		rLoc = 2948;
-		rType = 0;
-		vrLen = 1683;
-		vrLoc = 2387;
-	};
-	FA6B444C0DD5BE1D00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 94";
-		rLen = 0;
-		rLoc = 2948;
-		rType = 0;
-		vrLen = 1689;
-		vrLoc = 2387;
-	};
-	FA6B444D0DD5BE4800FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 99";
-		rLen = 0;
-		rLoc = 3252;
-		rType = 0;
-		vrLen = 1649;
-		vrLoc = 2387;
-	};
-	FA6B444F0DD5BE5300FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 99";
-		rLen = 0;
-		rLoc = 3252;
-		rType = 0;
-		vrLen = 1649;
-		vrLoc = 2387;
-	};
-	FA6B44530DD5BF6700FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 97";
-		rLen = 0;
-		rLoc = 3042;
-		rType = 0;
-		vrLen = 1715;
-		vrLoc = 2387;
-	};
-	FA6B44550DD5BFA800FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 97";
-		rLen = 0;
-		rLoc = 3000;
-		rType = 0;
-		vrLen = 1729;
-		vrLoc = 2387;
-	};
-	FA6B446F0DD5C04700FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 93";
-		rLen = 0;
-		rLoc = 2934;
-		rType = 0;
-		vrLen = 1690;
-		vrLoc = 2387;
-	};
-	FA6B44760DD5C0AD00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 100";
-		rLen = 0;
-		rLoc = 3288;
-		rType = 0;
-		vrLen = 1783;
-		vrLoc = 2387;
-	};
-	FA6B447A0DD5D38B00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 105";
-		rLen = 0;
-		rLoc = 3511;
-		rType = 0;
-		vrLen = 1445;
-		vrLoc = 2419;
-	};
-	FA6B447C0DD5D3B400FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 104";
-		rLen = 0;
-		rLoc = 3511;
-		rType = 0;
-		vrLen = 1542;
-		vrLoc = 2419;
-	};
-	FA6B447E0DD5D3D700FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 106";
-		rLen = 0;
-		rLoc = 3511;
-		rType = 0;
-		vrLen = 1748;
-		vrLoc = 2419;
-	};
-	FA6B44830DD5D50C00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 105";
-		rLen = 0;
-		rLoc = 3657;
-		rType = 0;
-		vrLen = 1954;
-		vrLoc = 2500;
-	};
-	FA6B44850DD5D5BD00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 107";
-		rLen = 0;
-		rLoc = 4274;
-		rType = 0;
-		vrLen = 1948;
-		vrLoc = 2500;
-	};
-	FA6B44870DD5D66C00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 106";
-		rLen = 0;
-		rLoc = 3681;
-		rType = 0;
-		vrLen = 1949;
-		vrLoc = 2500;
-	};
-	FA6B448A0DD5D94600FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 111";
-		rLen = 0;
-		rLoc = 4103;
-		rType = 0;
-		vrLen = 1976;
-		vrLoc = 2500;
-	};
-	FA6B448C0DD5D98600FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 115";
-		rLen = 0;
-		rLoc = 4567;
-		rType = 0;
-		vrLen = 2132;
-		vrLoc = 2500;
-	};
-	FA6B448E0DD5D9BB00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 114";
-		rLen = 0;
-		rLoc = 4331;
-		rType = 0;
-		vrLen = 2194;
-		vrLoc = 2500;
-	};
-	FA6B44900DD5D9F500FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 114";
-		rLen = 0;
-		rLoc = 4481;
-		rType = 0;
-		vrLen = 2213;
-		vrLoc = 2500;
-	};
-	FA6B44910DD5DA2F00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 114";
-		rLen = 0;
-		rLoc = 4331;
-		rType = 0;
-		vrLen = 2210;
-		vrLoc = 2500;
-	};
-	FA6B44920DD5DA8F00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 116";
-		rLen = 0;
-		rLoc = 4484;
-		rType = 0;
-		vrLen = 2333;
-		vrLoc = 2500;
-	};
-	FA6B44950DD5DC2B00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 129";
-		rLen = 0;
-		rLoc = 5334;
-		rType = 0;
-		vrLen = 2673;
-		vrLoc = 3622;
-	};
-	FA6B44970DD5DCF900FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 143";
-		rLen = 0;
-		rLoc = 6108;
-		rType = 0;
-		vrLen = 2815;
-		vrLoc = 3583;
-	};
-	FA6B44990DD5DE5E00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 198";
-		rLen = 0;
-		rLoc = 9352;
-		rType = 0;
-		vrLen = 2156;
-		vrLoc = 7671;
-	};
-	FA6B449B0DD5E16500FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 197";
-		rLen = 0;
-		rLoc = 9268;
-		rType = 0;
-		vrLen = 2121;
-		vrLoc = 7671;
-	};
-	FA6B449D0DD5E2CF00FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 89";
-		rLen = 0;
-		rLoc = 2724;
-		rType = 0;
-		vrLen = 1624;
-		vrLoc = 1842;
-	};
-	FA6B449F0DD5E2D700FB5C17 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 89";
-		rLen = 0;
-		rLoc = 2720;
-		rType = 0;
-		vrLen = 1776;
-		vrLoc = 1842;
-	};
-	FA6B44A10DD5E35700FB5C17 /* PBXTextBookmark */ = {
+	FA6B44A60DD5E5E300FB5C17 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
 		name = "artistsAlbums.m: 92";
@@ -574,6 +254,16 @@
 		rType = 0;
 		vrLen = 1770;
 		vrLoc = 1706;
+	};
+	FACC49BF0DD5E60A00643F28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 92";
+		rLen = 0;
+		rLoc = 2779;
+		rType = 0;
+		vrLen = 1711;
+		vrLoc = 1765;
 	};
 	FAEE4AA90DD495DA00A5CFDF /* artistsAlbums.m:288 */ = {
 		isa = PBXFileBreakpoint;
@@ -714,106 +404,6 @@
 		vrLen = 1535;
 		vrLoc = 0;
 	};
-	FAEE4B750DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 84";
-		rLen = 0;
-		rLoc = 9400;
-		rType = 0;
-		vrLen = 1234;
-		vrLoc = 2070;
-	};
-	FAEE4B760DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
-		name = "artistsAlbums.h: 29";
-		rLen = 0;
-		rLoc = 1092;
-		rType = 0;
-		vrLen = 1529;
-		vrLoc = 0;
-	};
-	FAEE4B770DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 90";
-		rLen = 0;
-		rLoc = 9491;
-		rType = 0;
-		vrLen = 1164;
-		vrLoc = 2070;
-	};
-	FAEE4B780DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
-		name = "artistsAlbums.h: 29";
-		rLen = 0;
-		rLoc = 1092;
-		rType = 0;
-		vrLen = 1533;
-		vrLoc = 0;
-	};
-	FAEE4B790DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 90";
-		rLen = 0;
-		rLoc = 9491;
-		rType = 0;
-		vrLen = 1099;
-		vrLoc = 221;
-	};
-	FAEE4B7A0DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
-		name = "artistsAlbums.h: 29";
-		rLen = 0;
-		rLoc = 1092;
-		rType = 0;
-		vrLen = 1529;
-		vrLoc = 0;
-	};
-	FAEE4B9A0DD4B54700A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 87";
-		rLen = 0;
-		rLoc = 9402;
-		rType = 0;
-		vrLen = 1212;
-		vrLoc = 1420;
-	};
-	FAEE4B9B0DD4B54700A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
-		name = "artistsAlbums.h: 43";
-		rLen = 0;
-		rLoc = 1700;
-		rType = 0;
-		vrLen = 1530;
-		vrLoc = 0;
-	};
-	FAEE4BAA0DD4B73700A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 91";
-		rLen = 0;
-		rLoc = 6938;
-		rType = 0;
-		vrLen = 1305;
-		vrLoc = 2068;
-	};
-	FAEE4BAB0DD4B73700A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
-		name = "artistsAlbums.h: 29";
-		rLen = 0;
-		rLoc = 1183;
-		rType = 0;
-		vrLen = 1612;
-		vrLoc = 0;
-	};
 	FAEE4BB50DD4B97300A5CFDF /* artistsAlbums.m:84 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
@@ -849,36 +439,6 @@
 		state = 2;
 	};
 	FAEE4C060DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
-		name = "artistsAlbums.h: 32";
-		rLen = 0;
-		rLoc = 1177;
-		rType = 0;
-		vrLen = 1577;
-		vrLoc = 0;
-	};
-	FAEE4C070DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 87";
-		rLen = 0;
-		rLoc = 2627;
-		rType = 0;
-		vrLen = 1366;
-		vrLoc = 2200;
-	};
-	FAEE4C080DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
-		name = "artistsAlbums.m: 87";
-		rLen = 0;
-		rLoc = 2627;
-		rType = 0;
-		vrLen = 1405;
-		vrLoc = 2200;
-	};
-	FAEE4C090DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
 		name = "artistsAlbums.h: 32";
