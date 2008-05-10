@@ -50,6 +50,10 @@ if (!count($groups)) {
 $projects = array();
 
 logMsg("Retrieving projects from SVN...");
+if (in_array('Frameworks/', $groups)) {
+    array_unshift($groups, 'Frameworks/');
+    $groups = array_unique($groups);
+}
 foreach ($groups as $group) {
     if (!is_dir("source/$group") && !@mkdir("source/$group")) {
         logError("Unable to create source/$group: " . lastError());
@@ -96,8 +100,9 @@ foreach ($projects as $project) {
         $path = preg_replace('/^Plugins/', 'Library/PlugIns/CarFrontEnd',
                                 $path);
     @exec("/usr/bin/xcodebuild -configuration Release -alltargets " .
-            "DSTROOT=$dir/build/ INSTALL_PATH=$path" .
-            " clean install", $output, $res);
+            "DSTROOT=$dir/build/ INSTALL_PATH=/$path " .
+            "FRAMEWORK_SEARCH_PATHS=$dir/build/Library/Frameworks " .
+            "clean install", $output, $res);
     if ($res) {
         logError("Unable to build $project.");
         exit(1);
