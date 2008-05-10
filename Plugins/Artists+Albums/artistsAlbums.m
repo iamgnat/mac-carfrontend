@@ -210,10 +210,11 @@ static ArtistsAlbums *sharedSP = nil;
 		level = 0;
 
     if (level == 0) {
+		//NSLog(@"getting ");
 		if (music != nil)
 			return [music count];
 			
-		NSDictionary    *its = [NSDictionary dictionaryWithContentsOfFile:@"/Users/Alex/Music/iTunes/iTunes Music Library.xml"];
+		NSDictionary    *its = [NSDictionary dictionaryWithContentsOfFile:[@"~/Music/iTunes/iTunes Music Library.xml" stringByExpandingTildeInPath]];
 		//NSLog(@"Class = %@", [its class]);
 		//NSLog(@"desc = %@", its);
 		NSDictionary *tracks = (NSDictionary *)[its objectForKey: @"Tracks"];
