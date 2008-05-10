@@ -1,0 +1,935 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeTarget = 8D5B49AC048680CD000E48DA /* Artists+Albums */;
+		addToTargets = (
+			8D5B49AC048680CD000E48DA /* Artists+Albums */,
+		);
+		breakpoints = (
+			FAEE4AA90DD495DA00A5CFDF /* artistsAlbums.m:288 */,
+			FAEE4AAB0DD495EA00A5CFDF /* artistsAlbums.m:285 */,
+			FAEE4AAD0DD495EC00A5CFDF /* artistsAlbums.m:288 */,
+			FAEE4B380DD4AD8F00A5CFDF /* artistsAlbums.m:216 */,
+			FAEE4B3F0DD4ADCB00A5CFDF /* artistsAlbums.m:216 */,
+			FAEE4B410DD4ADCD00A5CFDF /* artistsAlbums.m:216 */,
+			FAEE4B590DD4AF7A00A5CFDF /* artistsAlbums.m:216 */,
+			FAEE4BB50DD4B97300A5CFDF /* artistsAlbums.m:84 */,
+			FAEE4BEC0DD4BFA500A5CFDF /* artistsAlbums.m:302 */,
+			FAEE4C180DD4C4F200A5CFDF /* artistsAlbums.m:287 */,
+			FAEE4C5C0DD4DB3A00A5CFDF /* artistsAlbums.m:96 */,
+		);
+		codeSenseManager = FA6423400DA115EA008B4B77 /* Code sense */;
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXBookmarksDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBookmarksDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					200,
+					148.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBookmarksDataSource_LocationID,
+					PBXBookmarksDataSource_NameID,
+					PBXBookmarksDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					300,
+					229,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					227,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					993,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					353,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					279,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					315,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					299,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 232111335;
+			PBXWorkspaceStateSaveDate = 232111335;
+		};
+		perUserProjectItems = {
+			FA6B44430DD5BD5800FB5C17 /* PBXTextBookmark */ = FA6B44430DD5BD5800FB5C17 /* PBXTextBookmark */;
+			FA6B44480DD5BD9000FB5C17 /* PBXTextBookmark */ = FA6B44480DD5BD9000FB5C17 /* PBXTextBookmark */;
+			FA6B444A0DD5BDB100FB5C17 /* PBXTextBookmark */ = FA6B444A0DD5BDB100FB5C17 /* PBXTextBookmark */;
+			FA6B444C0DD5BE1D00FB5C17 /* PBXTextBookmark */ = FA6B444C0DD5BE1D00FB5C17 /* PBXTextBookmark */;
+			FA6B444D0DD5BE4800FB5C17 /* PBXTextBookmark */ = FA6B444D0DD5BE4800FB5C17 /* PBXTextBookmark */;
+			FA6B444F0DD5BE5300FB5C17 /* PBXTextBookmark */ = FA6B444F0DD5BE5300FB5C17 /* PBXTextBookmark */;
+			FA6B44530DD5BF6700FB5C17 /* PBXTextBookmark */ = FA6B44530DD5BF6700FB5C17 /* PBXTextBookmark */;
+			FA6B44550DD5BFA800FB5C17 /* PBXTextBookmark */ = FA6B44550DD5BFA800FB5C17 /* PBXTextBookmark */;
+			FA6B446F0DD5C04700FB5C17 /* PBXTextBookmark */ = FA6B446F0DD5C04700FB5C17 /* PBXTextBookmark */;
+			FA6B44760DD5C0AD00FB5C17 /* PBXTextBookmark */ = FA6B44760DD5C0AD00FB5C17 /* PBXTextBookmark */;
+			FA6B447A0DD5D38B00FB5C17 /* PBXTextBookmark */ = FA6B447A0DD5D38B00FB5C17 /* PBXTextBookmark */;
+			FA6B447C0DD5D3B400FB5C17 /* PBXTextBookmark */ = FA6B447C0DD5D3B400FB5C17 /* PBXTextBookmark */;
+			FA6B447E0DD5D3D700FB5C17 /* PBXTextBookmark */ = FA6B447E0DD5D3D700FB5C17 /* PBXTextBookmark */;
+			FA6B44830DD5D50C00FB5C17 /* PBXTextBookmark */ = FA6B44830DD5D50C00FB5C17 /* PBXTextBookmark */;
+			FA6B44850DD5D5BD00FB5C17 /* PBXTextBookmark */ = FA6B44850DD5D5BD00FB5C17 /* PBXTextBookmark */;
+			FA6B44870DD5D66C00FB5C17 /* PBXTextBookmark */ = FA6B44870DD5D66C00FB5C17 /* PBXTextBookmark */;
+			FA6B448A0DD5D94600FB5C17 /* PBXTextBookmark */ = FA6B448A0DD5D94600FB5C17 /* PBXTextBookmark */;
+			FA6B448C0DD5D98600FB5C17 /* PBXTextBookmark */ = FA6B448C0DD5D98600FB5C17 /* PBXTextBookmark */;
+			FA6B448E0DD5D9BB00FB5C17 /* PBXTextBookmark */ = FA6B448E0DD5D9BB00FB5C17 /* PBXTextBookmark */;
+			FA6B44900DD5D9F500FB5C17 /* PBXTextBookmark */ = FA6B44900DD5D9F500FB5C17 /* PBXTextBookmark */;
+			FA6B44910DD5DA2F00FB5C17 /* PBXTextBookmark */ = FA6B44910DD5DA2F00FB5C17 /* PBXTextBookmark */;
+			FA6B44920DD5DA8F00FB5C17 /* PBXTextBookmark */ = FA6B44920DD5DA8F00FB5C17 /* PBXTextBookmark */;
+			FA6B44950DD5DC2B00FB5C17 /* PBXTextBookmark */ = FA6B44950DD5DC2B00FB5C17 /* PBXTextBookmark */;
+			FA6B44970DD5DCF900FB5C17 /* PBXTextBookmark */ = FA6B44970DD5DCF900FB5C17 /* PBXTextBookmark */;
+			FA6B44990DD5DE5E00FB5C17 /* PBXTextBookmark */ = FA6B44990DD5DE5E00FB5C17 /* PBXTextBookmark */;
+			FA6B449B0DD5E16500FB5C17 /* PBXTextBookmark */ = FA6B449B0DD5E16500FB5C17 /* PBXTextBookmark */;
+			FA6B449D0DD5E2CF00FB5C17 /* PBXTextBookmark */ = FA6B449D0DD5E2CF00FB5C17 /* PBXTextBookmark */;
+			FA6B449F0DD5E2D700FB5C17 /* PBXTextBookmark */ = FA6B449F0DD5E2D700FB5C17 /* PBXTextBookmark */;
+			FA6B44A10DD5E35700FB5C17 /* PBXTextBookmark */ = FA6B44A10DD5E35700FB5C17 /* PBXTextBookmark */;
+			FAEE4B730DD4B2BF00A5CFDF = FAEE4B730DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B740DD4B2BF00A5CFDF = FAEE4B740DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B750DD4B2BF00A5CFDF = FAEE4B750DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B760DD4B2BF00A5CFDF = FAEE4B760DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B770DD4B2BF00A5CFDF = FAEE4B770DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B780DD4B2BF00A5CFDF = FAEE4B780DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B790DD4B2BF00A5CFDF = FAEE4B790DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B7A0DD4B2BF00A5CFDF = FAEE4B7A0DD4B2BF00A5CFDF /* PBXTextBookmark */;
+			FAEE4B9A0DD4B54700A5CFDF = FAEE4B9A0DD4B54700A5CFDF /* PBXTextBookmark */;
+			FAEE4B9B0DD4B54700A5CFDF = FAEE4B9B0DD4B54700A5CFDF /* PBXTextBookmark */;
+			FAEE4BAA0DD4B73700A5CFDF = FAEE4BAA0DD4B73700A5CFDF /* PBXTextBookmark */;
+			FAEE4BAB0DD4B73700A5CFDF = FAEE4BAB0DD4B73700A5CFDF /* PBXTextBookmark */;
+			FAEE4C060DD4C3FF00A5CFDF = FAEE4C060DD4C3FF00A5CFDF /* PBXTextBookmark */;
+			FAEE4C070DD4C3FF00A5CFDF = FAEE4C070DD4C3FF00A5CFDF /* PBXTextBookmark */;
+			FAEE4C080DD4C3FF00A5CFDF = FAEE4C080DD4C3FF00A5CFDF /* PBXTextBookmark */;
+			FAEE4C090DD4C3FF00A5CFDF = FAEE4C090DD4C3FF00A5CFDF /* PBXTextBookmark */;
+			FAEE4C600DD4DB9900A5CFDF = FAEE4C600DD4DB9900A5CFDF /* PBXTextBookmark */;
+		};
+		sourceControlManager = FA64233F0DA115EA008B4B77 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	089C167EFE841241C02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {488, 634}}";
+			sepNavSelRange = "{101, 0}";
+			sepNavVisRange = "{0, 101}";
+			sepNavWindowFrame = "{{38, 90}, {547, 762}}";
+		};
+	};
+	8D5B49AC048680CD000E48DA /* Artists+Albums */ = {
+		activeExec = 0;
+	};
+	8D5B49B7048680CD000E48DA /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {620, 634}}";
+			sepNavSelRange = "{609, 0}";
+			sepNavVisRange = "{0, 778}";
+			sepNavWindowFrame = "{{15, 111}, {547, 762}}";
+		};
+	};
+	FA64233F0DA115EA008B4B77 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	FA6423400DA115EA008B4B77 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	FA6423480DA1167C008B4B77 /* artistsAlbums.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {488, 728}}";
+			sepNavSelRange = "{1183, 0}";
+			sepNavVisRange = "{0, 1577}";
+			sepNavWindowFrame = "{{15, 111}, {547, 762}}";
+		};
+	};
+	FA6423490DA1167C008B4B77 /* artistsAlbums.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1676, 5656}}";
+			sepNavSelRange = "{2779, 0}";
+			sepNavVisRange = "{1706, 1770}";
+			sepNavWindowFrame = "{{592, 97}, {703, 776}}";
+		};
+	};
+	FA6B44430DD5BD5800FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 101";
+		rLen = 0;
+		rLoc = 4781;
+		rType = 0;
+		vrLen = 1683;
+		vrLoc = 2387;
+	};
+	FA6B44480DD5BD9000FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 95";
+		rLen = 0;
+		rLoc = 2948;
+		rType = 0;
+		vrLen = 1689;
+		vrLoc = 2387;
+	};
+	FA6B444A0DD5BDB100FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 93";
+		rLen = 0;
+		rLoc = 2948;
+		rType = 0;
+		vrLen = 1683;
+		vrLoc = 2387;
+	};
+	FA6B444C0DD5BE1D00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 94";
+		rLen = 0;
+		rLoc = 2948;
+		rType = 0;
+		vrLen = 1689;
+		vrLoc = 2387;
+	};
+	FA6B444D0DD5BE4800FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 99";
+		rLen = 0;
+		rLoc = 3252;
+		rType = 0;
+		vrLen = 1649;
+		vrLoc = 2387;
+	};
+	FA6B444F0DD5BE5300FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 99";
+		rLen = 0;
+		rLoc = 3252;
+		rType = 0;
+		vrLen = 1649;
+		vrLoc = 2387;
+	};
+	FA6B44530DD5BF6700FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 97";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1715;
+		vrLoc = 2387;
+	};
+	FA6B44550DD5BFA800FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 97";
+		rLen = 0;
+		rLoc = 3000;
+		rType = 0;
+		vrLen = 1729;
+		vrLoc = 2387;
+	};
+	FA6B446F0DD5C04700FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 93";
+		rLen = 0;
+		rLoc = 2934;
+		rType = 0;
+		vrLen = 1690;
+		vrLoc = 2387;
+	};
+	FA6B44760DD5C0AD00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 100";
+		rLen = 0;
+		rLoc = 3288;
+		rType = 0;
+		vrLen = 1783;
+		vrLoc = 2387;
+	};
+	FA6B447A0DD5D38B00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 105";
+		rLen = 0;
+		rLoc = 3511;
+		rType = 0;
+		vrLen = 1445;
+		vrLoc = 2419;
+	};
+	FA6B447C0DD5D3B400FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 104";
+		rLen = 0;
+		rLoc = 3511;
+		rType = 0;
+		vrLen = 1542;
+		vrLoc = 2419;
+	};
+	FA6B447E0DD5D3D700FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 106";
+		rLen = 0;
+		rLoc = 3511;
+		rType = 0;
+		vrLen = 1748;
+		vrLoc = 2419;
+	};
+	FA6B44830DD5D50C00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 105";
+		rLen = 0;
+		rLoc = 3657;
+		rType = 0;
+		vrLen = 1954;
+		vrLoc = 2500;
+	};
+	FA6B44850DD5D5BD00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 107";
+		rLen = 0;
+		rLoc = 4274;
+		rType = 0;
+		vrLen = 1948;
+		vrLoc = 2500;
+	};
+	FA6B44870DD5D66C00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 106";
+		rLen = 0;
+		rLoc = 3681;
+		rType = 0;
+		vrLen = 1949;
+		vrLoc = 2500;
+	};
+	FA6B448A0DD5D94600FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 111";
+		rLen = 0;
+		rLoc = 4103;
+		rType = 0;
+		vrLen = 1976;
+		vrLoc = 2500;
+	};
+	FA6B448C0DD5D98600FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 115";
+		rLen = 0;
+		rLoc = 4567;
+		rType = 0;
+		vrLen = 2132;
+		vrLoc = 2500;
+	};
+	FA6B448E0DD5D9BB00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 114";
+		rLen = 0;
+		rLoc = 4331;
+		rType = 0;
+		vrLen = 2194;
+		vrLoc = 2500;
+	};
+	FA6B44900DD5D9F500FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 114";
+		rLen = 0;
+		rLoc = 4481;
+		rType = 0;
+		vrLen = 2213;
+		vrLoc = 2500;
+	};
+	FA6B44910DD5DA2F00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 114";
+		rLen = 0;
+		rLoc = 4331;
+		rType = 0;
+		vrLen = 2210;
+		vrLoc = 2500;
+	};
+	FA6B44920DD5DA8F00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 116";
+		rLen = 0;
+		rLoc = 4484;
+		rType = 0;
+		vrLen = 2333;
+		vrLoc = 2500;
+	};
+	FA6B44950DD5DC2B00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 129";
+		rLen = 0;
+		rLoc = 5334;
+		rType = 0;
+		vrLen = 2673;
+		vrLoc = 3622;
+	};
+	FA6B44970DD5DCF900FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 143";
+		rLen = 0;
+		rLoc = 6108;
+		rType = 0;
+		vrLen = 2815;
+		vrLoc = 3583;
+	};
+	FA6B44990DD5DE5E00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 198";
+		rLen = 0;
+		rLoc = 9352;
+		rType = 0;
+		vrLen = 2156;
+		vrLoc = 7671;
+	};
+	FA6B449B0DD5E16500FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 197";
+		rLen = 0;
+		rLoc = 9268;
+		rType = 0;
+		vrLen = 2121;
+		vrLoc = 7671;
+	};
+	FA6B449D0DD5E2CF00FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 89";
+		rLen = 0;
+		rLoc = 2724;
+		rType = 0;
+		vrLen = 1624;
+		vrLoc = 1842;
+	};
+	FA6B449F0DD5E2D700FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 89";
+		rLen = 0;
+		rLoc = 2720;
+		rType = 0;
+		vrLen = 1776;
+		vrLoc = 1842;
+	};
+	FA6B44A10DD5E35700FB5C17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 92";
+		rLen = 0;
+		rLoc = 2779;
+		rType = 0;
+		vrLen = 1770;
+		vrLoc = 1706;
+	};
+	FAEE4AA90DD495DA00A5CFDF /* artistsAlbums.m:288 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableView:objectValueForTableColumn:row:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 288;
+		location = "Artists+Albums";
+		modificationTime = 232053596.5034389;
+		state = 2;
+	};
+	FAEE4AAB0DD495EA00A5CFDF /* artistsAlbums.m:285 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableView:objectValueForTableColumn:row:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 285;
+		location = "Artists+Albums";
+		modificationTime = 232053567.36153;
+		state = 2;
+	};
+	FAEE4AAD0DD495EC00A5CFDF /* artistsAlbums.m:288 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableView:objectValueForTableColumn:row:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 288;
+		location = "Artists+Albums";
+		modificationTime = 232053567.364832;
+		state = 2;
+	};
+	FAEE4B380DD4AD8F00A5CFDF /* artistsAlbums.m:216 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-numberOfRowsInTableView:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 216;
+		location = "Artists+Albums";
+		modificationTime = 232053567.368139;
+		state = 2;
+	};
+	FAEE4B3F0DD4ADCB00A5CFDF /* artistsAlbums.m:216 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-numberOfRowsInTableView:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 216;
+		location = "Artists+Albums";
+		modificationTime = 232053567.371423;
+		state = 2;
+	};
+	FAEE4B410DD4ADCD00A5CFDF /* artistsAlbums.m:216 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-numberOfRowsInTableView:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 216;
+		location = "Artists+Albums";
+		modificationTime = 232053567.375042;
+		state = 2;
+	};
+	FAEE4B590DD4AF7A00A5CFDF /* artistsAlbums.m:216 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-numberOfRowsInTableView:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 216;
+		location = "Artists+Albums";
+		modificationTime = 232053567.378678;
+		state = 2;
+	};
+	FAEE4B730DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 84";
+		rLen = 0;
+		rLoc = 9400;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 2044;
+	};
+	FAEE4B740DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 29";
+		rLen = 0;
+		rLoc = 1270;
+		rType = 0;
+		vrLen = 1535;
+		vrLoc = 0;
+	};
+	FAEE4B750DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 84";
+		rLen = 0;
+		rLoc = 9400;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 2070;
+	};
+	FAEE4B760DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 29";
+		rLen = 0;
+		rLoc = 1092;
+		rType = 0;
+		vrLen = 1529;
+		vrLoc = 0;
+	};
+	FAEE4B770DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 90";
+		rLen = 0;
+		rLoc = 9491;
+		rType = 0;
+		vrLen = 1164;
+		vrLoc = 2070;
+	};
+	FAEE4B780DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 29";
+		rLen = 0;
+		rLoc = 1092;
+		rType = 0;
+		vrLen = 1533;
+		vrLoc = 0;
+	};
+	FAEE4B790DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 90";
+		rLen = 0;
+		rLoc = 9491;
+		rType = 0;
+		vrLen = 1099;
+		vrLoc = 221;
+	};
+	FAEE4B7A0DD4B2BF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 29";
+		rLen = 0;
+		rLoc = 1092;
+		rType = 0;
+		vrLen = 1529;
+		vrLoc = 0;
+	};
+	FAEE4B9A0DD4B54700A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 87";
+		rLen = 0;
+		rLoc = 9402;
+		rType = 0;
+		vrLen = 1212;
+		vrLoc = 1420;
+	};
+	FAEE4B9B0DD4B54700A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 43";
+		rLen = 0;
+		rLoc = 1700;
+		rType = 0;
+		vrLen = 1530;
+		vrLoc = 0;
+	};
+	FAEE4BAA0DD4B73700A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 91";
+		rLen = 0;
+		rLoc = 6938;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 2068;
+	};
+	FAEE4BAB0DD4B73700A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 29";
+		rLen = 0;
+		rLoc = 1183;
+		rType = 0;
+		vrLen = 1612;
+		vrLoc = 0;
+	};
+	FAEE4BB50DD4B97300A5CFDF /* artistsAlbums.m:84 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableViewSelected:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 84;
+		location = "Artists+Albums";
+		modificationTime = 232053567.382637;
+		state = 2;
+	};
+	FAEE4BEC0DD4BFA500A5CFDF /* artistsAlbums.m:302 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableView:objectValueForTableColumn:row:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 302;
+		location = "Artists+Albums";
+		modificationTime = 232053567.386138;
+		state = 2;
+	};
+	FAEE4C060DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 32";
+		rLen = 0;
+		rLoc = 1177;
+		rType = 0;
+		vrLen = 1577;
+		vrLoc = 0;
+	};
+	FAEE4C070DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 87";
+		rLen = 0;
+		rLoc = 2627;
+		rType = 0;
+		vrLen = 1366;
+		vrLoc = 2200;
+	};
+	FAEE4C080DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 87";
+		rLen = 0;
+		rLoc = 2627;
+		rType = 0;
+		vrLen = 1405;
+		vrLoc = 2200;
+	};
+	FAEE4C090DD4C3FF00A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423480DA1167C008B4B77 /* artistsAlbums.h */;
+		name = "artistsAlbums.h: 32";
+		rLen = 0;
+		rLoc = 1177;
+		rType = 0;
+		vrLen = 1577;
+		vrLoc = 0;
+	};
+	FAEE4C180DD4C4F200A5CFDF /* artistsAlbums.m:287 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableView:objectValueForTableColumn:row:";
+		hitCount = 2;
+		ignoreCount = 0;
+		lineNumber = 287;
+		location = "Artists+Albums";
+		modificationTime = 232053593.714851;
+		state = 2;
+	};
+	FAEE4C5C0DD4DB3A00A5CFDF /* artistsAlbums.m:96 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		functionName = "-tableViewSelected:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 96;
+		location = "Artists+Albums";
+		modificationTime = 232053603.603413;
+		state = 1;
+	};
+	FAEE4C600DD4DB9900A5CFDF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FA6423490DA1167C008B4B77 /* artistsAlbums.m */;
+		name = "artistsAlbums.m: 99";
+		rLen = 0;
+		rLoc = 4781;
+		rType = 0;
+		vrLen = 1628;
+		vrLoc = 2387;
+	};
+}
