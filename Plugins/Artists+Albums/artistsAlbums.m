@@ -82,7 +82,7 @@ static ArtistsAlbums *sharedSP = nil;
 
 - (IBAction)tableViewSelected:(id)sender{
     int row = [sender selectedRow];
-    NSLog(@"the user just clicked on row %d", row);	
+    //NSLog(@"the user just clicked on row %d", row);	
 	if ((level == 1 || level == 2) && (row == 0)) { // back button
 		level--;	
 		[sender reloadData];
@@ -261,11 +261,14 @@ static ArtistsAlbums *sharedSP = nil;
 				[mdAlbum setDictionary:[mdArtist objectForKey:album]];
 			}
 			if (tracknumber == nil) {
+				//NSLog(@"no album number for %@ %@ (%@)", artist, title, [NSNumber numberWithUnsignedInteger:[mdAlbum count]]);
 				if ([mdAlbum count] > 0) {
-					//NSLog(@"%@", [NSNumber numberWithUnsignedInteger:[mdAlbum count]]);
-					tracknumber = [[NSNumber numberWithUnsignedInteger:[mdAlbum count]] stringValue];
-				} else 
+					//NSLog(@"setting number %@ for %@ %@", [NSNumber numberWithUnsignedInteger:[mdAlbum count]], artist, title);
+					tracknumber = [[NSNumber numberWithUnsignedInteger:([mdAlbum count] + 1)] stringValue];
+				} else {
+					//NSLog(@"setting number 1 for %@ %@", artist, title);
 					tracknumber = @"1";
+				}
 			}
 			[mdAlbum setValue:title forKey:tracknumber];
 			[mdArtist setObject:mdAlbum forKey:album];
