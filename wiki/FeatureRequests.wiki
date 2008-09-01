@@ -1,4 +1,5 @@
 #summary Requesting new features
+#labels Deprecated
 
 = Introduction =
 
