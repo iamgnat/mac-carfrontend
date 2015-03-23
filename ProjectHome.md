@@ -1,0 +1,1 @@
+CarFrontEnd is an extensible user interface for integrating a Mac into your car. The application itself is a simple UI shell environment that utilizes a plugin architecture to provide specific functionality to the user.
